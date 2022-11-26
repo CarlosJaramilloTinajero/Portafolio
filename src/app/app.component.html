@@ -1,8 +1,8 @@
-<app-navbar [ngClass]="{'hidden': !mostrarNavbar, 'contact show': mostrarNavbar}"
+<app-navbar  [ngClass]="{'hidden': !mostrarNavbar, 'show': mostrarNavbar}" class="contact"
     (selectedEvent)="cambiarContenido($event)" [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
 </app-navbar>
 
-<div id="puntero" [ngClass]="{'hidden': !mostrarNavbar, 'circulo d-none d-sm-block show': mostrarNavbar}">
+<div [ngClass]="{'hidden': !mostrarNavbar, 'show': mostrarNavbar}" class="circulo d-none d-sm-block opacity_0" id="puntero">
     <img src="assets/circulo.png" style="width: 100%; height: 100%;" alt="">
 </div>
 
