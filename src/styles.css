@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+::-webkit-scrollbar {
+    display: none;
+}
+
+*:hover,
+:focus,
+:active {
+    cursor: url("assets/cursorNoHover.png"), auto;
+}
+
+.hoverCursor,
+.hoverCursor:hover {
+    cursor: url("assets/cursorHover.png"), auto;
+
+}
+
+.btn,
+.btn:hover,
+.btn:focus {
+    cursor: url("assets/cursorHover.png"), auto;
+}
+
+body {
+    background-color: black;
+    cursor: url("assets/cursorNoHover.png"), auto;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.contact {
+    transition: all 3.5s ease-in-out;
+}

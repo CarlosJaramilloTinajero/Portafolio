@@ -1,0 +1,96 @@
+.presentacion {
+    color: white;
+}
+
+.divPresentacion {
+    text-align: center;
+    /* width: 100%; */
+    margin-top: 50px;
+
+}
+
+.textShadowLg{
+    text-shadow: rgb(255, 255, 255, 0.95) 1px 0 27px;
+}
+
+.textShadowSm{
+    text-shadow: rgb(255, 255, 255, 0.3) 1px 0 5px;
+}
+
+.scroll{
+    overflow-y: hidden;
+}
+
+.imagen {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
+    /* scale: ; */
+}
+
+.imagen:hover{
+    /* border-radius: 10px; */
+    filter: grayscale(80%);
+}
+
+.imgDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    margin-top: 40px;
+}
+
+.esconder {
+    height: 0%;
+    /* margin-top: -100%; */
+    /* content: ""; */
+
+}
+
+.incons {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.incons svg {
+    fill: white;
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    /* cursor: pointer; */
+}
+
+.incons svg:last-child {
+    margin-right: 0;
+}
+
+.letra {
+    transition: all 1.7s ease-in-out;
+    cursor: none;
+}
+
+.h {
+    /* visibility: hidden; */
+    opacity: 0;
+}
+
+.s {
+    /* visibility: visible; */
+    opacity: 1;
+}
+
+.hoverLetra:hover {
+    transition: all .03s ease-in-out;
+    opacity: .1;    
+}
+
+hr {
+    color: rgb(255, 255, 255);
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}

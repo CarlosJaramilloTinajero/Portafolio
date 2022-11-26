@@ -1,0 +1,69 @@
+.inicio {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    transition: all 2.5s ease-in-out;
+}
+
+.circulo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.Out {
+    opacity: 0;
+    scale: .6;
+}
+
+.marginOut {
+    margin-top: -1800px;
+}
+
+.In {
+    opacity: 1;
+    top: 0;
+
+}
+
+.OutLeft {
+    margin-left: -100%;
+    opacity: 0;
+    width: 0px;
+}
+
+
+.OutRigth {
+    margin-left: 110%;
+    width: 0px;
+    opacity: 0;
+}
+
+
+@media screen and (min-width:980px) {
+    .seccion {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 500px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:980px) {
+    .seccion {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 680px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

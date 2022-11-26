@@ -1,0 +1,262 @@
+@media screen and (max-width:500px) {
+    .contendor {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        /* max-width: ; */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+    }
+}
+
+@media screen and (min-width:500px) {
+    .contendor {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.titulo {
+    color: white;
+    font-weight: bold;
+    font-stretch: extra-condensed;
+}
+
+.hr1 {
+    width: 30%;
+    color: rgb(255, 255, 255, 0.5);
+}
+
+.hr2 {
+    width: 60%;
+    color: rgb(255, 255, 255, 0.5);
+}
+
+
+.textoP {
+    color: rgb(255, 255, 255, 0.7);
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+.proyectos {
+    position: absolute;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    transition: all 1.5s ease-in-out;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.link-proyecto {
+    position: absolute;
+    top: 75%;
+    left: 80%;
+}
+
+.mas-proyecto {
+    position: absolute;
+    top: 75%;
+    left: 4.2%;
+}
+
+.imagenProyecto {
+    /* object-fit: cover; */
+    width: 100.5%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -.5%;
+}
+
+.imagenBN {
+    filter: grayscale(90%);
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media screen and (min-width:500px) {
+    .proyecto {
+        position: relative;
+        width: 400px;
+        height: 220px;
+        /* background-color: aqua; */
+        border-radius: 7px;
+        overflow: hidden;
+        margin: 20px;
+        margin-bottom: 30px;
+        transition: all .3s ease-in-out;
+
+        -webkit-box-shadow: -3px 3px 4px 0px rgba(207, 207, 207, 0.5);
+        -moz-box-shadow: -3px 3px 4px 0px rgba(207, 207, 207, 0.5);
+        box-shadow: -3px 3px 4px 0px rgba(207, 207, 207, 0.5);
+    }
+
+    .btn {
+        background-color: #646262;
+        border: 2px #3f3e3e solid;
+        border-bottom: 4px #3f3e3e solid;
+        padding: 7px;
+        /* text-decoration: none; */
+        font-size: 14px;
+        /* transition: all .3s ease-in-out; */
+        /* cursor: url("/src/assets/cursorChido.png"), auto; */
+    }
+
+    .tr {
+        margin-top: 13px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .proyecto {
+        position: relative;
+        width: 300px;
+        height: 160px;
+        /* background-color: aqua; */
+        border-radius: 7px;
+        overflow: hidden;
+        margin: 20px;
+        margin-bottom: 30px;
+        transition: all .3s ease-in-out;
+    }
+
+    .btn {
+        background-color: #646262;
+        border: 2px #3f3e3e solid;
+        border-bottom: 4px #3f3e3e solid;
+        padding: 4px;
+        font-size: 12px;
+        transition: all .01s ease-in-out;
+        /* cursor: url("assets/cursorChido2.png"), auto; */
+
+    }
+
+    .tr {
+        margin-top: 8px;
+    }
+}
+
+.btn:active {
+    background-color: #646262;
+    border: 2px #3f3e3e solid;
+    border-bottom: 4px #3f3e3e solid;
+}
+
+.proyecto:hover {
+    -webkit-box-shadow: -8px 8px 4px 0px rgba(207, 207, 207, 0.5);
+    -moz-box-shadow: -8px 8px 4px 0px rgba(207, 207, 207, 0.5);
+    box-shadow: -8px 8px 4px 0px rgba(207, 207, 207, 0.5);
+    transform: translateY(-5px);
+}
+
+.proyecto:hover .proyecto-mas {
+    height: 100%;
+    transition: all .3s ease-in-out;
+    top: 0;
+}
+
+.proyecto-mas {
+    position: absolute;
+    width: 100.5%;
+    height: 100%;
+    top: -100%;
+    left: -.5%;
+    transition: all 1s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.proyecto:hover .lenguajes {
+    top: 0;
+    transition: all .8s ease-in-out;
+}
+
+.lenguajes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    transition: all .3s ease-in-out;
+}
+
+.separador {
+    margin: 40px;
+}
+
+.tituloProyecto {
+    padding: 6px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: 800;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 12px;
+
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+.botones {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tr .btn:first-child {
+    margin-left: 0px;
+}
+
+.tr .btn {
+    margin-left: 10px;
+}
+
+.btn span {
+    color: #dfd7d7;
+    font-weight: 700;
+    text-shadow: -2px -2px 1px #3f3e3e, 2px 2px 1px #3f3e3e, -2px 2px 1px #3f3e3e, 2px -2px 1px #3f3e3e;
+}
+
+.abajo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -100%;
+    /* z-index: 1; */
+}
+
+.inMas {
+    left: 0;
+    opacity: 1;
+    scale: 1;
+}
+
+.outMas {
+    left: -150%;
+    /* top: 50%; */
+    opacity: 0;
+    scale: .2;
+}
+
+.mas_Proyecto {
+    position: absolute;
+    /* margin-top: 200px; */
+    top: 0;
+    width: 100%;
+    max-width: 1000px;
+    /* left: -100%; */
+    transition: all 1.5s ease-in-out;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}

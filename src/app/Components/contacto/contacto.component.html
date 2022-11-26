@@ -1,0 +1,55 @@
+<div class="contendor">
+    <div class="rowDiv row row-cols-2 row-cols-lg-2">
+        <div class="col divImagen rotarImagen"><img src="assets/yo.jpg" class="imagen hoverCursor" alt=""></div>
+        <div class="col presentacion ">
+            <h2 class="textoPresentacion">Hola, aqui estan mis redes sociales para que me puedas contactar <br>
+                y tambien mi GitHub para que veas mis proyectos</h2>
+
+            <div class="row row-cols-3 row-cols-lg-3 icons">
+
+                <div class="col iconDiv" [ngClass]="{'copiadoButton': copiado == 1, 'iconBoxShadow': copiado != 1}"
+                    (click)="copyText('https://github.com/CarlosJaramilloTinajero', 1)">
+                    <img src="assets/git2.png" class="icon hoverCursor" alt="" [ngClass]="{'opacity-25': copiado == 1}">
+                    <small *ngIf="copiado == 1" class="copiado">Copiado</small>
+                </div>
+
+                <div class="col iconDiv" [ngClass]="{'copiadoButton': copiado == 2, 'iconBoxShadow': copiado != 2}"
+                    (click)="copyText('3319102115', 2)">
+                    <img src="assets/whts.png" class="icon hoverCursor" alt="" [ngClass]="{'opacity-25': copiado == 2}">
+                    <small *ngIf="copiado == 2" class="copiado">Copiado</small>
+                </div>
+
+                <div class="col iconDiv" style="background-color: white;"
+                    [ngClass]="{'copiadoButton': copiado == 3, 'iconBoxShadow': copiado != 3}"
+                    (click)="copyText('carlitux94@gmail.com', 3)">
+                    <img src="assets/gm3.png" class="icon hoverCursor" alt="" [ngClass]="{'opacity-25': copiado == 3}">
+                    <small *ngIf="copiado == 3" class="copiado" style="color: black;">Copiado</small>
+                </div>
+            </div>
+            <hr>
+
+            <form class="formulario" #contactoForm="ngForm" (submit)="submitContacto()">
+                <div class="mb-3" style="text-align: center; ">
+                    <label for="" class="form-label">¿Quieres mandarme una pregunta?</label>
+                </div>
+
+                <div class="mb-3 divInput">
+                    <label for="" class="form-label">Correo</label>
+                    <input type="text" name="correo" class="form-control">
+                </div>
+
+                <div class="mb-3 divInput">
+                    <label for="" class="form-label">Pregunta</label>
+                    <textarea name="pregunta" rows="3" class="form-control"></textarea>
+                </div>
+
+                <div class="mb-3 divInput">
+                    <div class="d-flex justify-content-end">
+                        <a class="link hoverCursor">Enviar</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
