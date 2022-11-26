@@ -9,15 +9,19 @@
 
 }
 
-.textShadowLg{
+.opacity_0 {
+    opacity: 0;
+}
+
+.textShadowLg {
     text-shadow: rgb(255, 255, 255, 0.95) 1px 0 27px;
 }
 
-.textShadowSm{
+.textShadowSm {
     text-shadow: rgb(255, 255, 255, 0.3) 1px 0 5px;
 }
 
-.scroll{
+.scroll {
     overflow-y: hidden;
 }
 
@@ -30,7 +34,7 @@
     /* scale: ; */
 }
 
-.imagen:hover{
+.imagen:hover {
     /* border-radius: 10px; */
     filter: grayscale(80%);
 }
@@ -84,7 +88,7 @@
 
 .hoverLetra:hover {
     transition: all .03s ease-in-out;
-    opacity: .1;    
+    opacity: .1;
 }
 
 hr {
