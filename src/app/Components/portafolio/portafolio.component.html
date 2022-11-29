@@ -123,6 +123,42 @@
 
         </div>
 
+        <!-- Proyecto pedidos -->
+        <div class="proyecto col">
+            <img src="assets/pedidos.png" class="imagenProyecto" alt="">
+
+            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
+                <img src="assets/pedidos.png" class="imagenBN" alt="">
+            </section>
+
+            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
+                <h1 class="tituloProyecto">ADMINISTADOR DE PEDIDOS</h1>
+
+                <div class="botones">
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
+                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
+                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
+                    </div>
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">PHP</span></a>
+                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
+                    </div>
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">Angular</span></a>
+                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
+                    </div>
+                </div>
+                <div class="mas-proyecto">
+                    <a class="btn" (click)="verProyecto(4)"><span class="hoverCursor">Mas...</span></a>
+                </div>
+                <div class="link-proyecto">
+                    <a href="https://carlosjaramillotinajero.github.io/pedidos/" target="_blank" class="btn"><span
+                            class="hoverCursor">Visitar</span></a>
+                </div>
+            </section>
+
+        </div>
     </div>
 
     <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
@@ -155,7 +191,18 @@
         descripcionProyecto="En este proyecto muuestro un poco de mis habilidades en el desarrollo web.Tambien muestro un portafolio 
         donde estan algunos de los proyectos que eh echo con diferentes lenguajes y FrameWork de BackEnd y FrontEnd"
         [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
-        img="assets/portafolio.png" 
-        link="https://carlosjaramillotinajero.github.io/Portafolio/" 
+        img="assets/portafolio.png" link="https://carlosjaramillotinajero.github.io/Portafolio/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/Portafolio"></app-proyecto-mas>
+
+
+    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+        [ngClass]="{'inMas': proyectoSelect == 4, 'outMas': proyectoSelect != 4}"
+        nombreProyecto="Administrador de pedidos"
+        descripcionBreve="Este proyecto esta echo para organizar y tener registros de pedidos que eh llevado en mi trabajo como repartidor de una polleria." 
+        descripcionProyecto="Este proyecto sirve como un administrador de pedidos que eh llevado en mi trabajo como repartidor, ya que tiene un CRUD de pedidos por llevar y pedidos llevados y tambien un CRUD de deudas para poder gestinonarlas.
+        Este proyecto me sirve mucho porque con el puedo llevar un control de cuanto dinero recibo por el precio del pedido y cuanto me dan de propia por cada pedido, y asi puedo revisar cualquier dia en el que se tengan registros de los pedidos.
+        Con este proyecto se pueden tener menos perdidas de dinero con los pedidos llevados, ya que tiene los registros de cuanto dinero recibo y al final del dia puedo contar el dinero en efectivo y compararlo con los registros."
+        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']" img="assets/pedidos.png"
+        link="https://carlosjaramillotinajero.github.io/pedidos/"
+        linkGithub="https://github.com/CarlosJaramilloTinajero/pedidos"></app-proyecto-mas>
 </div>

@@ -15,6 +15,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    /* transition: all .01 ease-in-out; */
 }
 
 .imagen {

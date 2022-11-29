@@ -34,6 +34,8 @@ export class AppComponent implements OnInit {
     window.addEventListener('mousemove', (e) => {
       pxRaton = (e.pageX - (lado / 2) + 6);
       pyRaton = (e.pageY - (lado / 2) + 6);
+      // puntero.style.left = pxRaton + "px";
+      // puntero.style.top = pyRaton + "px";
       mover = true;
     })
 
