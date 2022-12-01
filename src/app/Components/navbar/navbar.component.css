@@ -53,15 +53,10 @@ a {
     color: rgb(255, 255, 255, 0.6);
     font-size: 18px;
     transition: all .4s ease-in-out;
-    /* cursor: pointer; */
     position: relative;
     border-radius: 3px;
     padding: 5px;
     display: flex;
-    /* display: flex; */
-    /* justify-content: end; */
-    /* text-align: center; */
-
 }
 
 .navbarA span {
@@ -74,7 +69,6 @@ a {
 }
 
 .navLinkA .foot {
-    /* display: block; */
     width: 0%;
     height: 100%;
     opacity: .2;
@@ -89,8 +83,6 @@ a {
 .navLinkA:hover {
     color: rgba(255, 255, 255, 0.9);
     transform: scale(1.1);
-    /* text-shadow: rgb(255, 255, 255, 0.7) -5px 3px 2px; */
-    /* background-color: black; */
 }
 
 .selected {

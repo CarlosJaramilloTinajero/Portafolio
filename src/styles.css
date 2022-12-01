@@ -21,7 +21,6 @@
 .hoverCursor,
 .hoverCursor:hover {
     cursor: url("assets/cursorHover.png"), auto;
-
 }
 
 .btn,
