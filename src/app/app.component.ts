@@ -10,7 +10,8 @@ export class AppComponent implements OnInit {
   idIntervalPuntos: number = 0;
   idIntervalCursor: number = 0;
 
-  cantPuntos: number = 7;
+  cantPuntosAnt: number = 7;
+  cantPuntos: number = this.cantPuntosAnt;
   puntosArr: number[] = [];
   left: number[] = [];
   top: number[] = [];
@@ -32,28 +33,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // Inicializacion de las variables top y lef de los puntos de fonde
-    for (let k = 0; k < this.cantPuntos; k++) {
-      this.puntosArr[k] = 1;
-    }
+    // Inicializamos las variables de los puntos
     var idTimeOut1 = setTimeout(() => {
-      for (let i = 0; i < this.cantPuntos; i++) {
-        this.left[i] = this.getRandom(document.documentElement.clientWidth - 10);
-        this.top[i] = this.getRandom(document.documentElement.clientHeight - 55) + 55;
-      }
+      this.inicializarPuntos();
       window.clearTimeout(idTimeOut1);
     }, 2000);
 
     // Interval y TimeOut para los puntos de fondo
     var idTimeOutPuntos = setTimeout(() => {
       this.ponerPuntos();
-      // console.log(idTimeOutPuntos);
       window.clearTimeout(idTimeOutPuntos);
     }, 15000);
 
+    // Ponemos el puntero que sigue al cursor
     this.ponerCursor();
-
-
   }
 
   ponerCursor() {
@@ -106,7 +99,7 @@ export class AppComponent implements OnInit {
         }
       }
 
-    // console.log(this.idIntervalCursor);
+      // console.log(this.idIntervalCursor);
     }, 7);
 
     this.idIntervalCursor = parseInt(id.toString());
@@ -127,7 +120,7 @@ export class AppComponent implements OnInit {
   ponerPuntos() {
     var conPuntos = 0;
 
-   var id = setInterval(() => {
+    var id = setInterval(() => {
       if (this.mostrarPuntos) {
         if (conPuntos <= this.puntosArr.length) {
 
@@ -159,11 +152,40 @@ export class AppComponent implements OnInit {
     if (this.mostrarPuntos) {
       window.clearInterval(this.idIntervalPuntos);
       this.mostrarPuntos = false;
+      this.cantPuntos = 0;
+      this.inicializarPuntos();
     } else {
+      this.cantPuntos = this.cantPuntosAnt;
+      this.inicializarPuntos();
       this.mostrarPuntos = true;
       this.ponerPuntos();
     }
+  }
 
+
+  cambiarCantidadDePuntos() {
+    this.cantPuntos = this.cantPuntosAnt;
+    window.clearInterval(this.idIntervalPuntos);
+    this.inicializarPuntos();
+    this.ponerPuntos();
+  }
+
+
+  inicializarPuntos() {
+    this.puntosArr = [];
+    this.left = [];
+    this.top = [];
+    this.opacity = [];
+
+    // Inicializacion de las variables top y lef de los puntos de fonde
+    for (let k = 0; k < this.cantPuntos; k++) {
+      this.puntosArr[k] = 1;
+    }
+
+    for (let i = 0; i < this.cantPuntos; i++) {
+      this.left[i] = this.getRandom(document.documentElement.clientWidth - 10);
+      this.top[i] = this.getRandom(document.documentElement.clientHeight - 55) + 55;
+    }
   }
 
   // Helpers
