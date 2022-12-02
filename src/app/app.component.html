@@ -2,13 +2,10 @@
     <img src="assets/circulo.png" style="width: 100%; height: 100%;" alt="">
 </div>
 
-<!-- <div style="position: absolute; top: 0; left: 0;" > -->
-<div style="position: absolute; transition: all 4s ease-in-out;" class="d-none d-sm-block"
+<div style="position: absolute; transition: all 2s ease-in-out;" class="d-none d-sm-block"
     [ngClass]="{'show': mostrarPuntos, 'hidden': !mostrarPuntos}" *ngFor="let punto of puntosArr; let i= index">
     <app-punto [left]="left[i]" [top]="top[i]" [opacity]="opacity[i]"></app-punto>
 </div>
-<!-- </div> -->
-
 
 <div class="configuracion hoverCursor d-none d-sm-block fixed-bottom"
     [ngClass]="{'hidden': !mostrarNavbar, 'show contact': mostrarNavbar}">

@@ -87,8 +87,8 @@
 }
 
 .hoverLetra:hover {
-    transition: all .03s ease-in-out;
-    opacity: .1;
+    transition: all .01s ease-in-out;
+    opacity: .05;
 }
 
 hr {

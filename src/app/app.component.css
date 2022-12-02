@@ -112,6 +112,7 @@ hr {
     position: absolute;
     top: 0px;
     left: 0px;
+    /* transition: all .1s linear; */
 }
 
 .imagen {

@@ -166,8 +166,20 @@ export class AppComponent implements OnInit {
   cambiarCantidadDePuntos() {
     this.cantPuntos = this.cantPuntosAnt;
     window.clearInterval(this.idIntervalPuntos);
-    this.inicializarPuntos();
-    this.ponerPuntos();
+    this.mostrarPuntos = false;
+
+    var idTimeOut = setTimeout(() => {
+      this.inicializarPuntos();
+      this.ponerPuntos();
+
+      var idTimeOut2 = setTimeout(() => {
+        this.mostrarPuntos = true;
+        window.clearTimeout(idTimeOut2);
+      }, 1000);
+
+      window.clearTimeout(idTimeOut);
+    }, 2000);
+
   }
 
 
