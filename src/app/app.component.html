@@ -2,7 +2,7 @@
     <img src="assets/circulo.png" style="width: 100%; height: 100%;" alt="">
 </div>
 
-<div style="position: absolute; transition: all 2s ease-in-out;" class="d-none d-sm-block"
+<div class="d-none d-sm-block circulos"
     [ngClass]="{'show': mostrarPuntos, 'hidden': !mostrarPuntos}" *ngFor="let punto of puntosArr; let i= index">
     <app-punto [left]="left[i]" [top]="top[i]" [opacity]="opacity[i]"></app-punto>
 </div>

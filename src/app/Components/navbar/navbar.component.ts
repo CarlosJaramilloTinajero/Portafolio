@@ -23,9 +23,10 @@ export class NavbarComponent implements OnInit {
 
     if (this.habilitado && num != this.selected) {
       this.habilitado = false;
-      setTimeout(() => {
+      var idTimeOut = setTimeout(() => {
         this.habilitado = true;
-      },2500);
+        window.clearTimeout(idTimeOut);
+      }, 2500);
       this.selectedAnt = this.selected;
       this.selected = num;
       this.selectedEvent.emit(this.selected);

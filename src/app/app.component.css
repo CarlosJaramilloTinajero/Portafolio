@@ -36,6 +36,11 @@
     bottom: 5px;
 }
 
+.circulos {
+    position: absolute;
+    transition: all 2s ease-in-out;
+}
+
 .cerrar {
     width: max-content;
     background-color: #5b6666;

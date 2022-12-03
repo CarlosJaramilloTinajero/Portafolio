@@ -28,12 +28,13 @@ export class ContactoComponent implements OnInit {
     document.body.removeChild(selBox);
 
     this.copiado = num;
-    setTimeout(()=>{
+    var idTimeOut = setTimeout(() => {
       this.copiado = 0;
+      window.clearTimeout(idTimeOut);
     }, 2000)
   }
 
-  submitContacto(){
+  submitContacto() {
 
   }
 
