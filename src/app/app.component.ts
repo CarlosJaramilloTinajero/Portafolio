@@ -196,7 +196,7 @@ export class AppComponent implements OnInit {
 
     for (let i = 0; i < this.cantPuntos; i++) {
       this.left[i] = this.getRandom(document.documentElement.clientWidth - 10);
-      this.top[i] = this.getRandom(document.documentElement.clientHeight - 55) + 55;
+      this.top[i] = this.getRandom(document.documentElement.clientHeight - 110) + 55;
     }
   }
 

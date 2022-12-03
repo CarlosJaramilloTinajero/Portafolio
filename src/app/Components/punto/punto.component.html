@@ -1,3 +1,13 @@
-<div class="punto" [id]="'punto_' + num" [ngStyle]="{'top': top+'px', 'left': left+'px', 'opacity': opacity}">
-    <img src="assets/cursorHover.png" class="imagenPunto" alt="">
+<div [ngStyle]="{'top': top+'px', 'left': left+'px', 'opacity': opacity}" class="padre">
+
+    <div *ngFor="let puntito of cantPuntitosArr; let i = index" class="padrePuntito"
+        [ngStyle]="{ 'animation': 'girar ' + velocidadGiro[i] + 's infinite linear'}">
+        <div class="puntito" style="top: -30%; left: 20%;">
+            <img src="assets/cursorHover.png" class="imagenPunto" alt="">
+        </div>
+    </div>
+    
+    <div class="punto" [id]="'punto_' + num">
+        <img src="assets/cursorHover.png" class="imagenPunto" alt="">
+    </div>
 </div>

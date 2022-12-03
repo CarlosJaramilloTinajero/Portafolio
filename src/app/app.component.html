@@ -4,7 +4,7 @@
 
 <div class="d-none d-sm-block circulos"
     [ngClass]="{'show': mostrarPuntos, 'hidden': !mostrarPuntos}" *ngFor="let punto of puntosArr; let i= index">
-    <app-punto [left]="left[i]" [top]="top[i]" [opacity]="opacity[i]"></app-punto>
+    <app-punto [left]="left[i]" [top]="top[i]" [opacity]="opacity[i]" [cantPuntitos]="getRandom(3) + 2" [num]="i"></app-punto>
 </div>
 
 <div class="configuracion hoverCursor d-none d-sm-block fixed-bottom"
