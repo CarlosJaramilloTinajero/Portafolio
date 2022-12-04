@@ -139,7 +139,7 @@ export class AppComponent implements OnInit {
             // this.left[conPuntos] = document.documentElement.clientWidth + 80;
           }
 
-          if (this.left[conPuntos] >= document.documentElement.clientWidth) {
+          if (this.left[conPuntos] > document.documentElement.clientWidth + 80) {
             this.regresar[conPuntos] = false;
           }
 
