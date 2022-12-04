@@ -31,6 +31,13 @@
 
 body {
     background-color: black;
+    /* background: rgb(186, 210, 237); */
+    /* background: linear-gradient(90deg, rgba(186, 210, 237, 0.8827906162464986) 10px, rgba(52, 57, 62, 0.87718837535014) 100px, rgba(0, 0, 0, 1) 200px); */
+    /* background: rgb(186, 210, 237); */
+    /* background: radial-gradient(circle at 100vw 100vh, rgba(186, 210, 237, 0.8827906162464986) 20px, rgba(52, 57, 62, 0.87718837535014) 150px, rgba(0, 0, 0, 1) 250px); */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* height: 100vh; */
     cursor: url("assets/cursorNoHover.png"), auto;
 }
 

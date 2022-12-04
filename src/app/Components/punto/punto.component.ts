@@ -16,6 +16,7 @@ export class PuntoComponent implements OnInit {
   @Input() left: number = 0;
   @Input() top: number = 0;
   @Input() opacity: number = 0;
+  @Input() regresar: boolean = false;
 
   leftPuntitos: number[] = [];
   topPuntitos: number[] = [];

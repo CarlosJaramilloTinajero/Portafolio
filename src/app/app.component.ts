@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
   puntosArr: number[] = [];
   left: number[] = [];
   top: number[] = [];
+  regresar: boolean[] = [];
+  velocidad: number[] = [];
+
   opacity: number[] = [];
   mostrarPuntos: boolean = false;
 
@@ -123,7 +126,7 @@ export class AppComponent implements OnInit {
       if (this.mostrarPuntos) {
         if (conPuntos <= this.puntosArr.length) {
 
-          if (this.getRandom(15) == 5) {
+          if (this.getRandom(10) == 5) {
             if (this.opacity[conPuntos] == 1) {
               this.opacity[conPuntos] = 0;
             } else {
@@ -131,10 +134,19 @@ export class AppComponent implements OnInit {
             }
           }
 
-          if (this.left[conPuntos] < -30) {
-            this.left[conPuntos] = document.documentElement.clientWidth + 80;
+          if (this.left[conPuntos] < -80) {
+            this.regresar[conPuntos] = true;
+            // this.left[conPuntos] = document.documentElement.clientWidth + 80;
+          }
+
+          if (this.left[conPuntos] >= document.documentElement.clientWidth) {
+            this.regresar[conPuntos] = false;
+          }
+
+          if (!this.regresar[conPuntos]) {
+            this.left[conPuntos] -= this.velocidad[conPuntos];
           } else {
-            this.left[conPuntos] -= 10;
+            this.left[conPuntos] += this.velocidad[conPuntos];
           }
           conPuntos += 1;
         } else {
@@ -187,6 +199,8 @@ export class AppComponent implements OnInit {
     this.puntosArr = [];
     this.left = [];
     this.top = [];
+    this.regresar = [];
+    this.velocidad = [];
     this.opacity = [];
 
     // Inicializacion de las variables top y lef de los puntos de fonde
@@ -197,6 +211,13 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < this.cantPuntos; i++) {
       this.left[i] = this.getRandom(document.documentElement.clientWidth - 10);
       this.top[i] = this.getRandom(document.documentElement.clientHeight - 110) + 55;
+      if (this.getRandom(2) + 1 == 1) {
+        this.regresar[i] = false;
+      } else {
+        this.regresar[i] = true;
+      }
+
+      this.velocidad[i] = this.getRandom(9) + 6;
     }
   }
 
