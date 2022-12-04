@@ -37,7 +37,7 @@
 }
 
 .circulos {
-    position: absolute;
+    position: fixed;
     transition: all 2s ease-in-out;
 }
 
