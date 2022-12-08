@@ -25,7 +25,7 @@
     text-decoration: none;
     border-radius: 3px;
     margin-bottom: 14px;
-    margin-top: 18px;
+    margin-top: 22px;
     padding: 5px;
 }
 
@@ -279,7 +279,8 @@
 
     .contenedorMas {
         width: 90%;
-        margin: 0px;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 255px;
     }
 
@@ -299,10 +300,18 @@
     }
 
     .descripcion {
+        /* display: flex; */
+        margin-right: 0px;
+        max-width: 300px;
         color: rgb(255, 255, 255, 0.6);
         font-size: 15px;
         font-weight: 400;
         margin-top: 5px;
+
+    }
+
+    .descripcion a{
+        max-width: 200px;
     }
 
     .salto {
@@ -314,8 +323,8 @@
     }
 
     .divImagen {
-        width: 325px;
-        height: 228px;
+        width: 90%;
+        height: 60%;
         margin-top: 15px;
         /* margin-top: 10px; */
         margin-bottom: 15px;

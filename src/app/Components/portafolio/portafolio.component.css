@@ -1,11 +1,11 @@
 @media screen and (max-width:500px) {
     .contendor {
-        position: relative;
-        width: 100%;
-        max-width: 380px;
+        /* position: relative; */
+        width: 90%;
+        /* max-width: 340px; */
         /* max-width: ; */
-        /* margin-left: auto; */
-        /* margin-right: auto; */
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -41,6 +41,9 @@
     font-size: 16px;
     margin-top: 15px;
     font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    /* min-width: ; */
 }
 
 .proyectos {
@@ -120,22 +123,28 @@
 @media screen and (max-width:500px) {
     .proyecto {
         position: relative;
-        width: 300px;
-        height: 160px;
+        width: 90vw;
+        height: 50vw;
+        /* margin-right: auto; */
+        margin-left: 5vw;
         /* background-color: aqua; */
         border-radius: 7px;
         overflow: hidden;
-        margin: 20px;
-        margin-bottom: 30px;
+        /* margin: 20px; */
+        margin-bottom: 13vw;
         transition: all .3s ease-in-out;
+
+        -webkit-box-shadow: -3px 3px 4px 0px rgba(207, 207, 207, 0.5);
+        -moz-box-shadow: -3px 3px 4px 0px rgba(207, 207, 207, 0.5);
+        box-shadow: -3px 3px 4px 0px rgba(207, 207, 207, 0.5);
     }
 
     .btn {
         background-color: #646262;
-        border: 2px #3f3e3e solid;
-        border-bottom: 4px #3f3e3e solid;
-        padding: 4px;
-        font-size: 12px;
+        border: .15rem #3f3e3e solid;
+        border-bottom: .3rem #3f3e3e solid;
+        padding: .48rem;
+        font-size: .8rem;
         transition: all .01s ease-in-out;
         /* cursor: url("assets/cursorChido2.png"), auto; */
 
