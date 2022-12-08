@@ -159,6 +159,43 @@
             </section>
 
         </div>
+
+        <!-- Proyecto pacman -->
+        <div class="proyecto col">
+            <img src="assets/pacman.png" class="imagenProyecto" alt="">
+
+            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
+                <img src="assets/pacman.png" class="imagenBN" alt="">
+            </section>
+
+            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
+                <h1 class="tituloProyecto">PACMAN CON ANGULAR</h1>
+
+                <div class="botones">
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
+                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
+                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
+                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
+                    </div>
+                    <!-- <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">PHP</span></a>
+                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
+                    </div> -->
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">Angular</span></a>
+                    </div>
+                </div>
+                <div class="mas-proyecto">
+                    <a class="btn" (click)="verProyecto(5)"><span class="hoverCursor">Mas...</span></a>
+                </div>
+                <div class="link-proyecto">
+                    <a href="https://carlosjaramillotinajero.github.io/pacmanAngular/" target="_blank" class="btn"><span
+                            class="hoverCursor">Visitar</span></a>
+                </div>
+            </section>
+
+        </div>
     </div>
 
     <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
@@ -194,15 +231,22 @@
         img="assets/portafolio.png" link="https://carlosjaramillotinajero.github.io/Portafolio/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/Portafolio"></app-proyecto-mas>
 
-
     <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 4, 'outMas': proyectoSelect != 4}"
         nombreProyecto="Administrador de pedidos"
-        descripcionBreve="Este proyecto esta echo para organizar y tener registros de pedidos que eh llevado en mi trabajo como repartidor de una polleria." 
+        descripcionBreve="Este proyecto esta echo para organizar y tener registros de pedidos que eh llevado en mi trabajo como repartidor de una polleria."
         descripcionProyecto="Este proyecto sirve como un administrador de pedidos que eh llevado en mi trabajo como repartidor, ya que tiene un CRUD de pedidos por llevar y pedidos llevados y tambien un CRUD de deudas para poder gestinonarlas.
         Este proyecto me sirve mucho porque con el puedo llevar un control de cuanto dinero recibo por el precio del pedido y cuanto me dan de propia por cada pedido, y asi puedo revisar cualquier dia en el que se tengan registros de los pedidos.
         Con este proyecto se pueden tener menos perdidas de dinero con los pedidos llevados, ya que tiene los registros de cuanto dinero recibo y al final del dia puedo contar el dinero en efectivo y compararlo con los registros."
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']" img="assets/pedidos.png"
         link="https://carlosjaramillotinajero.github.io/pedidos/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/pedidos"></app-proyecto-mas>
+
+    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+        [ngClass]="{'inMas': proyectoSelect == 5, 'outMas': proyectoSelect != 5}" nombreProyecto="Pacman con Angular"
+        descripcionBreve="Este proyecto es un videojuego 2D tipo Pacman." descripcionProyecto="Este proyecto fue echo con Angular usando el app_component_ts para hacer toda la logica de el videojuego, creando los TimeOut's y los Interval's para el funcionamiento del jugador y de los fantasmas.
+        Este proyecto no es responsivo, ya que solo tiene un tamaño el mapa, los fantasmas y pacaman."
+        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Angular']" img="assets/pacman.png"
+        link="https://carlosjaramillotinajero.github.io/pacmanAngular/"
+        linkGithub="https://github.com/CarlosJaramilloTinajero/pacmanAngular"></app-proyecto-mas>
 </div>
