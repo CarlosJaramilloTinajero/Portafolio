@@ -9,7 +9,7 @@ export class InicioComponent implements OnInit {
 
   @Output() mostrarNavbar: EventEmitter<boolean> = new EventEmitter();
   @Output() selectdContact: EventEmitter<number> = new EventEmitter();
-  @Output() mostrarPuntosYPuntero: EventEmitter<boolean> = new EventEmitter();
+  @Output() mostrarPuntos: EventEmitter<boolean> = new EventEmitter();
   @Output() mostrarCursor: EventEmitter<boolean> = new EventEmitter();
 
   contador: number = 0;
@@ -37,7 +37,7 @@ export class InicioComponent implements OnInit {
         }, 1500);
 
         var idTimeOut2 = setTimeout(() => {
-          this.mostrarPuntosYPuntero.emit(true);
+          this.mostrarPuntos.emit(true);
           this.mostrarCursor.emit(true);
           window.clearTimeout(idTimeOut2);
         }, 3500);

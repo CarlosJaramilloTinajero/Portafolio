@@ -4,9 +4,7 @@
 
 .divPresentacion {
     text-align: center;
-    /* width: 100%; */
-    margin-top: 50px;
-
+    margin-top: 2vw;
 }
 
 .opacity_0 {
@@ -29,13 +27,13 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    transition: all .5s ease-in-out;
-    /* scale: ; */
+    transition: all 1.5s ease-in-out;
+    filter: grayscale(80%);
 }
 
 .imagen:hover {
-    /* border-radius: 10px; */
-    filter: grayscale(80%);
+    transition: all .5s ease-in-out;
+    filter: grayscale(0%);
 }
 
 .imgDiv {
@@ -45,19 +43,22 @@
     height: 200px;
     border-radius: 100px;
     overflow: hidden;
+    margin-top: 60px;
+    -webkit-box-shadow: 0px 0px 40px 2px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0px 0px 40px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 40px 2px rgba(255, 255, 255, 0.5);
+    transition: all 1.5s ease-in-out;
+}
 
-    margin-top: 40px;
-
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(255, 255, 255, 0.5);
-    -moz-box-shadow: 0px 0px 10px 4px rgba(255, 255, 255, 0.5);
-    box-shadow: 0px 0px 10px 4px rgba(255, 255, 255, 0.5);
+.imgDiv:hover {
+    transition: all .5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.45);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.45);
+    box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.45);
 }
 
 .esconder {
     height: 0%;
-    /* margin-top: -100%; */
-    /* content: ""; */
-
 }
 
 .incons {
@@ -70,7 +71,6 @@
     width: 25px;
     height: 25px;
     margin-right: 20px;
-    /* cursor: pointer; */
 }
 
 .incons svg:last-child {
@@ -83,12 +83,10 @@
 }
 
 .h {
-    /* visibility: hidden; */
     opacity: 0;
 }
 
 .s {
-    /* visibility: visible; */
     opacity: 1;
 }
 
