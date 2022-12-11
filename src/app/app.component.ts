@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   opacity: number[] = [];
   mostrarPuntos: boolean = false;
   over: number = 0;
-  gravedadPX: number = 150;
+  gravedadPX: number = 100;
   delayMax: number = 27;
   delayPuntos: number = (this.delayMax - this.cantPuntos);
 
@@ -99,13 +99,16 @@ export class AppComponent implements OnInit {
       if (this.mostrarPuntos) {
         if (conPuntos <= this.puntosArr.length) {
 
-          if (this.getRandom(15) == 5) {
-            if (this.opacity[conPuntos] == 1) {
+          if (this.opacity[conPuntos] == 1) {
+            if (this.getRandom(50) == 25) {
               this.opacity[conPuntos] = 0;
-            } else {
+            }
+          } else {
+            if (this.getRandom(20) == 10) {
               this.opacity[conPuntos] = 1;
             }
           }
+
 
           if (this.left[conPuntos] < -this.over) {
             this.regresar[conPuntos] = true;
@@ -117,7 +120,7 @@ export class AppComponent implements OnInit {
             this.regresar[conPuntos] = false;
           }
 
-          var punteroYArriba: boolean = ((this.pyRaton - this.top[conPuntos]) < this.gravedadPX && (this.top[conPuntos] - this.pyRaton) < this.gravedadPX);
+          var punteroYArriba: boolean = ((this.pyRaton - this.top[conPuntos]) < (this.gravedadPX / 2) && (this.top[conPuntos] - this.pyRaton) < (this.gravedadPX / 2));
           var punteroArribaXY: boolean = ((this.pxRaton - this.left[conPuntos]) < this.gravedadPX && punteroYArriba && (this.left[conPuntos] - this.pxRaton) < this.gravedadPX && punteroYArriba);
 
           if (punteroArribaXY) {
@@ -158,6 +161,7 @@ export class AppComponent implements OnInit {
       this.inicializarPuntos();
     } else {
       this.cantPuntos = this.cantPuntosAnt;
+      this.delayPuntos = this.delayMax - this.cantPuntos;
       this.inicializarPuntos();
       this.mostrarPuntos = true;
       this.ponerPuntos();

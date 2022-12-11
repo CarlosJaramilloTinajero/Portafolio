@@ -45,13 +45,20 @@
     margin-right: 7px;
 }
 
-/* .btnRegresar:hover {
-    scale: .93;
-} */
-
 .hr1 {
     width: 40%;
     color: rgb(255, 255, 255, 0.7);
+}
+
+.divImagen {
+    width: 90%;
+    height: 60%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (min-width:800px) {
@@ -69,7 +76,6 @@
         margin-top: 15px;
         transition: all .4s ease-in-out;
         border-radius: 3px;
-        /* cursor: pointer; */
     }
 
     .icon {
@@ -80,7 +86,6 @@
         border-bottom: 5px #308888 solid;
         border-radius: 11px;
         overflow: hidden;
-        /* cursor: pointer; */
         transition: all .4s ease-in-out;
         margin-bottom: -14px;
     }
@@ -98,14 +103,12 @@
         font-size: 35px;
         margin-top: 35px;
         font-weight: 700;
-        /* text-shadow: -2px -2px 1px #00000041, 2px 2px 1px #00000041, -2px 2px 1px #00000041, 2px -2px 1px #00000041; */
     }
 
     .TituloCh {
         color: rgb(255, 255, 255, 0.9);
         font-size: 31px;
         font-weight: 700;
-        /* text-shadow: -2px -2px 1px #3f3f3f60, 2px 2px 1px #3f3f3f60, -2px 2px 1px #3f3f3f60, 2px -2px 1px #3f3f3f60; */
     }
 
     .descripcion {
@@ -121,17 +124,6 @@
 
     .descripcion span {
         margin-left: 10px;
-    }
-
-    .divImagen {
-        width: 700px;
-        height: 420px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .botones {
@@ -165,7 +157,6 @@
         text-shadow: -1px -1px 4px #347070d3, 1px 1px 4px #347070d3, -1px 1px 4px #347070d3, 1px -1px 4px #347070d3;
         transition: all .4s ease-in-out;
         border-radius: 3px;
-        /* cursor: pointer; */
     }
 
     .icon {
@@ -176,7 +167,6 @@
         border-bottom: 5px #308888 solid;
         border-radius: 11px;
         overflow: hidden;
-        /* cursor: pointer; */
         transition: all .4s ease-in-out;
         margin-bottom: -2px;
     }
@@ -194,14 +184,12 @@
         font-size: 33px;
         font-weight: 700;
         margin-top: 25px;
-        /* text-shadow: -2px -2px 1px #3f3f3f60, 2px 2px 1px #3f3f3f60, -2px 2px 1px #3f3f3f60, 2px -2px 1px #3f3f3f60; */
     }
 
     .TituloCh {
         color: rgb(255, 255, 255, 0.9);
         font-size: 30px;
         font-weight: 700;
-        /* text-shadow: -2px -2px 1px #3f3f3f60, 2px 2px 1px #3f3f3f60, -2px 2px 1px #3f3f3f60, 2px -2px 1px #3f3f3f60; */
     }
 
     .descripcion {
@@ -217,17 +205,6 @@
 
     .descripcion span {
         margin-left: 10px;
-    }
-
-    .divImagen {
-        width: 480px;
-        height: 300px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .botones {
@@ -247,8 +224,6 @@
 }
 
 @media screen and (max-width:500px) {
-
-
     .link {
         text-decoration: none;
         color: white;
@@ -261,7 +236,6 @@
         text-shadow: -1px -1px 4px #347070d3, 1px 1px 4px #347070d3, -1px 1px 4px #347070d3, 1px -1px 4px #347070d3;
         transition: all .4s ease-in-out;
         border-radius: 3px;
-        /* cursor: pointer; */
     }
 
     .icon {
@@ -272,7 +246,6 @@
         border-bottom: 5px #308888 solid;
         border-radius: 11px;
         overflow: hidden;
-        /* cursor: pointer; */
         transition: all .4s ease-in-out;
         margin-bottom: 0;
     }
@@ -289,18 +262,15 @@
         color: rgb(255, 255, 255, 0.9);
         font-size: 20px;
         font-weight: 700;
-        /* text-shadow: -2px -2px 1px #3f3f3f60, 2px 2px 1px #3f3f3f60, -2px 2px 1px #3f3f3f60, 2px -2px 1px #3f3f3f60; */
     }
 
     .TituloCh {
         color: rgb(255, 255, 255, 0.9);
         font-size: 18px;
         font-weight: 700;
-        /* text-shadow: -2px -2px 1px #3f3f3f60, 2px 2px 1px #3f3f3f60, -2px 2px 1px #3f3f3f60, 2px -2px 1px #3f3f3f60; */
     }
 
     .descripcion {
-        /* display: flex; */
         margin-right: 0px;
         max-width: 300px;
         color: rgb(255, 255, 255, 0.6);
@@ -310,7 +280,7 @@
 
     }
 
-    .descripcion a{
+    .descripcion a {
         max-width: 200px;
     }
 
@@ -320,18 +290,6 @@
 
     .descripcion span {
         margin-left: 7px;
-    }
-
-    .divImagen {
-        width: 90%;
-        height: 60%;
-        margin-top: 15px;
-        /* margin-top: 10px; */
-        margin-bottom: 15px;
-        border-radius: 5px;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .botones {

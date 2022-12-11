@@ -2,12 +2,10 @@
     <img src="assets/circulo.png" style="width: 100%; height: 100%;" alt="">
 </div>
 
-<!-- [ngStyle]="{'left': pxPuntero + 'px', 'top': pyPuntero + 'px'}" -->
-
 <div class="d-none d-sm-block circulos" [ngClass]="{'show': mostrarPuntos, 'hidden': !mostrarPuntos}"
     *ngFor="let punto of puntosArr; let i= index">
     <app-punto [left]="left[i]" [top]="top[i]" [opacity]="opacity[i]" [regresar]="regresar[i]"
-        [cantPuntitos]="getRandom(3) + 2" [num]="i"></app-punto>
+        [cantPuntitos]="(getRandom(3) + 2)" [num]="i"></app-punto>
 </div>
 
 <div class="configuracion hoverCursor d-none d-sm-block fixed-bottom"
@@ -31,6 +29,7 @@
     <app-portafolio class="inicio" [animaciones]="animacionesHabiitar"
         [ngClass]="{'In': selected==1, 'Out': selected!=1, 'marginOut': esconder != 1}">
     </app-portafolio>
+
     <app-contacto class="inicio" [ngClass]="{'In': selected==3, 'Out': selected!=3, 'marginOut': esconder != 3 }">
     </app-contacto>
 </section>
@@ -47,7 +46,7 @@
             <div class="modal-body">
                 <div class="contenedorModal">
                     <div style="text-align: center;">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Configuracion de la pagina</h1>
+                        <h1 class="modal-title fs-5">Configuracion de la pagina</h1>
                     </div>
                     <hr>
                     <div class="form-check form-switch margin">
@@ -71,7 +70,7 @@
                             <option value="14">14</option>
                             <option value="16">16</option>
                         </select>
-                        <label for="">Cantidad de puntos</label>
+                        <label>Cantidad de puntos</label>
                     </div>
 
                     <hr>
