@@ -26,6 +26,9 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
 
+    var elm = document.getElementById('imagen') ?? document.createElement('a');
+    
+
     let idInterval = setInterval(() => {
       if (this.contador < this.textoArray.length) {
         this.contador++;
@@ -41,6 +44,8 @@ export class InicioComponent implements OnInit {
           this.mostrarCursor.emit(true);
           window.clearTimeout(idTimeOut2);
         }, 3500);
+
+        elm.style.opacity = '1';
 
         this.mostrarContact = true;
         this.mostrarNavbar.emit(true);

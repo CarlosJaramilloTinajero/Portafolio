@@ -8,8 +8,8 @@
         [cantPuntitos]="(getRandom(3) + 2)" [num]="i"></app-punto>
 </div>
 
-<div class="configuracion hoverCursor d-none d-sm-block fixed-bottom"
-    [ngClass]="{'hidden': !mostrarNavbar, 'show contact': mostrarNavbar}">
+<div class="configuracion contact hoverCursor d-none d-sm-block fixed-bottom" id="configSVG"
+    [ngClass]="{'hidden': !mostrarNavbar, 'show ': mostrarNavbar}">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide-connected"
         viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#configModal">
         <path
@@ -18,11 +18,12 @@
 </div>
 
 <section class="seccion">
-    <app-navbar style="position: absolute;" [ngClass]="{'hidden': !mostrarNavbar, 'show contact': mostrarNavbar}"
-        (selectedEvent)="cambiarContenido($event)" [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
+    <app-navbar style="position: absolute;" class="contact" id="navBar"
+        [ngClass]="{'hidden': !mostrarNavbar, 'show': mostrarNavbar}" (selectedEvent)="cambiarContenido($event)"
+        [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
     </app-navbar>
 
-    <app-inicio class="inicio" (mostrarCursor)="ponerCursorInicio($event)" (mostrarNavbar)="mostrarNavbar = $event"
+    <app-inicio class="inicio" (mostrarCursor)="ponerCursorInicio($event)" (mostrarNavbar)="mostrarNavbarEvt($event)"
         (mostrarPuntos)="ponerPuntosIncio($event)" (selectdContact)="cambiarContenido($event)"
         [ngClass]="{'In': selected==0, 'Out': selected!=0, 'marginOut': esconder != 0}"></app-inicio>
 
@@ -74,7 +75,7 @@
                     </div>
 
                     <hr>
-                    <button type="button" class="cerrar hoverCursor margin" data-bs-dismiss="modal"><svg
+                    <button class="btn btn1 hoverCursor margin" data-bs-dismiss="modal"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-x-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />

@@ -267,6 +267,15 @@ export class AppComponent implements OnInit {
     return (distancia / 50);
   }
 
+  mostrarNavbarEvt(b: boolean) {
+    this.mostrarNavbar = b;
+
+    var elmSVG = document.getElementById('configSVG') ?? document.createElement('a');
+    elmSVG.style.opacity = '1';
+    var elm = document.getElementById('navBar') ?? document.createElement('a');
+    elm.style.opacity = '1';
+  }
+
   getRandom(max: number) {
     return Math.floor(Math.random() * max);
   }

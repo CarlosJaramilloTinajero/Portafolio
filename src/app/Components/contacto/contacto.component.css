@@ -184,25 +184,26 @@ textarea {
 }
 
 .link {
-    text-decoration: none;
-    color: white;
-    border: 2px #308888 solid;
-    border-bottom: 5px #308888 solid;
-    background-color: #27bbbb;
-    font-size: 16px;
-    padding: 8px;
-    font-weight: 700;
-    text-shadow: -1px -1px 4px #347070d3, 1px 1px 4px #347070d3, -1px 1px 4px #347070d3, 1px -1px 4px #347070d3;
+
     margin-top: 15px;
-    transition: all .4s ease-in-out;
-    border-radius: 3px;
-    /* cursor: pointer; */
+}
+
+.link span {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.link svg {
+    fill: white;
+    width: 19px;
+    height: 20px;
 }
 
 .link:hover {
     scale: .95;
 }
-
 
 .formulario label {
     color: white;
