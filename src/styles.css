@@ -146,6 +146,10 @@ body {
 }
 
 .contact {
-    transition: all 3.5s ease-in-out;
+    /* transition: all 3.5s ease-in-out; */
     opacity: 0;
+}
+
+.tranS {
+    transition: all 3.5s ease-in-out;
 }

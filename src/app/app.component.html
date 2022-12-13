@@ -9,7 +9,7 @@
 </div>
 
 <div class="configuracion contact d-none d-sm-block fixed-bottom" id="configSVG"
-    [ngClass]="{'hidden': !mostrarNavbar, 'show ': mostrarNavbar}">
+    [ngClass]="{'hidden': !mostrarNavbar, 'show tranS ': mostrarNavbar}">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" [ngClass]="{'girarSVGClass': animacionConfSVG}"
         fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16" data-bs-toggle="modal"
         data-bs-target="#configModal">
@@ -20,8 +20,8 @@
 
 <section class="seccion">
     <app-navbar style="position: absolute;" class="contact" id="navBar"
-        [ngClass]="{'hidden': !mostrarNavbar, 'show': mostrarNavbar}" (selectedEvent)="cambiarContenido($event)"
-        [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
+        [ngClass]="{'hidden': !mostrarNavbar, 'show tranS': mostrarNavbar}"
+        (selectedEvent)="cambiarContenido($event)" [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
     </app-navbar>
 
     <app-inicio class="inicio" (mostrarAnimacionSVG)="ponerAnimacionSVGInicio($event)"
