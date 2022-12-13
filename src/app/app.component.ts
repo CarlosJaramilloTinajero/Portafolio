@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
   mostrarNavbar: boolean = false;
   mostrarCursor: boolean = false;
   animacionesHabiitar: boolean = false;
+  animacionConfSVG: boolean = false;
 
   constructor() {
   }
@@ -180,17 +181,27 @@ export class AppComponent implements OnInit {
   }
 
   ponerPuntosIncio(b: boolean) {
-    if (document.documentElement.clientWidth >= 576) {
-      // Inicializamos las variables de los puntos
-      this.inicializarPuntos();
+    if (b) {
+      if (document.documentElement.clientWidth >= 576) {
+        // Inicializamos las variables de los puntos
+        this.inicializarPuntos();
 
-      // Interval y TimeOut para los puntos de fondo
-      var idTimeOutPuntos = setTimeout(() => {
-        this.ponerPuntos();
-        this.mostrarPuntos = b;
-        window.clearTimeout(idTimeOutPuntos);
-      }, 2000);
+        // Interval y TimeOut para los puntos de fondo
+        var idTimeOutPuntos = setTimeout(() => {
+          this.ponerPuntos();
+          this.mostrarPuntos = b;
+          window.clearTimeout(idTimeOutPuntos);
+        }, 2000);
+      }
     }
+  }
+
+  ponerAnimacionSVGInicio(b: boolean) {
+    this.animacionConfSVG = b;
+    var id = setTimeout(() => {
+      this.animacionConfSVG = false;
+      window.clearTimeout(id);
+    }, 1500);
   }
 
   // Helpers puntos de fondo y cursor

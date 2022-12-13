@@ -11,6 +11,7 @@ export class InicioComponent implements OnInit {
   @Output() selectdContact: EventEmitter<number> = new EventEmitter();
   @Output() mostrarPuntos: EventEmitter<boolean> = new EventEmitter();
   @Output() mostrarCursor: EventEmitter<boolean> = new EventEmitter();
+  @Output() mostrarAnimacionSVG: EventEmitter<boolean> = new EventEmitter();
 
   contador: number = 0;
 
@@ -27,7 +28,7 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
 
     var elm = document.getElementById('imagen') ?? document.createElement('a');
-    
+
 
     let idInterval = setInterval(() => {
       if (this.contador < this.textoArray.length) {
@@ -42,6 +43,7 @@ export class InicioComponent implements OnInit {
         var idTimeOut2 = setTimeout(() => {
           this.mostrarPuntos.emit(true);
           this.mostrarCursor.emit(true);
+          this.mostrarAnimacionSVG.emit(true);
           window.clearTimeout(idTimeOut2);
         }, 3500);
 

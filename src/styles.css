@@ -103,13 +103,13 @@ body {
 .btn3::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5%;
+    left: 5%;
     z-index: -1;
-    width: 100%;
-    height: 175%;
+    width: 85%;
+    height: 165%;
     background: linear-gradient(45deg,
-            #ffffff, #d6d6d6c9, #bbbbbbb2, rgba(175, 175, 175, 0.822), rgba(255, 255, 255, 0.801), #ffffffd7, #ffffffe1, #f5f5f5);
+            #ffffff, #d6d6d6c9, #bbbbbbc7, rgba(175, 175, 175, 0.897), rgba(255, 255, 255, 0.801), #ffffffd7, #ffffffe1, #f5f5f5);
     background-size: 160%;
     border-radius: 10px;
     filter: blur(10px);

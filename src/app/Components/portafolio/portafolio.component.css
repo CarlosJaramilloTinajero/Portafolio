@@ -1,9 +1,6 @@
 @media screen and (max-width:500px) {
     .contendor {
-        /* position: relative; */
         width: 90%;
-        /* max-width: 340px; */
-        /* max-width: ; */
         margin-left: auto;
         margin-right: auto;
     }
@@ -35,7 +32,6 @@
     color: rgb(255, 255, 255, 0.5);
 }
 
-
 .textoP {
     color: rgb(255, 255, 255, 0.7);
     font-size: 16px;
@@ -43,7 +39,6 @@
     font-weight: 400;
     margin-left: auto;
     margin-right: auto;
-    /* min-width: ; */
 }
 
 .proyectos {
@@ -53,8 +48,6 @@
     display: flex;
     justify-content: center;
     transition: all 1.5s ease-in-out;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
 }
 
 .link-proyecto {
@@ -70,7 +63,6 @@
 }
 
 .imagenProyecto {
-    /* object-fit: cover; */
     width: 100.5%;
     height: 100%;
     position: absolute;
@@ -91,7 +83,6 @@
         position: relative;
         width: 400px;
         height: 220px;
-        /* background-color: aqua; */
         border-radius: 7px;
         overflow: hidden;
         margin: 20px;
@@ -108,10 +99,7 @@
         border: 2px #3f3e3e solid;
         border-bottom: 4px #3f3e3e solid;
         padding: 7px;
-        /* text-decoration: none; */
         font-size: 14px;
-        /* transition: all .3s ease-in-out; */
-        /* cursor: url("/src/assets/cursorChido.png"), auto; */
     }
 
     .tr {
@@ -125,12 +113,9 @@
         position: relative;
         width: 90vw;
         height: 50vw;
-        /* margin-right: auto; */
         margin-left: 5vw;
-        /* background-color: aqua; */
         border-radius: 7px;
         overflow: hidden;
-        /* margin: 20px; */
         margin-bottom: 13vw;
         transition: all .3s ease-in-out;
 
@@ -146,8 +131,6 @@
         padding: .48rem;
         font-size: .8rem;
         transition: all .01s ease-in-out;
-        /* cursor: url("assets/cursorChido2.png"), auto; */
-
     }
 
     .tr {
@@ -213,7 +196,6 @@
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-
 }
 
 .botones {
@@ -242,7 +224,6 @@
     height: 100%;
     left: 0;
     top: -100%;
-    /* z-index: 1; */
 }
 
 .inMas {
@@ -253,19 +234,14 @@
 
 .outMas {
     left: -150%;
-    /* top: 50%; */
     opacity: 0;
     scale: .2;
 }
 
 .mas_Proyecto {
     position: absolute;
-    /* margin-top: 200px; */
     top: 0;
     width: 100%;
     max-width: 1000px;
-    /* left: -100%; */
     transition: all 1.5s ease-in-out;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
 }

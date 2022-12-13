@@ -136,6 +136,25 @@ hr {
     opacity: 0;
 }
 
+.configuracion svg:hover,
+svg:target {
+    animation: girarSVG 1.5s linear infinite;
+}
+
+.girarSVGClass {
+    animation: girarSVG 1.5s linear infinite;
+}
+
+@keyframes girarSVG {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 @media screen and (min-width:980px) {
     .seccion {
