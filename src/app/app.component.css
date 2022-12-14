@@ -31,11 +31,6 @@
     opacity: 0;
 }
 
-.configuracion {
-    left: 10px;
-    bottom: 5px;
-}
-
 .circulos {
     position: fixed;
     transition: all 2s ease-in-out;
@@ -88,12 +83,6 @@ hr {
     width: 100%;
 }
 
-.configuracion svg {
-    width: 30px;
-    height: 30px;
-    fill: rgb(255, 255, 255, 0.7);
-}
-
 .circulo {
     position: absolute;
     top: -5px;
@@ -136,6 +125,18 @@ hr {
     opacity: 0;
 }
 
+.configuracion {
+    z-index: 100;
+    left: 10px;
+    bottom: 5px;
+}
+
+.configuracion svg {
+    width: 30px;
+    height: 30px;
+    fill: rgb(255, 255, 255, 0.7);
+}
+
 .configuracion svg:hover,
 svg:target {
     animation: girarSVG 1.5s linear infinite;
@@ -153,6 +154,108 @@ svg:target {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.opacity_10D {
+    opacity: .10;
+    transition: all 1s linear;
+}
+
+.opacity_10 {
+    opacity: .10;
+    transition: all .1s linear;
+}
+
+.opacity_85 {
+    opacity: .75;
+    transition: all .1s linear;
+}
+
+.opacity_65 {
+    opacity: .65;
+    transition: all .1s linear;
+}
+
+.opacity_100D {
+    opacity: 1;
+}
+
+.opacity_100 {
+    transition: all 1s ease-in-out;
+    opacity: 1;
+}
+
+.puntoI {
+    position: absolute;
+    z-index: 102;
+    background-color: white;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 35px;
+    border-radius: 6px;
+    transform: translateY(-35px);
+
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 1);
+}
+
+.z-index_0 {
+    z-index: -99;
+}
+
+.navBarC {
+    position: absolute;
+    z-index: 100;
+}
+
+.puntoV {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 102;
+    width: 150px;
+    height: 150px;
+}
+
+.pv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+@keyframes girarPV {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.fondoIncio {
+    transition: all 3.5s linear;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    background-size: 100%;
+    /* filter: blur(10px); */
 }
 
 

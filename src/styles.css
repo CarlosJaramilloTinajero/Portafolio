@@ -23,6 +23,11 @@
     cursor: url("assets/cursorHover.png"), auto;
 }
 
+.noHoverCursor,
+.noHoverCursor:hover {
+    cursor: url("assets/cursorNoHover.png"), auto;
+}
+
 .btn,
 .btn:hover,
 .btn:focus {

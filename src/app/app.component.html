@@ -1,13 +1,16 @@
+<!-- Puntero / cursor -->
 <div [ngClass]="{'hidden': !mostrarCursor, 'show': mostrarCursor}" class="circulo d-none d-sm-block" id="puntero">
     <img src="assets/circulo.png" style="width: 100%; height: 100%;" alt="">
 </div>
 
+<!-- Puntos de fondo -->
 <div class="d-none d-sm-block circulos" [ngClass]="{'show': mostrarPuntos, 'hidden': !mostrarPuntos}"
     *ngFor="let punto of puntosArr; let i= index">
     <app-punto [left]="left[i]" [top]="top[i]" [opacity]="opacity[i]" [regresar]="regresar[i]"
         [cantPuntitos]="(getRandom(3) + 2)" [num]="i"></app-punto>
 </div>
 
+<!-- SVG Configuracion -->
 <div class="configuracion contact d-none d-sm-block fixed-bottom" id="configSVG"
     [ngClass]="{'hidden': !mostrarNavbar, 'show tranS ': mostrarNavbar}">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" [ngClass]="{'girarSVGClass': animacionConfSVG}"
@@ -18,16 +21,17 @@
     </svg>
 </div>
 
+<!-- Secciones 'Inicio', 'Portafolio', 'Contacto' -->
 <section class="seccion">
-    <app-navbar style="position: absolute;" class="contact" id="navBar"
-        [ngClass]="{'hidden': !mostrarNavbar, 'show tranS': mostrarNavbar}"
+    <app-navbar class="contact navBarC" id="navBar" [ngClass]="{'hidden': !mostrarNavbar, 'show tranS': mostrarNavbar}"
         (selectedEvent)="cambiarContenido($event)" [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
     </app-navbar>
 
     <app-inicio class="inicio" (mostrarAnimacionSVG)="ponerAnimacionSVGInicio($event)"
         (mostrarCursor)="ponerCursorInicio($event)" (mostrarNavbar)="mostrarNavbarEvt($event)"
         (mostrarPuntos)="ponerPuntosIncio(false)" (selectdContact)="cambiarContenido($event)"
-        [ngClass]="{'In': selected==0, 'Out': selected!=0, 'marginOut': esconder != 0}"></app-inicio>
+        [ngClass]="{'In': selected==0, 'Out': selected!=0, 'marginOut': esconder != 0}"
+        [animacion]="animacionInicioLetras"></app-inicio>
 
     <app-portafolio class="inicio" [animaciones]="animacionesHabiitar"
         [ngClass]="{'In': selected==1, 'Out': selected!=1, 'marginOut': esconder != 1}">
@@ -36,6 +40,24 @@
     <app-contacto class="inicio" [ngClass]="{'In': selected==3, 'Out': selected!=3, 'marginOut': esconder != 3 }">
     </app-contacto>
 </section>
+
+<!-- Animacion inicio -->
+<div *ngIf="!animacionInicioLetras" class="fondoIncio noHoverCursor" [ngClass]="{'opacity_0': !animacionInicio}">
+
+    <div *ngFor="let barra of barrasInicio; let k = index;">
+        <div class="puntoI"
+            [ngClass]="{'opacity_10D': todos,'opacity_10': PuntoCargado != k || !todos, 'opacity_85': PuntoCargado2 == k && !todos, 'opacity_65': PuntoCargado3 == k && !todos,'opacity_100D': PuntoCargado == k, 'opacity_100': !animacionInicio}"
+            [ngStyle]="{'rotate': (k * (360 / barrasInicio.length)) + 'deg'}">
+        </div>
+    </div>
+    <!-- ,'opacity' : ((100 - ((k) * cantBarras)) / 100) -->
+
+    <div *ngFor="let puntoI of puntosInicio; let i = index">
+        <div *ngIf="moverInicio" class="puntoV" [ngStyle]="{'animation': 'girarPV ' + (i + 1) + 's infinite linear'}">
+            <div class="pv" [ngStyle]="{'left': (i * 7) +'px', 'top': (i * 7) +'px'}"></div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal configuracion -->
 <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

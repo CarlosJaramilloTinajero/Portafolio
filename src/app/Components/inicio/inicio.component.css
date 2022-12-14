@@ -79,7 +79,7 @@
 
 .letra {
     transition: all 1.7s ease-in-out;
-    cursor: none;
+    /* cursor: none; */
 }
 
 .h {

@@ -2,7 +2,7 @@
     <h6 class="presentacion">
         <span *ngFor="let palabra of textoArray; let i= index">
             <span *ngIf="palabra != '-'" class="letra"
-                [ngClass]="{'s': contador >= i , 'h': contador < i,'hoverLetra': contador >= textoArray.length, 'textShadowSm': textoShadow == 1, 'textShadowLg':textoShadow == 2}">{{palabra}}</span>
+                [ngClass]="{'s': contador > i , 'h': contador <= i,'hoverLetra': contador >= textoArray.length, 'textShadowSm': textoShadow == 1, 'textShadowLg':textoShadow == 2}">{{palabra}}</span>
             <br *ngIf="palabra == '-'">
         </span>
     </h6>

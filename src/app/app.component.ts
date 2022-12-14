@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   mover: boolean = false;
   tamanioPuntero: number = 50;
 
-  // Id's para limpiar lo intervals
+  // Id's para limpiar los intervals
   idIntervalPuntos: number = 0;
   idIntervalCursor: number = 0;
 
@@ -47,11 +47,82 @@ export class AppComponent implements OnInit {
   mostrarCursor: boolean = false;
   animacionesHabiitar: boolean = false;
   animacionConfSVG: boolean = false;
+  animacionInicioLetras: boolean = false;
+  animacionInicio: boolean = true;
+
+  // Animacion carga inicio
+  PuntoCargado: number = 0;
+  PuntoCargado2: number = 0;
+  PuntoCargado3: number = 0;
+  puntosInicio: number[] = [];
+  barrasInicio: number[] = [];
+  cantBarras: number = 9;
+  cantPuntosInicio: number = 4;
+  todos: boolean = false;
+  moverInicio: boolean = false;
+  delayInicio: number = 1000;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    var id = setTimeout(() => {
+      this.moverInicio = true;
+      window.clearTimeout(id);
+    }, this.delayInicio)
+
+    this.AnimacionCarga();
+  }
+
+  // Aimacion de carga al incio
+  AnimacionCarga() {
+    for (let i = 0; i < this.cantBarras; i++) {
+      this.barrasInicio[i] = 1;
+    }
+
+    for (let i = 0; i < this.cantPuntosInicio; i++) {
+      this.puntosInicio[i] = 1;
+    }
+
+    this.PuntoCargado = this.getRandom(6) + 1;
+    this.PuntoCargado2 = this.PuntoCargado - 1;
+    this.PuntoCargado3 = this.PuntoCargado - 2;
+    var cont = 0, vel = 100, maxMilSeg = 4500;
+
+    var id = setInterval(() => {
+      if (this.moverInicio) {
+        this.PuntoCargado++;
+        this.PuntoCargado2++;
+        this.PuntoCargado3++;
+
+        if (this.PuntoCargado >= this.cantBarras) {
+          this.PuntoCargado = 0;
+        }
+
+        if (this.PuntoCargado2 >= this.cantBarras) {
+          this.PuntoCargado2 = 0;
+        }
+
+        if (this.PuntoCargado3 >= this.cantBarras) {
+          this.PuntoCargado3 = 0;
+        }
+
+        if (cont >= maxMilSeg) {
+          var id2 = setTimeout(() => {
+            this.animacionInicioLetras = true;
+            window.clearTimeout(id2);
+          }, 3500 + this.delayInicio);
+          var id3 = setTimeout(() => {
+            this.animacionInicio = false;
+            window.clearTimeout(id3);
+          }, 200);
+          this.todos = true;
+          window.clearInterval(id);
+        }
+
+        cont += vel;
+      }
+    }, vel);
   }
 
   // Quitar y poner cursor y puntos de fondo
