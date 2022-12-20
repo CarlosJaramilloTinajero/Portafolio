@@ -16,6 +16,9 @@ export class NavbarComponent implements OnInit {
   @Input() selected: number = 0;
   selectedAnt: number = 0;
   habilitado: boolean = true;
+
+  @Input() habilitarMensajes: boolean = false;
+
   ngOnInit(): void {
   }
 
@@ -26,7 +29,7 @@ export class NavbarComponent implements OnInit {
       var idTimeOut = setTimeout(() => {
         this.habilitado = true;
         window.clearTimeout(idTimeOut);
-      }, 2500);
+      }, 4000);
       this.selectedAnt = this.selected;
       this.selected = num;
       this.selectedEvent.emit(this.selected);

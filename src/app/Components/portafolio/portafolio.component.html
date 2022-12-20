@@ -1,11 +1,14 @@
-<div class="contendor">
-    <h2 class="titulo">web developer portafolio</h2>
+<div *ngIf="select == 1 || retraso == 1" class="contendor">
+    <h2 class="titulo" [ngClass]="{'txtShadowBlancoLg': iliminacion}">web developer portafolio</h2>
     <hr class="hr1">
-    <h5 class="textoP">Estos proyectos fueron programados con diferentes lenguajes desde HTML, CSS, TypeScript y
-        JavaScript para el
-        FrontEnd, con peticiones HTTP a API'S creadas con Laravel.<br>
-        Como tambien con lenguajes como PHP y MYSQL para el BackEnd.<br>
-        Para estos proyectos se usaron los FrameWorks de Laravel para el BackEnd y Angular para el FrontEnd.
+    <h5 class="textoP" [ngClass]="{'txtShadowBlancoSm': iliminacion}">Estos proyectos fueron programados utilizando
+        diferentes lenguajes como HTML,
+        CSS, TypeScript y
+        JavaScript para el FrontEnd, y <br>
+        realizaron peticiones HTTP a API's creadas con Laravel. <br>
+        Además, se utilizaron lenguajes como PHP y MySQL para el BackEnd. <br>
+        Para estos proyectos, se utilizaron los frameworks de Laravel para
+        el BackEnd y Angular para el FrontEnd
     </h5>
     <hr class="hr2">
 
@@ -198,54 +201,47 @@
         </div>
     </div>
 
-    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 1, 'outMas': proyectoSelect != 1}"
         nombreProyecto="Administracion de reservas de salas"
-        descripcionBreve="Este proyecto crea y organiza reservas para diferentes salas."
-        descripcionProyecto="Este proyecto fue realizado con Angular un FrameWork de FrontEnd, con el que 
-        mostramos todo el contenido que recibimos con peticiones HTTP de una API craeda con Laravel.
-        Con este proyecto tenemos un CRUD de salas con las que podemos agendar reservas con ayuda de otro CRUD para las rervas"
+        descripcionBreve="Este proyecto crea y gestiona reservas para diferentes salas."
+        descripcionProyecto="Este proyecto fue desarrollado utilizando Angular, un framework de FrontEnd, con el que se mostró todo el contenido obtenido a través de peticiones HTTP a una API creada con Laravel. Gracias a este proyecto, contamos con un sistema de gestión de reservas de salas, que nos permite agendar reservas a través de un sistema de gestión de reservas. Este proyecto nos brinda la posibilidad de realizar operaciones básicas de gestión de datos (CRUD) tanto para las salas como para las reservas"
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
         img="assets/Proyecto_Salas.png" link="https://carlosjaramillotinajero.github.io/angularSalas/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/angularSalas"></app-proyecto-mas>
 
-    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 2, 'outMas': proyectoSelect != 2}" nombreProyecto="Sitio de peliculas"
         descripcionBreve="Este proyecto simula el comportamiento de un sitio de peliculas como Star+."
-        descripcionProyecto="Este proyecto fue echo con laravel usando la libreria de BootStrap para los estilos.
-        Tambien muestra un catalogo de peliculas con las cuales se puede ver un video de YouTube ya sea el trailer o un resumen de cada pelicula,
-        cada pelicula tiene su categoria para poder separalas entre si.
-        Este proyecto cuenta con un CRUD de peliculas y de categorias el cual solo se puede usar si se inicia sesion con la cuenta administrador.
-        Cuenta con un sistema de login y de registro de usuarios, cada usuario puede modificar su usario ya sea con la foto de perfil o tambien la lista de peliculas para ver despues.
-        Este sitio tambien es reponsivo, por lo que el contenido se puede ver tanto en celulares como en una laptop."
+        descripcionProyecto="Este proyecto fue realizado con Laravel y utiliza la librería de BootStrap para los estilos. Además, ofrece un catálogo de películas, en el que se pueden visualizar vídeos de YouTube de cada película, ya sea el tráiler o un resumen; Cada película está categorizada para facilitar su organización.
+        Este proyecto cuenta con un sistema de gestión de datos (CRUD) tanto para las películas como para las categorías, pero sólo es accesible para el usuario administrador. Además, incluye un sistema de inicio de sesión y registro de usuarios, y permite a cada usuario modificar su perfil, ya sea la foto de perfil o la lista de películas para ver más tarde.
+        Este sitio también es responsive, por lo que el contenido se puede visualizar tanto en dispositivos móviles como en computadoras portátiles."
         [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel']" img="assets/Proyecto_Peliculas.png"
         link="http://carlosjaramillo.peliculas.beauty"
         linkGithub="https://github.com/CarlosJaramilloTinajero/PeliculasLaravel"></app-proyecto-mas>
 
-    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 3, 'outMas': proyectoSelect != 3}" nombreProyecto="Portafolio"
-        descripcionBreve="Este proyecto muestra una breve descripcion mia y muestra mis habilidades y proyectos en el desarrollo web"
-        descripcionProyecto="En este proyecto muuestro un poco de mis habilidades en el desarrollo web.Tambien muestro un portafolio 
-        donde estan algunos de los proyectos que eh echo con diferentes lenguajes y FrameWork de BackEnd y FrontEnd"
+        descripcionBreve="Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes."
+        descripcionProyecto="En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, TypeScript, JavaScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje."
         [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
         img="assets/portafolio.png" link="https://carlosjaramillotinajero.github.io/Portafolio/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/Portafolio"></app-proyecto-mas>
 
-    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 4, 'outMas': proyectoSelect != 4}"
         nombreProyecto="Administrador de pedidos"
-        descripcionBreve="Este proyecto esta echo para organizar y tener registros de pedidos que eh llevado en mi trabajo como repartidor de una polleria."
-        descripcionProyecto="Este proyecto sirve como un administrador de pedidos que eh llevado en mi trabajo como repartidor, ya que tiene un CRUD de pedidos por llevar y pedidos llevados y tambien un CRUD de deudas para poder gestinonarlas.
-        Este proyecto me sirve mucho porque con el puedo llevar un control de cuanto dinero recibo por el precio del pedido y cuanto me dan de propia por cada pedido, y asi puedo revisar cualquier dia en el que se tengan registros de los pedidos.
-        Con este proyecto se pueden tener menos perdidas de dinero con los pedidos llevados, ya que tiene los registros de cuanto dinero recibo y al final del dia puedo contar el dinero en efectivo y compararlo con los registros."
+        descripcionBreve="Este proyecto está diseñado para organizar y llevar un registro de los pedidos que he llevado en mi trabajo como repartidor de una pollería"
+        descripcionProyecto="Este proyecto sirve como un administrador de pedidos que he llevado en mi trabajo como repartidor. Cuenta con un CRUD (Create, Read, Update, Delete) de pedidos por llevar y pedidos llevados, así como un CRUD de deudas para poder gestionarlas. Para el front-end de este proyecto, se utilizó el framework de Angular y para el back-end, se hicieron peticiones HTTP a una API creada en Laravel.
+        Este proyecto me resulta muy útil porque me permite llevar un control preciso de cuánto dinero recibo por el precio del pedido y cuánto me dan de propina por cada pedido; De esta manera, puedo revisar en cualquier momento los registros de los pedidos y asegurarme de que todo esté en orden."
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']" img="assets/pedidos.png"
         link="https://carlosjaramillotinajero.github.io/pedidos/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/pedidos"></app-proyecto-mas>
 
-    <app-proyecto-mas class="mas_Proyecto" (regresarEvent)="proyectoSelect = $event"
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 5, 'outMas': proyectoSelect != 5}" nombreProyecto="Pacman con Angular"
-        descripcionBreve="Este proyecto es un videojuego 2D tipo Pacman." descripcionProyecto="Este proyecto fue echo con Angular usando el app_component_ts para hacer toda la logica de el videojuego, creando los TimeOut's y los Interval's para el funcionamiento del jugador y de los fantasmas.
-        Este proyecto no es responsivo, ya que solo tiene un tamaño el mapa, los fantasmas y pacaman."
+        descripcionBreve="Este proyecto es un videojuego 2D tipo Pacman."
+        descripcionProyecto="Este proyecto fue desarrollado con Angular y utilizó el archivo app_component_ts para implementar la lógica del juego. Se utilizaron TimeOut's e Interval's para controlar el comportamiento del jugador y los fantasmas. Sin embargo, este proyecto no es responsivo, ya que el tamaño del mapa, los fantasmas y Pac-Man es fijo."
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Angular']" img="assets/pacman.png"
         link="https://carlosjaramillotinajero.github.io/pacmanAngular/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/pacmanAngular"></app-proyecto-mas>

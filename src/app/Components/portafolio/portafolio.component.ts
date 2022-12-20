@@ -8,6 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PortafolioComponent implements OnInit {
   @Input() esconder: number = 0;
   @Input() animaciones: boolean = false;
+
+  @Input() select: number = 0;
+  @Input() retraso: number = 0;
+  @Input() iliminacion: boolean = false;
+
   proyectoSelect: number = 0;
   constructor() { }
 

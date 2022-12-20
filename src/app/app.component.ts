@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   puntero: ElementCSSInlineStyle = document.createElement('textarea');
   mover: boolean = false;
   tamanioPuntero: number = 50;
+  velocidadPuntero: number = 20;
+  delayPuntero: number = 18;
 
   // Id's para limpiar los intervals
   idIntervalPuntos: number = 0;
@@ -41,6 +43,7 @@ export class AppComponent implements OnInit {
   selectedAnt: number = 0;
   esconder: number = 0;
   cambioCom: boolean = false;
+  retraso: number = 0;
 
   // Habilitar o deshabilitar 
   mostrarNavbar: boolean = false;
@@ -49,6 +52,7 @@ export class AppComponent implements OnInit {
   animacionConfSVG: boolean = false;
   animacionInicioLetras: boolean = false;
   animacionInicio: boolean = true;
+  iluminacionExtra: boolean = true;
 
   // Animacion carga inicio
   PuntoCargado: number = 0;
@@ -62,10 +66,23 @@ export class AppComponent implements OnInit {
   moverInicio: boolean = false;
   delayInicio: number = 1000;
 
+  // Habilitar panel mensajes
+  mensajesHabilitar: boolean = false;
   constructor() {
   }
 
   ngOnInit(): void {
+    // Habilitar la opcion para ver mensajes
+    window.onkeydown = (e) => {
+      if (e.ctrlKey && e.code === 'KeyM') {
+        this.mensajesHabilitar = !this.mensajesHabilitar;
+        if (this.selected == 4) {
+          this.cambiarContenido(0);
+        }
+      }
+    };
+
+    // Habilitar la animacion de carga de incio despues de un time out
     var id = setTimeout(() => {
       this.moverInicio = true;
       window.clearTimeout(id);
@@ -131,24 +148,11 @@ export class AppComponent implements OnInit {
     // SetInterval para mover el cursor hacia el cursor
     var id = setInterval(() => {
       if (this.mostrarCursor && this.mover) {
+        this.pxPuntero += this.getVelocidad(this.pxRaton - this.pxPuntero);
+        this.pyPuntero += this.getVelocidad(this.pyRaton - this.pyPuntero);
 
-        if (this.pxRaton > this.pxPuntero) {
-          this.pxPuntero += this.getVelocidad((this.pxRaton - this.pxPuntero));
-        }
-
-        if (this.pyRaton > this.pyPuntero) {
-          this.pyPuntero += this.getVelocidad((this.pyRaton - this.pyPuntero));
-        }
-
-        if (this.pxRaton < this.pxPuntero) {
-          this.pxPuntero -= this.getVelocidad((this.pxPuntero - this.pxRaton));
-        }
-
-        if (this.pyRaton < this.pyPuntero) {
-          this.pyPuntero -= this.getVelocidad((this.pyPuntero - this.pyRaton));
-        }
-        this.puntero.style.top = this.pyPuntero + "px";
-        this.puntero.style.left = this.pxPuntero + "px";
+        this.puntero.style.left = `${this.pxPuntero}px`;
+        this.puntero.style.top = `${this.pyPuntero}px`;
       }
 
       if (this.mover && this.mostrarCursor) {
@@ -156,7 +160,7 @@ export class AppComponent implements OnInit {
           this.mover = false;
         }
       }
-    }, 7);
+    }, this.delayPuntero);
 
     this.idIntervalCursor = parseInt(id.toString());
   }
@@ -346,7 +350,7 @@ export class AppComponent implements OnInit {
 
   // Helpers
   getVelocidad(distancia: number) {
-    return (distancia / 50);
+    return (distancia / this.velocidadPuntero);
   }
 
   mostrarNavbarEvt(b: boolean) {
@@ -364,11 +368,19 @@ export class AppComponent implements OnInit {
 
   cambiarContenido(num: number) {
     window.scroll(0, 0);
+    this.retraso = this.selected;
+
     this.selected = num;
+
     var idTimeOutContenido = setTimeout(() => {
       this.esconder = this.selected;
       window.clearTimeout(idTimeOutContenido);
     }, 1250);
+
+    var idTimeOutContenido3 = setTimeout(() => {
+      this.retraso = -1;
+      window.clearTimeout(idTimeOutContenido3);
+    }, 3000);
 
     if (num == 1) {
       var idTimeOutContenido2 = setTimeout(() => {
@@ -379,5 +391,9 @@ export class AppComponent implements OnInit {
       this.animacionesHabiitar = false;
     }
 
+  }
+
+  cambiarIluminacion() {
+    this.iluminacionExtra = !this.iluminacionExtra;
   }
 }

@@ -16,6 +16,7 @@ export class ProyectoMasComponent implements OnInit {
   @Input() nombreProyecto: string = "";
   @Input() descripcionBreve: string = "";
   @Input() linkGithub: string = "";
+  @Input() iliminacion: boolean = false;
 
   @Output() regresarEvent: EventEmitter<number> = new EventEmitter();
 

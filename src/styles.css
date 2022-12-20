@@ -1,16 +1,6 @@
 ::-webkit-scrollbar {
-    /* width: 5px; */
     display: none;
 }
-
-/* ::-webkit-scrollbar-track {
-    background-color: black;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 7px;
-    background-color: rgb(255, 255, 255, 0.3);
-} */
 
 *:hover,
 :focus,
@@ -34,6 +24,35 @@
     cursor: url("assets/cursorHover.png"), auto;
 }
 
+.opacity_10D {
+    opacity: .10;
+    transition: all 1s linear;
+}
+
+.opacity_10 {
+    opacity: .10;
+    transition: all .1s linear;
+}
+
+.opacity_85 {
+    opacity: .75;
+    transition: all .1s linear;
+}
+
+.opacity_65 {
+    opacity: .65;
+    transition: all .1s linear;
+}
+
+.opacity_100D {
+    opacity: 1;
+}
+
+.opacity_100 {
+    transition: all 1s ease-in-out;
+    opacity: 1;
+}
+
 body {
     background-color: black;
     /* background: rgb(186, 210, 237); */
@@ -46,6 +65,18 @@ body {
     cursor: url("assets/cursorNoHover.png"), auto;
 }
 
+.txtShadowBlancoSm {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+}
+
+.txtShadowBlancoMd {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 11px rgba(255, 255, 255, 0.3)
+}
+
+.txtShadowBlancoLg {
+     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
 .btn {
     background-color: unset;
     border: none;
@@ -55,6 +86,7 @@ body {
 }
 
 .btn1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all .5s ease-in-out;
     border-bottom: 3px rgba(255, 255, 255, 0.8) solid;
     position: relative;
@@ -77,6 +109,7 @@ body {
 }
 
 .btn2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all .5s ease-in-out;
     border-bottom: 3px #308888 solid;
     position: relative;
@@ -99,6 +132,7 @@ body {
 }
 
 .btn3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all .5s ease-in-out;
     position: relative;
 }
@@ -121,6 +155,125 @@ body {
     /* animation: btn 30s linear infinite; */
 }
 
+.btn4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all .5s ease-in-out;
+    border-bottom: 3px #18b309 solid;
+    position: relative;
+}
+
+.btn4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            #18b309, #17b309d8, #17b309b0, #17b30996, #17b309c7, #17b309d3, #17b309e3, #18b309);
+    background-size: 160%;
+    border-radius: 10px;
+    filter: blur(10px);
+}
+
+.btn5 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all .5s ease-in-out;
+    border-bottom: 3px #b30909 solid;
+    position: relative;
+}
+
+.btn5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            #b30909, #b30909d0, #b30909a2, #b309098a, #b30909b2, #b30909d3, #b30909dc, #b30909);
+    background-size: 160%;
+    border-radius: 10px;
+    filter: blur(10px);
+}
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover,
+.btn5:hover {
+    scale: .95;
+    opacity: .75;
+}
+
+.btn1 span,
+.btn2 span,
+.btn2,
+.btn3 span,
+.btn4 span,
+.btn5 span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3), 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.btn1 svg,
+.btn2 svg,
+.btn3 svg,
+.btn4 svg,
+.btn5 svg {
+    margin-right: 8px;
+    fill: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4), 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+.modal-content {
+    background-color: unset;
+}
+
+.modal-content .modal-title {
+    color: rgb(255, 255, 255, 0.9);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.modal-content label {
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.margin {
+    margin-left: 10px;
+    margin-bottom: 18px;
+}
+
+.margin:last-child {
+    margin-bottom: 0px;
+}
+
+.selectDiv {
+    display: flex;
+    width: max-content;
+}
+
+.selectDiv label {
+    margin-left: 10px;
+}
+
+.selectDiv select {
+    width: max-content;
+    background-color: unset;
+    color: white;
+    border: unset;
+}
+
+.selectDiv select option {
+    color: black;
+}
+
 @keyframes btn {
     0% {
         background-position: 0, 0;
@@ -133,6 +286,73 @@ body {
     100% {
         background-position: 0, 0;
     }
+}
+
+hr {
+    visibility: visible;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+
+.placeHolder {
+    position: absolute;
+    transition: all .3s linear;
+    top: 6px;
+    left: 10px;
+    scale: .9;
+    opacity: .5;
+}
+
+textarea {
+    transition: all 2s ease-in-out;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+    background-color: unset;
+    border: 1px white solid;
+}
+
+textarea:focus,
+textarea:target {
+    color: white;
+    transition: all 2s ease-in-out;
+    border: 0px linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) solid;
+    background-color: unset;
+    /* z-index: 99; */
+    box-shadow: none;
+}
+
+.area {
+    width: 100%;
+    border-radius: 6px;
+}
+
+input[type='text'] {
+    transition: all 2s ease-in-out;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+    background-color: unset;
+    border: 1px white solid;
+}
+
+input[type='text']:focus,
+input[type='text']:target {
+    color: white;
+    transition: all 2s ease-in-out;
+    border: 0px linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) solid;
+    background-color: unset;
+    /* z-index: 99; */
+    box-shadow: none;
+}
+
+.placeHolderArriba {
+    top: -23px;
+    opacity: 1;
+    scale: 1;
+    left: 0;
+    /* z-index: 100; */
 }
 
 .btn1:hover,

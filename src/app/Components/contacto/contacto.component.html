@@ -1,11 +1,14 @@
 <div class="contendor">
     <div class="rowDiv row row-cols-2 row-cols-lg-2">
-        <div class="col divImagen rotarImagen"><img src="assets/yo.jpg" class="imagen hoverCursor" alt=""></div>
+        <div *ngIf="select == 3 || retraso == 3" class="col divImagen rotarImagen"><img src="assets/yo.jpg"
+                class="imagen hoverCursor" alt=""></div>
         <div class="col presentacion ">
-            <h2 class="textoPresentacion">Hola, aqui estan mis redes sociales para que me puedas contactar <br>
-                y tambien mi GitHub para que veas mis proyectos</h2>
+            <h2 *ngIf="select == 3 || retraso == 3" class="textoPresentacion"
+                [ngClass]="{'txtShadowBlancoSm': iluminacion}">Hola, aquí estan mis redes sociales para que me puedas
+                contactar <br>
+                y también mi GitHub para que veas mis proyectos</h2>
 
-            <div class="row row-cols-3 row-cols-lg-3 icons">
+            <div *ngIf="select == 3 || retraso == 3" class="row row-cols-3 row-cols-lg-3 icons">
 
                 <div class="col iconDiv" [ngClass]="{'copiadoButton': copiado == 1, 'iconBoxShadow': copiado != 1}"
                     (click)="copyText('https://github.com/CarlosJaramilloTinajero', 1)">
@@ -28,31 +31,53 @@
             </div>
             <hr>
 
-            <form class="formulario" #contactoForm="ngForm" (submit)="submitContacto()">
-                <div class="mb-3" style="text-align: center; ">
-                    <label for="" class="form-label">¿Quieres mandarme una pregunta?</label>
+            <form class="formulario" #contactoForm="ngForm" (submit)="submitContacto(contactoForm)">
+
+                <div class="trs2s mb-3" style="text-align: center; ">
+                    <label for="" class="form-label" [ngClass]="{'txtShadowBlancoMd': iluminacion}">¿Quieres mandarme un
+                        mensaje?</label>
                 </div>
 
-                <div class="mb-3 divInput">
-                    <label for="" class="form-label">Correo</label>
-                    <input type="text" name="correo" class="form-control">
+                <div class="trs2s mb-3 divInput">
+                    <label for="" class="form-label placeHolder"
+                        [ngClass]="{'placeHolderArriba':focusInput || (contacto.dirty && contacto.touched && msj.contacto != ''), 'txtShadowBlancoSm': iluminacion}">Correo
+                        ó Telefono</label>
+                    <input type="text" name="contaco" [(ngModel)]="msj.contacto" class="form-control" autocomplete="off"
+                        (focus)="focusInput = true" (blur)="focusInput = false" #contacto="ngModel">
                 </div>
 
-                <div class="mb-3 divInput">
-                    <label for="" class="form-label">Pregunta</label>
-                    <textarea name="pregunta" rows="3" class="form-control"></textarea>
+                <div class="trs2s mb-3 divInput">
+                    <label for="" class="form-label placeHolder"
+                        [ngClass]="{'placeHolderArriba':focusArea || (mensaje.dirty && mensaje.touched && msj.mensaje != ''), 'txtShadowBlancoSm': iluminacion}">Mensaje</label>
+                    <textarea name="mensaje" [(ngModel)]="msj.mensaje" rows="2" class="area" (focus)="focusArea = true"
+                        (blur)="focusArea = false" #mensaje="ngModel"></textarea>
                 </div>
 
-                <div class="mb-3 divInput">
+                <div class="trs2s mb-3 divInput">
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn2 link hoverCursor"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                        <button type="submit" class="btn link hoverCursor"
+                            [ngClass]="{'btn2': !animacionEnviado && envioEstado != 2, 'btn4': animacionEnviado, 'btn5': envioEstado == 2}"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-send" viewBox="0 0 16 16">
                                 <path
                                     d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
-                            </svg><span>Enviar</span></a>
+                            </svg>
+
+                            <span class="palabraAl" style="left: 28px;"
+                                [ngClass]="{'show': !animacionEnviando && envioEstado == 0, 'hidden': animacionEnviando || envioEstado != 0}">Enviar</span>
+
+                            <span class="palabraAl"
+                                [ngClass]="{'show': animacionEnviando && envioEstado == 0, 'hidden': !animacionEnviando || envioEstado != 0}">Enviando</span>
+
+                            <span class="palabraAl"
+                                [ngClass]="{'show': !animacionEnviando && envioEstado == 1, 'hidden': animacionEnviando  || envioEstado != 1}">Enviado</span>
+
+                            <span class="palabraAl" style="left: 28px;"
+                                [ngClass]="{'show': !animacionEnviando && envioEstado == 2, 'hidden': animacionEnviando || envioEstado != 2}">Error</span>
+
+                        </button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>

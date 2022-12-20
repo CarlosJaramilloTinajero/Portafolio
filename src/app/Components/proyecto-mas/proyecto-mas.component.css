@@ -24,8 +24,8 @@
 }
 
 .btnRegresar {
-    margin-bottom: 14px;
-    margin-top: 22px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .btnRegresar span {
@@ -74,7 +74,7 @@
     .contenedorMas {
         width: 90%;
         max-width: 800px;
-        margin-top: 180px;
+        margin-top: 205px;
         margin-right: auto;
         margin-left: auto;
     }
@@ -93,7 +93,7 @@
     }
 
     .descripcion {
-        color: rgb(255, 255, 255, 0.6);
+        color: rgb(255, 255, 255, 0.85);
         font-size: 19px;
         font-weight: 400;
         margin-top: 10px;
@@ -140,13 +140,6 @@
         margin-bottom: -2px;
     }
 
-    .contenedorMas {
-        width: 90%;
-        max-width: 800px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 235px;
-    }
 
     .Titulo {
         color: rgb(255, 255, 255, 0.9);
@@ -192,6 +185,37 @@
     }
 }
 
+@media screen and (max-width:800px) and (min-width:500px) {
+
+    .contenedorMas {
+        width: 90%;
+        max-width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 235px;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:500px) {
+
+    .contenedorMas {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 255px;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .contenedorMas {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 310px;
+    }
+}
+
 @media screen and (max-width:500px) {
     .link {
         color: white;
@@ -206,12 +230,7 @@
         height: 42px;
     }
 
-    .contenedorMas {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 255px;
-    }
+
 
     .Titulo {
         margin-top: 20px;

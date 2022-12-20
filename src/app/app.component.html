@@ -24,20 +24,28 @@
 <!-- Secciones 'Inicio', 'Portafolio', 'Contacto' -->
 <section class="seccion">
     <app-navbar class="contact navBarC" id="navBar" [ngClass]="{'hidden': !mostrarNavbar, 'show tranS': mostrarNavbar}"
-        (selectedEvent)="cambiarContenido($event)" [selected]="selected" (selectedAntEvent)="selectedAnt = $event">
+        (selectedEvent)="cambiarContenido($event)" [habilitarMensajes]="mensajesHabilitar" [selected]="selected"
+        (selectedAntEvent)="selectedAnt = $event">
     </app-navbar>
 
-    <app-inicio class="inicio" (mostrarAnimacionSVG)="ponerAnimacionSVGInicio($event)"
-        (mostrarCursor)="ponerCursorInicio($event)" (mostrarNavbar)="mostrarNavbarEvt($event)"
-        (mostrarPuntos)="ponerPuntosIncio(false)" (selectdContact)="cambiarContenido($event)"
+    <app-mensajes class="inicio" [select]="selected" [retraso]="retraso" *ngIf="mensajesHabilitar"
+        [ngClass]="{'In': selected==4, 'Out': selected!=4, 'marginOut': esconder != 4}"></app-mensajes>
+
+    <app-inicio class="inicio" [select]="selected" [retraso]="retraso"
+        (mostrarAnimacionSVG)="ponerAnimacionSVGInicio($event)" (mostrarCursor)="ponerCursorInicio($event)"
+        (mostrarNavbar)="mostrarNavbarEvt($event)" (mostrarPuntos)="ponerPuntosIncio(false)"
+        (selectdContact)="cambiarContenido($event)"
         [ngClass]="{'In': selected==0, 'Out': selected!=0, 'marginOut': esconder != 0}"
         [animacion]="animacionInicioLetras"></app-inicio>
 
-    <app-portafolio class="inicio" [animaciones]="animacionesHabiitar"
+    <app-portafolio class="inicio" [iliminacion]="iluminacionExtra" [animaciones]="animacionesHabiitar"
+        [select]="selected" [retraso]="retraso"
         [ngClass]="{'In': selected==1, 'Out': selected!=1, 'marginOut': esconder != 1}">
     </app-portafolio>
 
-    <app-contacto class="inicio" [ngClass]="{'In': selected==3, 'Out': selected!=3, 'marginOut': esconder != 3 }">
+    <app-contacto class="inicio" [iluminacion]="iluminacionExtra"
+        (verMensajes)="mensajesHabilitar = ! mensajesHabilitar" [select]="selected" [retraso]="retraso"
+        [ngClass]="{'In': selected==3, 'Out': selected!=3, 'marginOut': esconder != 3 }">
     </app-contacto>
 </section>
 
@@ -60,7 +68,7 @@
 </div>
 
 <!-- Modal configuracion -->
-<div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="configModal" tabindex="-1" aria-hidden="true">
 
     <div style="background-color: rgb(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
     </div>
@@ -76,14 +84,20 @@
                     <hr>
                     <div class="form-check form-switch margin">
                         <input class="form-check-input hoverCursor" type="checkbox" role="switch"
-                            (change)="quitar_o_poner_puntosInterval()">
+                            (change)="quitar_o_poner_cursorInterval()" [checked]="mostrarCursor">
+                        <label class="form-check-label">Mostrar cursor</label>
+                    </div>
+                    <div class="form-check form-switch margin">
+                        <input class="form-check-input hoverCursor" type="checkbox" role="switch"
+                            (change)="quitar_o_poner_puntosInterval()" [checked]="mostrarPuntos">
                         <label class="form-check-label">Mostrar puntos de fondo</label>
                     </div>
                     <div class="form-check form-switch margin">
                         <input class="form-check-input hoverCursor" type="checkbox" role="switch"
-                            (change)="quitar_o_poner_cursorInterval()" checked>
-                        <label class="form-check-label">Mostrar cursor</label>
+                            (change)="cambiarIluminacion()" [checked]="iluminacionExtra">
+                        <label class="form-check-label">Iluminación en el texto</label>
                     </div>
+                    <hr style="width: 80%; margin: 0 auto;">
                     <div class="selectDiv margin">
                         <select name="" id="" [(ngModel)]="cantPuntosAnt" (ngModelChange)="cambiarCantidadDePuntos()">
                             <option value="2">2</option>
@@ -98,14 +112,24 @@
                         <label>Cantidad de puntos</label>
                     </div>
 
+                    <div class="selectDiv margin">
+                        <select name="" id="" [(ngModel)]="velocidadPuntero">
+                            <option value="80">Muy lento</option>
+                            <option value="40">Lento</option>
+                            <option value="20" selected>Normal</option>
+                            <option value="10">Rapido</option>
+                            <option value="5">Muy rapido</option>
+                        </select>
+                        <label>Velocidad del cursor</label>
+                    </div>
+
                     <hr>
-                    <button class="btn btn1 hoverCursor margin" data-bs-dismiss="modal"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <button class="btn btn1 margin" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                             <path
                                 d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                        </svg><span class="hoverCursor">Close</span></button>
+                        </svg><span class="hoverCursor">Cerrar</span></button>
 
                 </div>
             </div>

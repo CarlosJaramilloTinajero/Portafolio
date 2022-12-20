@@ -11,6 +11,8 @@ import { ProyectoMasComponent } from './Components/proyecto-mas/proyecto-mas.com
 import { ContactoComponent } from './Components/contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
 import { PuntoComponent } from './Components/punto/punto.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MensajesComponent } from './Components/mensajes/mensajes.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { PuntoComponent } from './Components/punto/punto.component';
     FooterComponent,
     ProyectoMasComponent,
     ContactoComponent,
-    PuntoComponent
+    PuntoComponent,
+    MensajesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

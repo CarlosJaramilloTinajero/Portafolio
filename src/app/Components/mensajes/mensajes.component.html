@@ -1,0 +1,68 @@
+<div *ngIf="select == 4 || retraso == 4" class="contenedor">
+    <h1 class="Titulo">Mensajes</h1>
+    <hr>
+    <!-- <div class="mensaje">
+        <h6 class="contacto">De: {{mensajeModal.contacto}} <span>{{mensajeModal.dia}} - {{mensajeModal.hora}}</span>
+        </h6>
+        <hr class="hrClass">
+        <h5 class="mensajeC">{{mensajeModal.mensaje}}</h5>
+        <a data-bs-toggle="modal" data-bs-target="#eliminarModal" class="cerrar btn btn5"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+            </svg><span>Eliminar</span></a>
+    </div> -->
+
+    <div *ngFor="let mensaje of mensajes" class="mensaje">
+        <h6 class="contacto">De: {{mensaje.contacto}} <span>{{mensaje.dia}} - {{mensaje.hora}}</span></h6>
+        <hr class="hrClass">
+        <h5 class="mensajeC">{{mensaje.mensaje}}</h5>
+        <a data-bs-toggle="modal" data-bs-target="#eliminarModal" class="cerrar btn btn5"
+            (click)="mensajeModal = mensaje"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                <path
+                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+            </svg><span>Eliminar</span></a>
+    </div>
+</div>
+
+<!-- Modal configuracion -->
+<div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div style="background-color: rgb(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    </div>
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="contenedorModal">
+                    <div style="text-align: center;">
+                        <h1 class="modal-title fs-5">
+                            Mensaje de: {{mensajeModal.contacto}}<br>¿Esta seguro de elminarlo?
+                        </h1>
+                    </div>
+                    <hr style="width: 90%;">
+                    <div class="selectDiv margin" style="margin-left: auto; margin-right: auto;">
+                        <button (click)="deleteMensaje(mensajeModal.id);" data-bs-dismiss="modal" class="btn btn5"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash3-fill " viewBox="0 0 16 16">
+                                <path
+                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg><span>Eliminar</span></button>
+
+                        <button class="btn btn1 hoverCursor margin" data-bs-dismiss="modal"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-circle " viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg><span class="hoverCursor ">Cerrar</span></button>
+                    </div>
+                    <hr style="width: 90%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

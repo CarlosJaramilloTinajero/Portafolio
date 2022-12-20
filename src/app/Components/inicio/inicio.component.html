@@ -1,5 +1,5 @@
 <div class="divPresentacion" [ngClass]="{'scroll': !mostrarContact}">
-    <h6 class="presentacion">
+    <h6 *ngIf="select == 0 || retraso == 0" class="presentacion">
         <span *ngFor="let palabra of textoArray; let i= index">
             <span *ngIf="palabra != '-'" class="letra"
                 [ngClass]="{'s': contador > i , 'h': contador <= i,'hoverLetra': contador >= textoArray.length, 'textShadowSm': textoShadow == 1, 'textShadowLg':textoShadow == 2}">{{palabra}}</span>
@@ -8,11 +8,11 @@
     </h6>
 
     <div id="imagen" class="contact" [ngClass]="{'hidden': !mostrarContact, 'show tranS': mostrarContact}">
-        <div class="imgDiv">
+        <div *ngIf="select == 0 || retraso == 0" class="imgDiv">
             <img src="assets/yo.jpg" alt="" class="imagen hoverCursor">
         </div>
 
-        <div class="incons">
+        <div *ngIf="select == 0 || retraso == 0" class="incons">
             <svg (click)="contact()" xmlns="http://www.w3.org/2000/svg" class="hoverCursor" width="16" height="16"
                 fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                 <path

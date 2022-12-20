@@ -7,26 +7,6 @@
     transition: all 2.5s ease-in-out;
 }
 
-.selectDiv {
-    display: flex;
-    width: max-content;
-}
-
-.selectDiv label {
-    margin-left: 10px;
-}
-
-.selectDiv select {
-    width: 45px;
-    background-color: unset;
-    color: white;
-    border: unset;
-}
-
-.selectDiv select option {
-    color: black;
-}
-
 .opacity_0 {
     opacity: 0;
 }
@@ -47,31 +27,6 @@
     color: white;
 }
 
-.modal-content {
-    background-color: unset;
-}
-
-.modal-content .modal-title {
-    color: rgb(255, 255, 255, 0.9);
-    font-size: 23px;
-    font-weight: 700;
-}
-
-.modal-content label {
-    color: rgb(255, 255, 255, 0.8);
-    font-size: 15px;
-    font-weight: 400;
-}
-
-.margin {
-    margin-left: 10px;
-    margin-bottom: 18px;
-}
-
-.margin:last-child {
-    margin-bottom: 0px;
-}
-
 .contenedorModal {
     width: 400px;
     margin-right: auto;
@@ -89,7 +44,7 @@ hr {
     left: -5px;
     width: 5px;
     height: 5px;
-    /* transition: all .1s linear; */
+    transition: all .5 linear;
 }
 
 .imagen {
@@ -154,35 +109,6 @@ svg:target {
     100% {
         transform: rotate(360deg);
     }
-}
-
-.opacity_10D {
-    opacity: .10;
-    transition: all 1s linear;
-}
-
-.opacity_10 {
-    opacity: .10;
-    transition: all .1s linear;
-}
-
-.opacity_85 {
-    opacity: .75;
-    transition: all .1s linear;
-}
-
-.opacity_65 {
-    opacity: .65;
-    transition: all .1s linear;
-}
-
-.opacity_100D {
-    opacity: 1;
-}
-
-.opacity_100 {
-    transition: all 1s ease-in-out;
-    opacity: 1;
 }
 
 .puntoI {
