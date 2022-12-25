@@ -20,7 +20,7 @@ export class PortafolioComponent implements OnInit {
   }
 
   verProyecto(num: number) {
-    window.scroll(0, 180);
+    window.scroll(0, 220);
     this.proyectoSelect = num;
 
   }

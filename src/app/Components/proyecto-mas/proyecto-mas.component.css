@@ -24,12 +24,13 @@
 }
 
 .btnRegresar {
-    margin-bottom: 0px;
+    margin-bottom: 40px;
     margin-top: 0px;
 }
 
 .btnRegresar span {
     color: white;
+    font-size: 15px;
 }
 
 
@@ -93,10 +94,13 @@
     }
 
     .descripcion {
+        margin-left: auto;
+        margin-right: auto;
         color: rgb(255, 255, 255, 0.85);
         font-size: 19px;
         font-weight: 400;
         margin-top: 10px;
+        text-align: justify;
     }
 
     .salto {
@@ -155,6 +159,9 @@
     }
 
     .descripcion {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
         color: rgb(255, 255, 255, 0.6);
         font-size: 17px;
         font-weight: 400;
@@ -246,8 +253,9 @@
     }
 
     .descripcion {
-        margin-right: 0px;
-        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
         color: rgb(255, 255, 255, 0.6);
         font-size: 15px;
         font-weight: 400;
