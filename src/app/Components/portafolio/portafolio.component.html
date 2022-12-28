@@ -2,10 +2,9 @@
     <h2 class="titulo" [ngClass]="{'txtShadowBlancoLg': iliminacion}">web developer portafolio</h2>
     <hr class="hr1">
     <h5 class="textoP" [ngClass]="{'txtShadowBlancoSm': iliminacion}">Estos proyectos fueron programados utilizando
-        diferentes lenguajes como HTML, CSS, TypeScript y JavaScript para el FrontEnd, y <br>
-        realizaron peticiones HTTP a API's creadas con Laravel. <br>
+        diferentes lenguajes como HTML, CSS, TypeScript y JavaScript para el FrontEnd, algunos realizan peticiones HTTP a API's creadas con Laravel. <br>
         Además, se utilizaron lenguajes como PHP y MySQL para el BackEnd. <br>
-        Para estos proyectos, se utilizaron los frameworks de Laravel para el BackEnd y Angular para el FrontEnd
+        Para estos proyectos, se utilizaron los frameworks de Laravel para el BackEnd y Angular para el FrontEnd.
     </h5>
     <hr class="hr2">
 
@@ -220,7 +219,7 @@
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 3, 'outMas': proyectoSelect != 3}" nombreProyecto="Portafolio"
         descripcionBreve="Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes."
-        descripcionProyecto="En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, TypeScript, JavaScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje."
+        descripcionProyecto="En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, TypeScript, JavaScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles."
         [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
         img="assets/portafolio.png" link="https://carlosjaramillotinajero.github.io/Portafolio/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/Portafolio"></app-proyecto-mas>
@@ -238,7 +237,7 @@
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 5, 'outMas': proyectoSelect != 5}" nombreProyecto="Pacman con Angular"
         descripcionBreve="Este proyecto es un videojuego 2D tipo Pacman."
-        descripcionProyecto="Este proyecto fue desarrollado con Angular y utilizó el archivo app_component_ts para implementar la lógica del juego. Se utilizaron TimeOut's e Interval's para controlar el comportamiento del jugador y los fantasmas. Sin embargo, este proyecto no es responsivo, ya que el tamaño del mapa, los fantasmas y Pac-Man es fijo."
+        descripcionProyecto="Este proyecto fue desarrollado con Angular y utilizó el archivo app_component_ts para implementar la lógica del juego. Se utilizaron TimeOut's e Interval's para controlar el comportamiento del jugador y los fantasmas. Este proyecto es reponsive, por lo cual se puede jugar tambien en dispositivos móviles."
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Angular']" img="assets/pacman.png"
         link="https://carlosjaramillotinajero.github.io/pacmanAngular/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/pacmanAngular"></app-proyecto-mas>
