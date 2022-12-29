@@ -98,8 +98,8 @@
 @media screen and (min-width:500px) {
     .proyecto {
         position: relative;
-        width: 400px;
-        height: 220px;
+        width: 430px;
+        height: 236px;
         border-radius: 7px;
         overflow: hidden;
         margin: 20px;
@@ -114,9 +114,9 @@
     .btn {
         background-color: #646262;
         border: 2px #3f3e3e solid;
-        border-bottom: 4px #3f3e3e solid;
+        border-bottom: 5px #3f3e3e solid;
         padding: 7px;
-        font-size: 14px;
+        font-size: 14.5px;
     }
 
     .tr {
@@ -232,7 +232,10 @@
 .btn span {
     color: #dfd7d7;
     font-weight: 700;
-    text-shadow: -2px -2px 1px #3f3e3e, 2px 2px 1px #3f3e3e, -2px 2px 1px #3f3e3e, 2px -2px 1px #3f3e3e;
+    text-shadow:
+     /* -2px -2px 1px #3f3e3e, 2px 2px 1px #3f3e3e, -2px 2px 1px #3f3e3e, 2px -2px 1px #3f3e3e, */
+        -1.5px -1.5px 1px #3f3e3e, 1.5px 1.5px 1px #3f3e3e, -1.5px 1.5px 1px #3f3e3e, 1.5px -1.5px 1px #3f3e3e,
+        -1px -1px 1px #3f3e3e, 1px 1px 1px #3f3e3e, -1px 1px 1px #3f3e3e, 1px -1px 1px #3f3e3e;
 }
 
 .abajo {

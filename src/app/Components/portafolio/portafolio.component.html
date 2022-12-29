@@ -12,7 +12,7 @@
         [ngClass]="{'inMas': proyectoSelect == 0, 'outMas': proyectoSelect != 0}">
 
         <!-- Proyecto Salas -->
-        <div class="proyecto col">
+        <!-- <div class="proyecto col">
             <img src="assets/Proyecto_Salas.png" class="imagenProyecto" alt="">
 
             <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
@@ -48,7 +48,7 @@
                 </div>
 
             </section>
-        </div>
+        </div> -->
 
         <!-- Proyecto Peliculas -->
         <div class="proyecto col">
@@ -197,14 +197,14 @@
         </div>
     </div>
 
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
+    <!-- <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 1, 'outMas': proyectoSelect != 1}"
         nombreProyecto="Administracion de reservas de salas"
         descripcionBreve="Este proyecto crea y gestiona reservas para diferentes salas."
         descripcionProyecto="Este proyecto fue desarrollado utilizando Angular, un framework de FrontEnd, con el que se mostró todo el contenido obtenido a través de peticiones HTTP a una API creada con Laravel. Gracias a este proyecto, contamos con un sistema de gestión de reservas de salas, que nos permite agendar reservas a través de un sistema de gestión de reservas. Este proyecto nos brinda la posibilidad de realizar operaciones básicas de gestión de datos (CRUD) tanto para las salas como para las reservas"
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
         img="assets/Proyecto_Salas.png" link="https://carlosjaramillotinajero.github.io/angularSalas/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/angularSalas"></app-proyecto-mas>
+        linkGithub="https://github.com/CarlosJaramilloTinajero/angularSalas"></app-proyecto-mas> -->
 
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 2, 'outMas': proyectoSelect != 2}" nombreProyecto="Sitio de peliculas"
