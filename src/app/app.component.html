@@ -23,7 +23,7 @@
 
 <!-- Secciones 'Inicio', 'Portafolio', 'Contacto' -->
 <section class="seccion">
-    <app-navbar class="contact navBarC" id="navBar" [ngClass]="{'hidden': !mostrarNavbar, 'show tranS': mostrarNavbar}"
+    <app-navbar class=" navBarC" id="navBar" [ngClass]="{'hidden': !mostrarNavbar, 'show tranS': mostrarNavbar}"
         (selectedEvent)="cambiarContenido($event)" [habilitarMensajes]="mensajesHabilitar" [selected]="selected"
         (selectedAntEvent)="selectedAnt = $event">
     </app-navbar>
