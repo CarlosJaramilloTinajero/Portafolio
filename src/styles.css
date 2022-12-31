@@ -53,6 +53,15 @@
     opacity: 1;
 }
 
+.hr1 {
+    width: 40%;
+}
+
+
+.hr2 {
+    width: 70%;
+}
+
 body {
     background-color: black;
     /* background: rgb(186, 210, 237); */
@@ -74,7 +83,7 @@ body {
 }
 
 .txtShadowBlancoLg {
-     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .btn {

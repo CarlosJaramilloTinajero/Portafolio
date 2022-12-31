@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { PuntoComponent } from './Components/punto/punto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MensajesComponent } from './Components/mensajes/mensajes.component';
+import { SkillsComponent } from './Components/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MensajesComponent } from './Components/mensajes/mensajes.component';
     ProyectoMasComponent,
     ContactoComponent,
     PuntoComponent,
-    MensajesComponent
+    MensajesComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

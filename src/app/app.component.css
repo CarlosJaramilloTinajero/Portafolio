@@ -172,7 +172,7 @@ svg:target {
 }
 
 .fondoIncio {
-    transition: all 3.5s linear;
+    transition: opacity 3.5s linear;
     top: 0;
     left: 0;
     z-index: 101;
