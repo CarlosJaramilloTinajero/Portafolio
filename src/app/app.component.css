@@ -1,10 +1,25 @@
 .inicio {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: max-content;
+    top: 0;
+    left: 0;
     margin-top: 100px;
-    /* opacity: 0; */
     transition: all 2.5s ease-in-out;
+}
+
+@media screen and (min-width:600px) {
+    .medio {
+        top: 50%;
+        margin-top: 0;
+        transform: translate(0, -50%);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .medio {
+        margin-top: 100px;
+    }
 }
 
 .opacity_0 {
@@ -58,13 +73,12 @@ hr {
 }
 
 .marginOut {
-    margin-top: -1800px;
+    margin-top: -3000px;
 }
 
 .In {
     opacity: 1;
-    top: 0;
-
+    /* top: 0; */
 }
 
 .OutLeft {
@@ -190,7 +204,7 @@ svg:target {
         position: relative;
         width: 100%;
         max-width: 1200px;
-        height: 500px;
+        height: 100vh;
         margin-right: auto;
         margin-left: auto;
     }

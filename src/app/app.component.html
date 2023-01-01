@@ -31,7 +31,7 @@
     <app-mensajes class="inicio" [select]="selected" [retraso]="retraso" *ngIf="mensajesHabilitar"
         [ngClass]="{'In': selected==4, 'Out': selected!=4, 'marginOut': esconder != 4}"></app-mensajes>
 
-    <app-inicio class="inicio" [select]="selected" [retraso]="retraso"
+    <app-inicio class="inicio medio" [select]="selected" [retraso]="retraso"
         (mostrarAnimacionSVG)="ponerAnimacionSVGInicio($event)" (mostrarCursor)="ponerCursorInicio($event)"
         (mostrarNavbar)="mostrarNavbarEvt($event)" (mostrarPuntos)="ponerPuntosIncio(false)"
         (selectdContact)="cambiarContenido($event)"
