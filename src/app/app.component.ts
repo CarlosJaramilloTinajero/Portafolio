@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
   pxRaton: number = 0;
   pyRaton: number = 0;
   puntero: ElementCSSInlineStyle = document.createElement('textarea');
-  mover: boolean = false;
+  // mover: boolean = false;
   tamanioPuntero: number = 50;
   velocidadPuntero: number = 20;
-  delayPuntero: number = 18;
+  // delayPuntero: number = 18;
 
   // Id's para limpiar los intervals
   idIntervalPuntos: number = 0;
@@ -143,26 +143,19 @@ export class AppComponent implements OnInit {
   }
 
   // Quitar y poner cursor y puntos de fondo
-  ponerCursor() {
-
-    // SetInterval para mover el cursor hacia el cursor
-    var id = setInterval(() => {
-      if (this.mostrarCursor && this.mover) {
-        this.pxPuntero += this.getVelocidad(this.pxRaton - this.pxPuntero);
-        this.pyPuntero += this.getVelocidad(this.pyRaton - this.pyPuntero);
-
-        this.puntero.style.left = `${this.pxPuntero}px`;
-        this.puntero.style.top = `${this.pyPuntero}px`;
+  ponerCursor(): void {
+    let funcion = () => {
+      this.pxPuntero += this.getVelocidad(this.pxRaton - this.pxPuntero);
+      this.pyPuntero += this.getVelocidad(this.pyRaton - this.pyPuntero);
+      this.puntero.style.left = `${this.pxPuntero}px`;
+      this.puntero.style.top = `${this.pyPuntero}px`;
+      if (!this.mostrarCursor) {
+        return;
       }
+      requestAnimationFrame(funcion);
+    };
 
-      if (this.mover && this.mostrarCursor) {
-        if (Math.round(this.pxRaton) == Math.round(this.pxPuntero) && Math.round(this.pyRaton) == Math.round(this.pyPuntero)) {
-          this.mover = false;
-        }
-      }
-    }, this.delayPuntero);
-
-    this.idIntervalCursor = parseInt(id.toString());
+    requestAnimationFrame(funcion);
   }
 
   ponerPuntos() {
@@ -216,7 +209,7 @@ export class AppComponent implements OnInit {
 
   quitar_o_poner_cursorInterval() {
     if (this.mostrarCursor) {
-      window.clearInterval(this.idIntervalCursor);
+      // window.clearInterval(this.idIntervalCursor);
       this.pxPuntero = 0;
       this.pyPuntero = 0;
       this.puntero.style.left = 0 + "px";
@@ -343,7 +336,7 @@ export class AppComponent implements OnInit {
       if (this.mostrarCursor || this.mostrarPuntos) {
         this.pxRaton = (e.pageX - (this.tamanioPuntero / 2) + 6);
         this.pyRaton = (e.pageY - (this.tamanioPuntero / 2) + 6);
-        this.mover = true;
+        // this.mover = true;
       }
     })
   }
