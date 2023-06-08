@@ -14,6 +14,7 @@ import { PuntoComponent } from './Components/punto/punto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MensajesComponent } from './Components/mensajes/mensajes.component';
 import { SkillsComponent } from './Components/skills/skills.component';
+import { ExperienceComponent } from './Components/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SkillsComponent } from './Components/skills/skills.component';
     ContactoComponent,
     PuntoComponent,
     MensajesComponent,
-    SkillsComponent
+    SkillsComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   // Id's para limpiar los intervals
   idIntervalPuntos: number = 0;
-  idIntervalCursor: number = 0;
+  // idIntervalCursor: number = 0;
 
   // Putos de fondo
   cantPuntosAnt: number = 7;
@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // Habilitar la opcion para ver mensajes
     window.onkeydown = (e) => {
-      if (e.ctrlKey && e.code === 'KeyM') {
+      if (e.ctrlKey && e.code === 'KeyG') {
         this.mensajesHabilitar = !this.mensajesHabilitar;
         if (this.selected == 4) {
           this.cambiarContenido(0);

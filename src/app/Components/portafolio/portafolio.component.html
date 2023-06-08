@@ -1,12 +1,13 @@
 <div *ngIf="select == 1 || retraso == 1" class="contendor">
-    <h2 class="titulo" [ngClass]="{'txtShadowBlancoLg': iliminacion}">web developer portafolio</h2>
-    <hr class="hr1">
-    <h5 class="textoP" [ngClass]="{'txtShadowBlancoSm': iliminacion}">Estos proyectos fueron programados utilizando
-        diferentes lenguajes como HTML, CSS, TypeScript y JavaScript para el FrontEnd, algunos realizan peticiones HTTP a API's creadas con Laravel. <br>
+    <h1 class="titulo" [ngClass]="{'txtShadowBlancoSm': iliminacion}">web developer portafolio</h1>
+    <hr class="hr1 hrcenter">
+    <p class="textoP" [ngClass]="{'txtShadowBlancoSm': iliminacion}">Estos proyectos fueron programados utilizando
+        diferentes lenguajes como HTML, CSS, TypeScript y JavaScript para el FrontEnd, algunos realizan peticiones HTTP
+        a API's creadas con Laravel. <br>
         Además, se utilizaron lenguajes como PHP y MySQL para el BackEnd. <br>
         Para estos proyectos, se utilizaron los frameworks de Laravel para el BackEnd y Angular para el FrontEnd.
-    </h5>
-    <hr class="hr2">
+    </p>
+    <hr>
 
     <div class="proyectos row row-cols-2 row-cols-lg-2"
         [ngClass]="{'inMas': proyectoSelect == 0, 'outMas': proyectoSelect != 0}">
@@ -50,6 +51,43 @@
             </section>
         </div> -->
 
+        <!-- Proyecto Expercom -->
+        <div class="proyecto col">
+            <img src="assets/Expercom.png" class="imagenProyecto" alt="">
+
+            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
+                <img src="assets/Expercom.png" class="imagenBN" alt="">
+            </section>
+
+            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
+                <h1 class="tituloProyecto">EXPERCOM ECOMERCE</h1>
+
+                <div class="botones">
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
+                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
+                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
+                    </div>
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">PHP</span></a>
+                        <a class="btn"><span class="hoverCursor">API</span></a>
+                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
+                    </div>
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
+                    </div>
+                </div>
+                <div class="mas-proyecto">
+                    <a class="btn" (click)="verProyecto(6)"><span class="hoverCursor">Mas...</span></a>
+                </div>
+                <div class="link-proyecto">
+                    <a href="https://www.expercom.mx/" target="_blank" class="btn"><span
+                            class="hoverCursor">Visitar</span></a>
+                </div>
+            </section>
+
+        </div>
+
         <!-- Proyecto Peliculas -->
         <div class="proyecto col">
             <img src="assets/Proyecto_Peliculas.png" class="imagenProyecto" alt="">
@@ -69,6 +107,7 @@
                     </div>
                     <div class="d-flex justify-content-center tr">
                         <a class="btn"><span class="hoverCursor">PHP</span></a>
+                        <a class="btn"><span class="hoverCursor">API</span></a>
                         <a class="btn"><span class="hoverCursor">MSYQL</span></a>
                     </div>
                     <div class="d-flex justify-content-center tr">
@@ -103,16 +142,16 @@
                     <div class="d-flex justify-content-center tr">
                         <a class="btn"><span class="hoverCursor">HTML5</span></a>
                         <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
+                        <!-- <a class="btn"><span class="hoverCursor">JavaScript</span></a> -->
                         <a class="btn"><span class="hoverCursor">TypeScript</span></a>
                     </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
-                    </div>
+                    <!-- <div class="d-flex justify-content-center tr">
+                                <a class="btn"><span class="hoverCursor">PHP</span></a>
+                                <a class="btn"><span class="hoverCursor">MSYQL</span></a>
+                            </div> -->
                     <div class="d-flex justify-content-center tr">
                         <a class="btn"><span class="hoverCursor">Angular</span></a>
-                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
+                        <!-- <a class="btn"><span class="hoverCursor">Laravel</span></a> -->
                     </div>
                 </div>
                 <div class="mas-proyecto">
@@ -123,7 +162,7 @@
         </div>
 
         <!-- Proyecto pedidos -->
-        <div class="proyecto col">
+        <!-- <div class="proyecto col">
             <img src="assets/pedidos.png" class="imagenProyecto" alt="">
 
             <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
@@ -157,7 +196,7 @@
                 </div>
             </section>
 
-        </div>
+        </div> -->
 
         <!-- Proyecto pacman -->
         <div class="proyecto col">
@@ -208,20 +247,63 @@
 
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 2, 'outMas': proyectoSelect != 2}" nombreProyecto="Sitio de peliculas"
-        descripcionBreve="Este proyecto simula el comportamiento de un sitio de peliculas como Star+."
-        descripcionProyecto="Este proyecto fue realizado con Laravel y utiliza la librería de BootStrap para los estilos. Además, ofrece un catálogo de películas, en el que se pueden visualizar vídeos de YouTube de cada película, ya sea el tráiler o un resumen; Cada película está categorizada para facilitar su organización.
-        Este proyecto cuenta con un sistema de gestión de datos (CRUD) tanto para las películas como para las categorías, pero sólo es accesible para el usuario administrador. Además, incluye un sistema de inicio de sesión y registro de usuarios, y permite a cada usuario modificar su perfil, ya sea la foto de perfil o la lista de películas para ver más tarde.
-        Este sitio también es responsive, por lo que el contenido se puede visualizar tanto en dispositivos móviles como en computadoras portátiles."
-        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel']" img="assets/Proyecto_Peliculas.png"
-        link="http://carlosjaramillo.peliculas.beauty"
+        descripcionBreve="Este proyecto simula el comportamiento de un sitio de peliculas el cual cuenta con un catalogo de peliculas."
+        descripcionProyecto="
+        Este proyecto desarrollado en Laravel es una aplicación web para ver un catálogo de películas organizadas por
+        categorías; Además, cuenta con un sistema de autenticación de usuarios los cuales pueden crear una lista 
+        personalizada de películas para ver después, para mejorar la experiencia del usuario, se ha utilizado
+        Bootstrap para algunos estilos de la interfaz de usuario, y Splide para crear carruseles de películas.
+
+        Una de las características más destacadas de este proyecto es la integración con la API de OMDb;
+        El usuario administrador puede buscar películas por nombre y agregarlas a el catalogo de peliculas, 
+        además, el proyecto cuenta con un sistema de administración (CRUD) para agregar nuevas películas y categorías, 
+        el cual solo el usuario administrador tiene acceso a estas funciones.
+
+        Para mejorar la seguridad del proyecto, se ha implementado middleware de rutas para controlar el acceso a
+        ciertas partes de la aplicación; En resumen, este proyecto es una aplicación web completa que ofrece una 
+        experiencia de usuario mejorada y una amplia gama de funciones para ver y administrar películas.
+
+        Este sitio es responsive, por lo que el contenido se puede visualizar tanto en dispositivos móviles 
+        como en computadoras portátiles."
+        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Livewire', 'Consumo de API', 'MYSQL', 'Laravel']"
+        img="assets/Proyecto_Peliculas.png" link="http://carlosjaramillo.peliculas.beauty"
         linkGithub="https://github.com/CarlosJaramilloTinajero/PeliculasLaravel"></app-proyecto-mas>
+
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
+        [ngClass]="{'inMas': proyectoSelect == 6, 'outMas': proyectoSelect != 6}" nombreProyecto="Expercom Ecomerce"
+        descripcionBreve="Desarrollo del Ecomerce para la empresa Expercom." descripcionProyecto="
+
+        Integración de APIs de Mayoristas: Implementé conexiones a diversas APIs de mayoristas, como Exel, CtOnline, PCH, TVC, CVA, Intcomex y DC Mayorista; 
+        Utilicé los componentes de Laravel para consumir estas APIs de manera eficiente y obtener datos actualizados de los catálogos de productos, precios y disponibilidad;
+        Mediante comandos y tareas programadas utilizando el Kernel de comandos y el sistema de cron de Laravel, automatizé la obtención de datos 
+        y la creación de órdenes en Expercom.
+
+        Desarrollo de Módulos Avanzados: Desarrolle módulos personalizados tanto en el backend del administrador del sitio como en la interfaz pública de Expercom; 
+        Utilicé componentes del framework Livewire de Laravel en algunos modulos para crear interacciones dinámicas y en tiempo real, mejorando la experiencia
+        del usuario y aumentando la eficiencia en la manipulación y visualización de datos.
+
+        Mejoras en el Frontend: Realicé mejoras en el frontend tanto del administrador del sitio como en la interfaz pública de Expercom; Esto incluyó la creación de nuevos
+        diseños y mejoras en los existentes utilizando CSS y JavaScript, con el objetivo de mejorar la apariencia y experiencia de usuario de la página.
+
+        Desarrollo de la mayor parte de la Lógica del Ecommerce: Construí la mayor parte de la lógica del Ecommerce de Expercom utilizando las estructuras y funcionalidades proporcionadas
+        por Laravel; Esto incluyó el desarrollo de un sistema de gestión de productos para administrar y mostrar los catálogos de productos, el diseño e implementación de 
+        un carrito de compras con capacidad de gestión de inventario, la implementación de un sistema de autenticación y registro de usuarios,
+        y la creación de un panel de administración completo para que los propietarios y administradores gestionen pedidos, productos, clientes y 
+        otras configuraciones relevantes.
+        
+        Estas tareas muestran mi capacidad para trabajar con APIs externas, desarrollar módulos personalizados, mejorar el frontend de una aplicación y 
+        crear la lógica completa de un Ecommerce; Estoy orgulloso de mi contribución al proyecto Expercom y considero que estas habilidades serán valiosas en 
+        futuros proyectos."
+        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Livewire', 'Consumo de APIs', 'MYSQL', 'Laravel', 'Tareas Cron']"
+        img="assets/Expercom.png" link="https://www.expercom.mx/"
+        linkGithub="https://github.com/CarlosJaramilloTinajero"></app-proyecto-mas>
 
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 3, 'outMas': proyectoSelect != 3}" nombreProyecto="Portafolio"
         descripcionBreve="Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes."
-        descripcionProyecto="En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, TypeScript, JavaScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles."
-        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
-        img="assets/portafolio.png" link="https://carlosjaramillotinajero.github.io/Portafolio/"
+        descripcionProyecto="En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, JavaScript, TypeScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles."
+        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'Angular']" img="assets/portafolio.png"
+        link="https://carlosjaramillotinajero.github.io/Portafolio/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/Portafolio"></app-proyecto-mas>
 
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"

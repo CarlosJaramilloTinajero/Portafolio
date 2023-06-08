@@ -90,7 +90,7 @@
 }
 
 .letra {
-    transition: all 2.5s ease-in-out;
+    transition: all 2.5s ease-in-out, font-size 0s ease-in-out;
     /* cursor: none; */
 }
 

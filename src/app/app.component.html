@@ -42,6 +42,10 @@
         [ngClass]="{'In': selected==2, 'Out': selected!=2, 'marginOut': esconder != 2}">
     </app-skills> -->
 
+    <app-experience class="inicio" [select]="selected" [retraso]="retraso" [iluminacion]="iluminacionExtra"
+        [ngClass]="{'In': selected==5, 'Out': selected!=5, 'marginOut': esconder != 5}">
+    </app-experience>
+
     <app-portafolio class="inicio" [iliminacion]="iluminacionExtra" [animaciones]="animacionesHabiitar"
         [select]="selected" [retraso]="retraso"
         [ngClass]="{'In': selected==1, 'Out': selected!=1, 'marginOut': esconder != 1}">
