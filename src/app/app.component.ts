@@ -73,14 +73,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Habilitar la opcion para ver mensajes
-    window.onkeydown = (e) => {
-      if (e.ctrlKey && e.code === 'KeyG') {
-        this.mensajesHabilitar = !this.mensajesHabilitar;
-        if (this.selected == 4) {
-          this.cambiarContenido(0);
-        }
-      }
-    };
+    // window.onkeydown = (e) => {
+    //   if (e.ctrlKey && e.code === 'KeyG') {
+    //     this.mensajesHabilitar = !this.mensajesHabilitar;
+    //     if (this.selected == 4) {
+    //       this.cambiarContenido(0);
+    //     }
+    //   }
+    // };
 
     // Habilitar la animacion de carga de incio despues de un time out
     var id = setTimeout(() => {
