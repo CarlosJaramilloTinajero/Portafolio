@@ -21,18 +21,23 @@
 
 .job-experience {
     width: 100%;
-    margin: 55px 0;
+    max-width: 100vw;
+    padding-bottom: 50px;
 }
 
 .job-experience .title {
-    /* display: flex; */
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: left;
 }
 
 .job-experience .title .company {
     font-size: 23px;
-    color: rgba(255, 255, 255, 0.95);
+}
+
+.job-experience .title .link-company a{
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-shadow: none !important;
 }
 
 .job-experience .title .date-experience {
@@ -46,4 +51,214 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: rgba(255, 255, 255, 0.9);
     text-align: justify;
+}
+
+.jobs-experiences {
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+}
+
+.experiences-container {
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+@media screen and (min-width: 550px) {
+    .experiences-container .experience-container {
+        width: 380px;
+        height: 200px;
+        border-radius: 3px;
+        transition: scale .3s ease-in-out, box-shadow .3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .experiences-container .experience-container {
+        width: 88vw;
+        height: 48vw;
+        margin: 0 auto;
+        border-radius: 3px;
+        transition: scale .3s ease-in-out, box-shadow .3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.experiences-container .experience-container:hover {
+    scale: 1.03;
+}
+
+.experiences-container .experience-container .btn-experience {
+    background-color: transparent;
+    border: unset;
+    padding: 7px 10px;
+    position: absolute;
+    bottom: 0px;
+    left: -100px;
+    width: max-content;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    transition: left .8s ease-in-out, scale .3s ease-in-out;
+    text-decoration: unset;
+}
+
+.experiences-container .experience-container:hover .btn-experience {
+    left: 3px;
+}
+
+.experiences-container .experience-container .btn-experience:hover {
+    scale: 1.08;
+}
+
+.experiences-container .experience-container:hover .job-position-experience,
+.experiences-container .experience-container:hover .tilte-experience,
+.experiences-container .experience-container:hover .time-experience {
+    opacity: 0;
+}
+
+.experiences-container .experience-container .job-position-experience {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    margin-left: 20px;
+    color: white;
+    opacity: .95;
+    margin-bottom: 0;
+    text-align: left;
+    transition: opacity 1s ease-in-out;
+    margin-top: 0px;
+}
+
+.experiences-container .experience-container .tilte-experience {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 25px;
+    margin-left: 13px;
+    margin-top: 13px;
+    color: white;
+    margin-bottom: 0px;
+    text-align: left;
+    transition: opacity 1s ease-in-out;
+}
+
+.experiences-container .experience-container .time-experience {
+    margin-left: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    opacity: .9;
+    color: white;
+    margin-bottom: 0px;
+    text-align: left;
+    position: absolute;
+    width: max-content;
+    bottom: 7px;
+    right: 12px;
+    transition: opacity 1s ease-in-out;
+}
+
+.experiences-container .experience-container .image-experience {
+    opacity: 0;
+    width: 77%;
+    height: 77%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s ease-in-out;
+}
+
+.experiences-container .experience-container:hover .image-experience {
+    opacity: 1;
+}
+
+.experiences-container .experience-container .image-experience img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mervins */
+.experiences-container .experience-container.mervins {
+    background: linear-gradient(61deg, rgba(255, 104, 35, 1) 15%, rgba(255, 150, 38, 1) 82%);
+}
+
+.experiences-container .experience-container.mervins {
+    box-shadow: -6px 6px 6px rgba(241, 76, 0, 0.3);
+}
+
+.experiences-container .experience-container.mervins:hover {
+    box-shadow: -9px 9px 10px rgba(241, 76, 0, 0.3);
+}
+
+
+.in-out-job {
+    transition: left 1.5s ease-in-out, opacity 1.5s ease-in-out, scale 1.5s ease-in-out;
+    position: absolute;
+    top: 0;
+}
+
+.in-job {
+    left: 0;
+    opacity: 1;
+    scale: 1;
+    /* animation: in 1s linear; */
+    /* animation-fill-mode: forwards; */
+}
+
+.out-job {
+    left: -150%;
+    opacity: 0;
+    scale: .3;
+    /* animation: out 1s linear; */
+    /* animation-fill-mode: forwards; */
+}
+
+/* @keyframes out {
+    0% {
+        opacity: 1;
+        scale: 1;
+        z-index: 101;
+    }
+
+    40% {
+        opacity: .4;
+        scale: .8;
+    }
+
+    80% {
+        scale: .6;
+        opacity: .1;
+    }
+
+    100% {
+        opacity: 0;
+        scale: .5;
+        z-index: -1;
+    }
+
+} */
+
+@keyframes out {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+@keyframes in {
+    0% {
+        left: 150%;
+    }
+
+    100% {
+        left: 0;
+    }
 }

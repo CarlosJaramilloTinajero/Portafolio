@@ -90,6 +90,21 @@ body {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
+.btn-return {
+    margin: 0;
+}
+
+.btn-return span {
+    color: white;
+    font-size: 14px;
+}
+
+.btn-return svg {
+    width: 15px;
+    margin-right: 7px;
+    height: 15px;
+}
+
 .btn {
     background-color: unset;
     border: none;
