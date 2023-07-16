@@ -83,7 +83,7 @@ export class AppComponent implements OnInit {
     // };
 
     // Habilitar la animacion de carga de incio despues de un time out
-    var id = setTimeout(() => {
+    let id = setTimeout(() => {
       this.moverInicio = true;
       window.clearTimeout(id);
     }, this.delayInicio)
@@ -104,9 +104,9 @@ export class AppComponent implements OnInit {
     this.PuntoCargado = this.getRandom(6) + 1;
     this.PuntoCargado2 = this.PuntoCargado - 1;
     this.PuntoCargado3 = this.PuntoCargado - 2;
-    var cont = 0, vel = 100, maxMilSeg = 4500;
+    let cont = 0, vel = 100, maxMilSeg = 2000;
 
-    var id = setInterval(() => {
+    let id = setInterval(() => {
       if (this.moverInicio) {
         this.PuntoCargado++;
         this.PuntoCargado2++;
@@ -125,11 +125,11 @@ export class AppComponent implements OnInit {
         }
 
         if (cont >= maxMilSeg) {
-          var id2 = setTimeout(() => {
+          let id2 = setTimeout(() => {
             this.animacionInicioLetras = true;
             window.clearTimeout(id2);
           }, 3500 + this.delayInicio);
-          var id3 = setTimeout(() => {
+          let id3 = setTimeout(() => {
             this.animacionInicio = false;
             window.clearTimeout(id3);
           }, 200);
