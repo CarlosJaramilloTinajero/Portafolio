@@ -10,6 +10,10 @@
         [cantPuntitos]="(getRandom(3) + 2)" [num]="i"></app-punto>
 </div>
 
+<!-- Pup-Up -->
+<app-pop-up *ngIf="pupVisible" class="pup-up-animation" [ngStyle]="{'left': leftPup + 'px', 'scale': scalePup}"
+    (clousePupEvent)="clousePup($event)"></app-pop-up>
+
 <!-- SVG Configuracion -->
 <div class="configuracion contact d-none d-sm-block fixed-bottom" id="configSVG"
     [ngClass]="{'hidden': !mostrarNavbar, 'show tranS ': mostrarNavbar}">

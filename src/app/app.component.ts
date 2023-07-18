@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopupService } from './Services/popup.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'portafolio1.0';
+
+  //Pup-up
+  leftPup: number = -500;
+  scalePup: number = .5;
+  pupVisible: boolean = false;
 
   // Putero
   pyPuntero: number = 0;
@@ -68,10 +74,13 @@ export class AppComponent implements OnInit {
 
   // Habilitar panel mensajes
   mensajesHabilitar: boolean = false;
-  constructor() {
+  constructor(private popUpService: PopupService) {
   }
 
   ngOnInit(): void {
+
+    this.initPup();
+
     // Habilitar la opcion para ver mensajes
     // window.onkeydown = (e) => {
     //   if (e.ctrlKey && e.code === 'KeyG') {
@@ -346,13 +355,22 @@ export class AppComponent implements OnInit {
     return (distancia / this.velocidadPuntero);
   }
 
-  mostrarNavbarEvt(b: boolean) {
-    this.mostrarNavbar = b;
+  mostrarNavbarEvt(event: boolean) {
+    this.mostrarNavbar = event;
 
     var elmSVG = document.getElementById('configSVG') ?? document.createElement('a');
     elmSVG.style.opacity = '1';
     var elm = document.getElementById('navBar') ?? document.createElement('a');
     elm.style.opacity = '1';
+
+    if (this.pupVisible) {
+      let idTimeOut = setTimeout(() => {
+        this.leftPup = 20;
+        this.scalePup = 1;
+        window.clearTimeout(idTimeOut);
+      }, (this.getRandom(7) + 9) * 1000);
+    }
+
   }
 
   getRandom(max: number) {
@@ -388,5 +406,24 @@ export class AppComponent implements OnInit {
 
   cambiarIluminacion() {
     this.iluminacionExtra = !this.iluminacionExtra;
+  }
+
+  // Pop-up
+  clousePup(event: number): void {
+    this.popUpService.checkPup(event).subscribe(
+      data => {
+        // console.log(data);
+      },
+      error => {
+      }
+    );
+    this.leftPup = -500;
+    this.scalePup = .5;
+  }
+
+  initPup(): void {
+    if (!localStorage.getItem('checkPup') && document.documentElement.clientWidth > 1150) {
+      this.pupVisible = true;
+    }
   }
 }

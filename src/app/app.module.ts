@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MensajesComponent } from './Components/mensajes/mensajes.component';
 import { SkillsComponent } from './Components/skills/skills.component';
 import { ExperienceComponent } from './Components/experience/experience.component';
+import { PopUpComponent } from './Components/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ExperienceComponent } from './Components/experience/experience.componen
     PuntoComponent,
     MensajesComponent,
     SkillsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
