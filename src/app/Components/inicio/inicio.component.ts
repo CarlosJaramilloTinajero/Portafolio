@@ -23,7 +23,7 @@ export class InicioComponent implements OnInit {
 
   mostrarContact: boolean = false;
 
-  texto: string = "Hola, yo soy Carlos Jaramillo-Tecnólogo en desarrollo de software.-Con habilidades en el desarrollo web que me gustaria explotar.-Soy una persona muy autodidacta capaz de resolver problemas de una manera eficaz.-Tengo diversos conocimientos en programación web que van desde el diseño web a HTML, CSS, TypeScript, JavaScript y PHP.-Como también con conocimientos en diferentes FrameWorks de Bakcend como de Frontend.";
+  texto: string = "Hola, yo soy Carlos Jaramillo-Tecnólogo en desarrollo de software.-Con habilidades en el desarrollo web que me gustaría explotar.-Soy una persona muy autodidacta capaz de resolver problemas de una manera eficaz.-Tengo diversos conocimientos en programación web que van desde el diseño web a HTML, CSS, TypeScript, JavaScript y PHP.-Como también con conocimientos en diferentes FrameWorks de Backend como de Frontend.";
 
 
   textoArray: string[] = this.texto.split("");
