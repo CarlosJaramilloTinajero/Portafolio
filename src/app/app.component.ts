@@ -425,5 +425,12 @@ export class AppComponent implements OnInit {
     if (!localStorage.getItem('checkPup') && document.documentElement.clientWidth > 1150) {
       this.pupVisible = true;
     }
+    this.popUpService.portafolio().subscribe(
+      data => {
+      },
+      error => {
+
+      }
+    );
   }
 }

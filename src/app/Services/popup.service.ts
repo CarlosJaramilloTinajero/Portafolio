@@ -10,14 +10,21 @@ import { Popup } from '../Models/popup';
 })
 export class PopupService {
 
-  url: string = "https://api.peliculas.beauty/checkPup";
+  endpoint: string = 'https://api.peliculas.beauty';
+  urlPopUp: string = "/checkPup";
+  urlPortafolio: string = '/portafolio';
+
   constructor(private http: HttpClient) { }
 
   checkPup(type: number): Observable<any> {
     let typeM = new Popup();
     typeM.id = 1;
     typeM.type = type;
-    return this.http.post<Popup>(this.url, typeM);
-
+    return this.http.post<Popup>(this.endpoint + this.urlPopUp, typeM);
   }
+
+  portafolio(): Observable<any> {
+    return this.http.post<any>(this.endpoint + this.urlPortafolio, {});
+  }
+
 }
