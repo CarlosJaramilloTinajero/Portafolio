@@ -106,7 +106,7 @@
         position: relative;
         width: 430px;
         height: 236px;
-        border-radius: 7px;
+        border-radius: 3px;
         overflow: hidden;
         margin: 20px;
         margin-bottom: 30px;
@@ -137,7 +137,7 @@
         width: 90vw;
         height: 50vw;
         margin-left: 5vw;
-        border-radius: 7px;
+        border-radius: 3px;
         overflow: hidden;
         margin-bottom: 13vw;
         transition: all .3s ease-in-out;
