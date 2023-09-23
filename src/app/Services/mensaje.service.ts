@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class MensajeService {
 
-  urlAdd: string = "https://api.peliculas.beauty/addMensaje";
-  urlGet: string = "https://api.peliculas.beauty/getMensajes";
-  urlDelet: string = "https://api.peliculas.beauty/deleteMsj/";
+  urlAdd: string = "https://api.carlosjaramillo.beauty/addMensaje";
+  urlGet: string = "https://api.carlosjaramillo.beauty/getMensajes";
+  urlDelet: string = "https://api.carlosjaramillo.beauty/deleteMsj/";
   constructor(private http: HttpClient) { }
 
   addMensaje(msj: Mensaje): Observable<any> {

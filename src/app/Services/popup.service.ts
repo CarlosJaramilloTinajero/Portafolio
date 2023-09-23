@@ -10,7 +10,7 @@ import { Popup } from '../Models/popup';
 })
 export class PopupService {
 
-  endpoint: string = 'https://api.peliculas.beauty';
+  endpoint: string = 'https://api.carlosjaramillo.beauty';
   urlPopUp: string = "/checkPup";
   urlPortafolio: string = '/portafolio';
 
