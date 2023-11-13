@@ -159,6 +159,42 @@
 
         </div>
 
+        <!-- Proyecto api rest vue -->
+        <div class="proyecto col">
+            <img src="assets/api-rest-vue.png" class="imagenProyecto" alt="">
+
+            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
+                <img src="assets/api-rest-vue.png" class="imagenBN" alt="">
+            </section>
+
+            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
+                <h1 class="tituloProyecto">CONSUMO API REST CON VUE 3</h1>
+
+                <div class="botones">
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
+                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
+                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
+                    </div>
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">PHP</span></a>
+                        <a class="btn"><span class="hoverCursor">SQL</span></a>
+                    </div>
+                    <div class="d-flex justify-content-center tr">
+                        <a class="btn"><span class="hoverCursor">LARAVEL</span></a>
+                        <a class="btn"><span class="hoverCursor">VUE</span></a>
+                    </div>
+                </div>
+                <div class="mas-proyecto">
+                    <a class="btn" (click)="verProyecto(7)"><span class="hoverCursor">Mas...</span></a>
+                </div>
+                <div class="link-proyecto">
+                    <a href="https://carlosjaramillo.beauty/consumo-ap-rest-vue/#/" target="_blank" class="btn"><span
+                            class="hoverCursor">Visitar</span></a>
+                </div>
+            </section>
+        </div>
+
         <!-- Proyecto pedidos -->
         <!-- <div class="proyecto col">
             <img src="assets/pedidos.png" class="imagenProyecto" alt="">
@@ -238,6 +274,23 @@
         [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
         img="assets/Proyecto_Salas.png" link="https://carlosjaramillotinajero.github.io/angularSalas/"
         linkGithub="https://github.com/CarlosJaramilloTinajero/angularSalas"></app-proyecto-mas> -->
+
+    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
+        [ngClass]="{'inMas': proyectoSelect == 7, 'outMas': proyectoSelect != 7}"
+        nombreProyecto="Consumo de API REST con Vue 3 (Composition API)"
+        descripcionBreve="Este proyecto consume una API creada con laravel, la cual tiene un CRUD de servicios y clientes."
+        descripcionProyecto="Para este proyecto, se diseñó y desarrolló una API robusta utilizando Laravel, incorporando el paquete de autenticación Sanctum de Laravel; En dicha API, se implementaron operaciones CRUD dedicadas a los clientes y servicios, proporcionando una gestión completa de los datos.
+
+        En la capa del frontend, se optó por Vue 3 con Composition API; Para la navegación del proyecto de una sola página (SPA), se empleó Vue Router, configurando rutas eficientes y asegurando su protección mediante la autenticación de los Guards de Vue Router; Además, se integró Vuex para almacenar de manera centralizada la información recuperada de la API relacionada con clientes y servicios; La sincronización automática entre componentes se logró gracias a la conexión de estos componentes con los estados de Vuex, permitiendo una experiencia coherente y en tiempo real.
+        
+        En el proceso de validación de datos, se implementó Vuelidate, una herramienta que garantiza la integridad de la información antes de realizar las peticiones a la API; Esto se traduce en una capa adicional de seguridad y consistencia en el flujo de datos.
+        
+        La gestión de solicitudes HTTP a la API se simplificó utilizando Axios, una biblioteca conocida por su eficiencia y flexibilidad en el manejo de comunicaciones basadas en HTTP; Para orquestar estas solicitudes y mantener un código organizado, se creó una clase dedicada que abstrae y centraliza todas las interacciones con la API REST.
+        
+        Para mejorar la experiencia del usuario, se implementó Toastify, una biblioteca que facilita la presentación de notificaciones de manera atractiva y efectiva; Esto garantiza que cualquier acción importante, como la creación o modificación de clientes y servicios, se comunique de manera clara y visualmente agradable al usuario final."
+        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel', 'Vue 3', 'Vue Router', 'Vuex', 'Vuelidate', 'Axios']"
+        img="assets/api-rest-vue.png" link="https://carlosjaramillo.beauty/consumo-ap-rest-vue/"
+        linkGithub="https://github.com/CarlosJaramilloTinajero/Consumo_API_REST_Vue_Composition_API"></app-proyecto-mas>
 
     <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
         [ngClass]="{'inMas': proyectoSelect == 2, 'outMas': proyectoSelect != 2}" nombreProyecto="Sitio de peliculas"
