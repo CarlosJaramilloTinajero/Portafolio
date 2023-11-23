@@ -409,3 +409,26 @@ input[type='text']:target {
 .tranS {
     transition: all 3.5s ease-in-out;
 }
+
+.animation-text-shadow {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.751);
+    animation-name: animation-text-shadow;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    text-decoration: unset;
+}
+
+@keyframes animation-text-shadow {
+    0% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.751);
+    }
+
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.751);
+    }
+}

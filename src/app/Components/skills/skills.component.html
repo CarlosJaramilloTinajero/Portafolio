@@ -1,49 +1,58 @@
 <div *ngIf="select == 2 || retraso == 2" class="contenedor">
-    <!-- <h4 class="titulo" [ngClass]="{'txtShadowBlancoLg': iluminacion}">Frameworks</h4> -->
-    <!-- <hr class="hr2"> -->
-    <div class="row row-cols-2 row-cols-lg-2 fila">
-        <div class="cotendor2 hoverCursor" (mouseover)="pornerColorRandomFramework()"
-            (mouseleave)="colorBoxShadowFrameworks = boxShadowDefault"
-            [ngStyle]="{'box-shadow': '-9px 9px 7px rgba(' + colorBoxShadowFrameworks + ')'}">
-            <div class="tituloContenedor">
-                <h3>FrameWorks</h3>
-            </div>
-            <div class="tecnologias" [ngStyle]="{'background-image': colorFrameworks}"></div>
-        </div>
 
-        <div class="cotendor2 hoverCursor" (mouseenter)="pornerColorRandomLenguaje()"
-            (mouseleave)="colorBoxShadowLenguajes = boxShadowDefault"
-            [ngStyle]="{'box-shadow': '-9px 9px 7px rgba(' + colorBoxShadowLenguajes + ')'}">
-            <div class="tituloContenedor">
-                <h3><span>Lenguajes</span></h3>
-            </div>
+   <h1 class="tilte-page" [ngClass]="{'txtShadowBlancoSm': iluminacion}">Presentación de mis habilidades en el
+        desarrollo Web</h1>
+    <hr class="hr1 hrcenter">
+    <p class="description-page" [ngClass]="{'txtShadowBlancoSm': iluminacion}">En este apartado, presentaré una
+        selección de mis habilidades en lenguajes y frameworks, abarcando tanto el desarrollo de frontend como de
+        backend. En el ámbito del frontend, tengo experiencia sólida en lenguajes clave como <a
+            [href]="'#' + tecnologyTitle[3]" class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[3].length, tecnologyTitle[3])">JavaScript</a>,
+        <a [href]="'#' + tecnologyTitle[4]" class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[4].length, tecnologyTitle[4])">CSS</a>, <a [href]="'#' + tecnologyTitle[5]"
+            class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[5].length, tecnologyTitle[5])">HTML</a> y
+        <a [href]="'#' + tecnologyTitle[6]" class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[6].length, tecnologyTitle[6])">TypeScript</a>,
+        mientras que en el backend, mi dominio abarca <a [href]="'#' + tecnologyTitle[2]"
+            class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[2].length, tecnologyTitle[2])">PHP</a> y <a [href]="'#'"
+            class="text-resalt animation-text-shadow">SQL</a>,
+        fundamentales para la gestión eficiente de
+        datos y lógica del servidor.
+        <br>
+        Destaco en la implementación de frameworks potentes como <a [href]="'#' + tecnologyTitle[1]"
+            class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[1].length, tecnologyTitle[1])">Vue</a> y <a [href]="'#' + tecnologyTitle[7]"
+            class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[7].length, tecnologyTitle[7])">Angular</a>
+        para el
+        desarrollo ágil y estructurado de
+        interfaces de usuario interactivas y dinámicas. En el caso del backend, mi destreza se concentra en <a
+            [href]="'#' + tecnologyTitle[0]" class="text-resalt animation-text-shadow"
+            (click)="showText(tecnologyText[0].length, tecnologyTitle[0])">Laravel</a>, donde
+        aplico
+        técnicas
+        avanzadas y
+        prácticas óptimas para construir
+        aplicaciones seguras, escalables y de alto rendimiento, ofreciendo soluciones integrales en entornos
+        complejos y diversos de desarrollo de software.
+    </p>
+    <hr>
 
-            <div class="tecnologias" [ngStyle]="{'background-image': colorLenguajes}">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-chevron-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-                </svg>
-
-                <!--                 
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
-                    </div>
-                </div> -->
-
-
-            </div>
+    <div class="mb-5">
+        <div class="skills-text" [id]="tecnologyTitle[z]" *ngFor="let textTecnology of tecnologyText; let z = index">
+            <p class="title">
+                <span (mouseleave)="hiddeText()"
+                    (mouseover)="showText(textTecnology.length, tecnologyTitle[z])">{{tecnologyTitle[z]}}
+                </span>
+                <span class="text-info">
+                    <span *ngFor="let item of textTecnology; let i = index">
+                        <span class="word"
+                            [ngClass]="{'show': showNumberWord > i && text === tecnologyTitle[z], 'opacity-25': showNumberWord <= i || text !== tecnologyTitle[z]}">{{item}}</span>
+                    </span>
+                </span>
+            </p>
         </div>
     </div>
 </div>

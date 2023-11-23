@@ -7,57 +7,60 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  colores: string[] = ["linear-gradient( 89.4deg,  rgba(194,0,39,1) 0.8%, rgba(10,35,104,1) 99.4% )",
-    "linear-gradient( 179.4deg,  rgba(132,56,122,1) 14.6%, rgba(190,24,49,1) 104.7% )",
-    "linear-gradient( 99deg,  rgba(115,18,81,1) 10.6%, rgba(28,28,28,1) 118% )",
-    "linear-gradient( 180.4deg,  rgba(188,120,236,1) -2.2%, rgba(29,133,163,1) 83.5% )",
-    "radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,152,155,1) 0.1%, rgba(0,94,120,1) 94.2% )",
-    "radial-gradient( circle farthest-corner at 10% 20%,  rgba(147,67,67,1) 0%, rgba(111,27,27,1) 90% )",
-    "linear-gradient( 106.9deg,  rgba(148,14,60,1) 60.9%, rgba(3,22,27,1) 122.3% )",
-    "linear-gradient( 96.5deg,  rgba(39,103,187,1) 10.4%, rgba(16,72,144,1) 87.7% )",
-    "radial-gradient( circle farthest-corner at 32.7% 82.7%,  rgba(173,0,171,1) 8.3%, rgba(15,51,92,1) 79.4% )"];
-
-  coloresBoxShadow: string[] = ["194,0,39, .5",
-    "132,56,122, .5",
-    "115,18,81, .5",
-    "188,120,236, .5",
-    "0,152,155, .5",
-    "147,67,67, .5",
-    "148,14,60, .5",
-    " 39,103,187, .5",
-    "173,0,171, .5"];
-
-  boxShadowDefault: string = "255, 255, 255, 0.5";
-
-  colorLenguajes: string = "";
-  colorBoxShadowLenguajes: string = this.boxShadowDefault;
-
-  colorFrameworks: string = "";
-  colorBoxShadowFrameworks: string = this.boxShadowDefault;
-
-
   @Input() select: number = 0;
   @Input() retraso: number = 0;
   @Input() iluminacion: boolean = false;
+
+  // Textos
+  tecnologyTitle: string[] = ['Laravel', 'Vue', 'PHP', 'JavaScript', 'CSS', 'HTML', 'TypeScript', 'Angular'];
+
+  tecnologyText: any = [
+    ("Mi destreza en Laravel se extiende a Livewire, CRON para comandos programados, gestión de Jobs, creación/consumo de API Rest, manipulación de Emails, Excel para exportar/importar datos, y aprovechamiento de Websockets (Pusher y Laravel Echo), entre otros.").split(""),
+    ("Mi experiencia en el Framework de JavaScript Vue incluye habilidades en Vuelidate para validación, Vuex para la gestión de estados, Vue Router para enrutamiento, y la capacidad de consumir APIs Rest para integraciones dinámicas y eficientes, entro otros.").split(""),
+    ('Mis habilidades en el lenguaje de programación PHP abarcan una amplia gama de áreas, desde el manejo de bases de datos MySQL, creación de aplicaciones web dinámicas hasta la implementación de seguridad robusta y optimización de rendimiento, entre otros').split(""),
+    ('Mis habilidades en el lenguaje de programación JavaScript abarcan la creación de aplicaciones web interactivas y dinámicas, el desarrollo de funciones y componentes frontend, manipulación del DOM, gestión de eventos, uso de APIs y Frameworks como Vue o Angular.').split(""),
+    ('En el ámbito del lenguaje de estilos CSS, mis habilidades se extienden a la creación de diseños responsivos, estilización de páginas web, manejo avanzado de selectores, animaciones, posicionamiento y uso de frameworks como Bootstrap o Tailwind para agilizar el desarrollo.').split(""),
+    ('En mi trayectoria con HTML, me destaco en la creación de estructuras web semánticas, la utilización meticulosa de etiquetas, la elaboración de elementos multimedia y la aplicación rigurosa de estándares de accesibilidad para diseñar interfaces eficientes y accesibles.').split(""),
+    ('Mi habilidad en TypeScript se manifiesta en la creación de aplicaciones sólidas con tipado estático. Implemento interfaces, clases, módulos y optimizo el desarrollo en entornos complejos de programación para garantizar sistemas eficientes y escalables, entre otros.').split(""),
+    // ('En SQL, demuestro habilidades en la creación y gestión eficiente de bases de datos, escritura de consultas complejas, diseño de esquemas, optimización de consultas y manejo seguro de datos para sistemas eficaces y confiables.').split(""),
+    ('En Angular, destaco por mi habilidad en la construcción de aplicaciones web dinámicas y escalables. Manejo la creación de componentes, servicios, enrutamiento, gestión de estado con RxJS y optimización de rendimiento para interfaces robustas y eficientes, entre otros.').split("")
+  ];
+
+  idInterval: any = 0;
+  showNumberWord: number = 0;
+  text: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  pornerColorRandomLenguaje() {
-    let i = this.getRandom(this.colores.length);
-    this.colorLenguajes = this.colores[i];
-    this.colorBoxShadowLenguajes = this.coloresBoxShadow[i];
+  hiddeText() {
+    if (this.idInterval !== 0) {
+      window.clearInterval(this.idInterval);
+    }
+
+    this.showNumberWord = 0;
+    this.text = '';
   }
 
-  pornerColorRandomFramework() {
-    let i = this.getRandom(this.colores.length);
-    this.colorFrameworks = this.colores[i];
-    this.colorBoxShadowFrameworks = this.coloresBoxShadow[i];
-  }
+  showText(length: number, type: string) {
+    if (this.text === type) {
+      return;
+    }
 
-  getRandom(max: number) {
-    return Math.floor(Math.random() * max);
-  }
+    this.hiddeText();
 
+    this.text = type;
+    let i: number = 0;
+    this.idInterval = window.setInterval(() => {
+      if (i >= length) {
+        window.clearInterval(this.idInterval);
+        this.idInterval = 0;
+      } else {
+        this.showNumberWord++;
+        i++;
+      }
+    }, 30);
+  }
 }
