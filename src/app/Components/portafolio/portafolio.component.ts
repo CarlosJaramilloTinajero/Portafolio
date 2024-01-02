@@ -13,6 +13,121 @@ export class PortafolioComponent implements OnInit {
   @Input() retraso: number = 0;
   @Input() iliminacion: boolean = false;
 
+  projects: any = [
+    {
+      title: 'EXPERCOM ECOMERCE',
+      img: 'assets/Expercom.png',
+      showNumber: 6,
+      link: 'https://www.expercom.mx/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero',
+      technologiesProfolie: [['HTML5', 'CSS', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
+      moreProject: {
+        name: 'Expercom Ecomerce',
+        shortDescription: 'Desarrollo del Ecomerce para la empresa Expercom.',
+        description: 'Integración de APIs de Mayoristas: Implementé conexiones a diversas APIs de mayoristas, como Exel, CtOnline, PCH, TVC, CVA, Intcomex y DC Mayorista; Utilicé los componentes de Laravel para consumir estas APIs de manera eficiente y obtener datos actualizados de los catálogos de productos, precios y disponibilidad; Mediante comandos y tareas programadas utilizando el Kernel de comandos y el sistema de cron de Laravel, automatizé la obtención de datos y la creación de órdenes en Expercom. Desarrollo de Módulos Avanzados: Desarrolle módulos personalizados tanto en el backend del administrador del sitio como en la interfaz pública de Expercom; Utilicé componentes del framework Livewire de Laravel en algunos modulos para crear interacciones dinámicas y en tiempo real, mejorando la experiencia del usuario y aumentando la eficiencia en la manipulación y visualización de datos. Mejoras en el Frontend: Realicé mejoras en el frontend tanto del administrador del sitio como en la interfaz pública de Expercom; Esto incluyó la creación de nuevos diseños y mejoras en los existentes utilizando CSS y JavaScript, con el objetivo de mejorar la apariencia y experiencia de usuario de la página. Desarrollo de la mayor parte de la Lógica del Ecommerce: Construí la mayor parte de la lógica del Ecommerce de Expercom utilizando las estructuras y funcionalidades proporcionadas por Laravel; Esto incluyó el desarrollo de un sistema de gestión de productos para administrar y mostrar los catálogos de productos, el diseño e implementación de un carrito de compras con capacidad de gestión de inventario, la implementación de un sistema de autenticación y registro de usuarios, y la creación de un panel de administración completo para que los propietarios y administradores gestionen pedidos, productos, clientes y otras configuraciones relevantes. Estas tareas muestran mi capacidad para trabajar con APIs externas, desarrollar módulos personalizados, mejorar el frontend de una aplicación y crear la lógica completa de un Ecommerce; Estoy orgulloso de mi contribución al proyecto Expercom y considero que estas habilidades serán valiosas en futuros proyectos.',
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Livewire', 'Consumo de APIs', 'MYSQL', 'Laravel', 'Tareas Cron'],
+      }
+    },
+    {
+      title: 'SITIO DE PELICULAS',
+      img: 'assets/Proyecto_Peliculas.png',
+      showNumber: 2,
+      link: 'https://peliculas.carlosjaramillo.beauty/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/PeliculasLaravel',
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
+      moreProject: {
+        name: 'Sitio de peliculas',
+        shortDescription: 'Este proyecto simula el comportamiento de un sitio de peliculas el cual cuenta con un catalogo de peliculas.',
+        description: 'Este proyecto desarrollado en Laravel es una aplicación web para ver un catálogo de películas organizadas por categorías; Además, cuenta con un sistema de autenticación de usuarios los cuales pueden crear una lista personalizada de películas para ver después, para mejorar la experiencia del usuario, se ha utilizado Bootstrap para algunos estilos de la interfaz de usuario, y Splide para crear carruseles de películas. Una de las características más destacadas de este proyecto es la integración con la API de OMDb; El usuario administrador puede buscar películas por nombre y agregarlas a el catalogo de peliculas, además, el proyecto cuenta con un sistema de administración(CRUD) para agregar nuevas películas y categorías, el cual solo el usuario administrador tiene acceso a estas funciones. Para mejorar la seguridad del proyecto, se ha implementado middleware de rutas para controlar el acceso a ciertas partes de la aplicación; En resumen, este proyecto es una aplicación web completa que ofrece una experiencia de usuario mejorada y una amplia gama de funciones para ver y administrar películas. Este sitio es responsive, por lo que el contenido se puede visualizar tanto en dispositivos móviles como en computadoras portátiles.',
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Livewire', 'Consumo de API', 'MYSQL', 'Laravel'],
+      }
+    },
+    {
+      title: 'PORTAFOLIO',
+      img: 'assets/portafolio.png',
+      showNumber: 3,
+      link: 'https://carlosjaramillo.beauty/portafolio',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/Portafolio',
+      technologiesProfolie: [['HTML5', 'CSS', 'JavaScript', 'TypeScript'], ['Angular']],
+      moreProject: {
+        name: 'Portafolio',
+        shortDescription: 'Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes.',
+        description: 'En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, JavaScript, TypeScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles.',
+        technologies: ['HTML5', 'CSS3', 'TypeScript', 'Angular'],
+      }
+    },
+    {
+      title: 'CONSUMO API REST CON VUE 3',
+      img: 'assets/api-rest-vue.png',
+      showNumber: 7,
+      link: 'https://carlosjaramillo.beauty/consumo-ap-rest-vue/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/Consumo_API_REST_Vue_Composition_API',
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel', 'Vue']],
+      moreProject: {
+        name: 'Consumo de API REST con Vue 3 (Composition API)',
+        shortDescription: 'Este proyecto consume una API creada con laravel, la cual tiene un CRUD de servicios y clientes.',
+        description: 'Para este proyecto, se diseñó y desarrolló una API robusta utilizando Laravel, incorporando el paquete de autenticación Sanctum de Laravel; En dicha API, se implementaron operaciones CRUD dedicadas a los clientes y servicios, proporcionando una gestión completa de los datos. En la capa del frontend, se optó por Vue 3 con Composition API; Para la navegación del proyecto de una sola página(SPA), se empleó Vue Router, configurando rutas eficientes y asegurando su protección mediante la autenticación de los Guards de Vue Router; Además, se integró Vuex para almacenar de manera centralizada la información recuperada de la API relacionada con clientes y servicios; La sincronización automática entre componentes se logró gracias a la conexión de estos componentes con los estados de Vuex, permitiendo una experiencia coherente y en tiempo real. En el proceso de validación de datos, se implementó Vuelidate, una herramienta que garantiza la integridad de la información antes de realizar las peticiones a la API; Esto se traduce en una capa adicional de seguridad y consistencia en el flujo de datos. La gestión de solicitudes HTTP a la API se simplificó utilizando Axios, una biblioteca conocida por su eficiencia y flexibilidad en el manejo de comunicaciones basadas en HTTP; Para orquestar estas solicitudes y mantener un código organizado, se creó una clase dedicada que abstrae y centraliza todas las interacciones con la API REST. Para mejorar la experiencia del usuario, se implementó Toastify, una biblioteca que facilita la presentación de notificaciones de manera atractiva y efectiva; Esto garantiza que cualquier acción importante, como la creación o modificación de clientes y servicios, se comunique de manera clara y visualmente agradable al usuario final.',
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel', 'Vue 3', 'Vue Router', 'Vuex', 'Vuelidate', 'Axios'],
+      }
+    },
+    {
+      title: 'PACMAN CON ANGULAR',
+      img: 'assets/pacman.png',
+      showNumber: 5,
+      link: 'https://carlosjaramillotinajero.github.io/pacmanAngular/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/pacmanAngular',
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript', 'TypeScript'], ['Angular']],
+      moreProject: {
+        name: 'Pacman con Angular',
+        shortDescription: 'Este proyecto es un videojuego 2D tipo Pacman.',
+        description: "Este proyecto fue desarrollado con Angular y utilizó el archivo app_component_ts para implementar la lógica del juego. Se utilizaron TimeOut's e Interval's para controlar el comportamiento del jugador y los fantasmas. Este proyecto es reponsive, por lo cual se puede jugar tambien en dispositivos móviles.",
+        technologies: ['HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Angular'],
+      }
+    },
+    {
+      title: 'LISTA DE TAREAS',
+      img: 'assets/task-list.png',
+      showNumber: 8,
+      link: 'https://carlosjaramillo.beauty/task-list/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/task_list_Vue',
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
+      moreProject: {
+        name: 'Lista de tareas con Vue 3 (Composition API) y Laravel',
+        shortDescription: 'Este proyecto consume una API creada con laravel, la cual tiene un CRUD de tareas y listas de tareas.',
+        description: 'Para este proyecto, se diseñó y desarrolló una API robusta utilizando Laravel, incorporando el paquete de autenticación Sanctum de Laravel; En dicha API, se implementaron operaciones CRUD dedicadas a las tareas y lista de tareas, proporcionando una gestión completa de los datos. En la capa del frontend, se optó por Vue 3 con Composition API; Para la navegación del proyecto de una sola página(SPA), se empleó Vue Router, configurando rutas eficientes y asegurando su protección mediante la autenticación de los Guards de Vue Router; Además, se integró Vuex para almacenar de manera centralizada la información recuperada de la API relacionada con las tareas y listas de tareas; La sincronización automática entre componentes se logró gracias a la conexión de estos componentes con los estados de Vuex, permitiendo una experiencia coherente y en tiempo real. La gestión de solicitudes HTTP a la API se simplificó utilizando Axios, una biblioteca conocida por su eficiencia y flexibilidad en el manejo de comunicaciones basadas en HTTP; Para orquestar estas solicitudes y mantener un código organizado, se creó una clase dedicada que abstrae y centraliza todas las interacciones con la API REST. Para cada acción que se haga con las tareas o listas de tareas, se manda un correo electrónico al email del usuario, ya sea cuando se crea una tarea o cuando se archiva una lista de tareas. Para mejorar la experiencia del usuario, se implementó Toastify, una biblioteca que facilita la presentación de notificaciones de manera atractiva y efectiva; Esto garantiza que cualquier acción importante, como la creación o modificación de tareas o listas de tareas, se comunique de manera clara y visualmente agradable al usuario final.',
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel', 'Vue 3', 'Vue Router', 'Vuex', 'Axios'],
+      }
+    },
+    // {
+    //   title: 'ADMINISTADOR DE SALAS',
+    //   img: 'assets/Proyecto_Salas.png',
+    //   showNumber: 1,
+    //   link: 'https://carlosjaramillotinajero.github.io/angularSalas/',
+    //   linkGitHub: 'https://github.com/CarlosJaramilloTinajero/angularSalas',
+    //   technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript', 'TypeScript'], ['PHP', 'API', 'SQL'], ['Laravel', 'Angular']],
+    //   moreProject: {
+    //     name: 'Administracion de reservas de salas',
+    //     shortDescription: 'Este proyecto crea y gestiona reservas para diferentes salas.',
+    //     description: 'Este proyecto fue desarrollado utilizando Angular, un framework de FrontEnd, con el que se mostró todo el contenido obtenido a través de peticiones HTTP a una API creada con Laravel. Gracias a este proyecto, contamos con un sistema de gestión de reservas de salas, que nos permite agendar reservas a través de un sistema de gestión de reservas. Este proyecto nos brinda la posibilidad de realizar operaciones básicas de gestión de datos (CRUD) tanto para las salas como para las reservas',
+    //     technologies: ['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular'],
+    //   }
+    // },
+    // {
+    //   title: 'ADMINISTADOR DE PEDIDOS',
+    //   img: 'assets/pedidos.png',
+    //   showNumber: 4,
+    //   link: 'https://carlosjaramillotinajero.github.io/pedidos/',
+    //   linkGitHub: 'https://github.com/CarlosJaramilloTinajero/pedidos/',
+    //   technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript', 'TypeScript'], ['PHP', 'API', 'SQL'], ['Laravel', 'Angular']],
+    //   moreProject: {
+    //     name: 'Administrador de pedidos',
+    //     shortDescription: 'Este proyecto está diseñado para organizar y llevar un registro de los pedidos que he llevado en mi trabajo como repartidor de una pollería',
+    //     description: 'Este proyecto sirve como un administrador de pedidos que he llevado en mi trabajo como repartidor. Cuenta con un CRUD (Create, Read, Update, Delete) de pedidos por llevar y pedidos llevados, así como un CRUD de deudas para poder gestionarlas. Para el front-end de este proyecto, se utilizó el framework de Angular y para el back-end, se hicieron peticiones HTTP a una API creada en Laravel. Este proyecto me resulta muy útil porque me permite llevar un control preciso de cuánto dinero recibo por el precio del pedido y cuánto me dan de propina por cada pedido; De esta manera, puedo revisar en cualquier momento los registros de los pedidos y asegurarme de que todo esté en orden.',
+    //     technologies: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular'],
+    //   }
+    // }
+  ];
+
   proyectoSelect: number = 0;
   constructor() { }
 
@@ -22,7 +137,6 @@ export class PortafolioComponent implements OnInit {
   verProyecto(num: number) {
     window.scroll(0, 220);
     this.proyectoSelect = num;
-
   }
 
 }

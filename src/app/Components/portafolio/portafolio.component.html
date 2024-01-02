@@ -15,359 +15,39 @@
     <div class="proyectos row row-cols-2 row-cols-lg-2"
         [ngClass]="{'inMas': proyectoSelect == 0, 'outMas': proyectoSelect != 0}">
 
-        <!-- Proyecto Salas -->
-        <!-- <div class="proyecto col">
-            <img src="assets/Proyecto_Salas.png" class="imagenProyecto" alt="">
+        <div *ngFor="let project of projects" class="proyecto col" data-aos="fade-up">
+            <img [src]="project.img" class="imagenProyecto" alt="">
 
             <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/Proyecto_Salas.png" class="imagenBN" alt="">
-            </section>
-
-            <section [ngClass]="{'abajo': !animaciones, 'lenguajes': animaciones}">
-                <h1 class="tituloProyecto">ADMINISTADOR DE SALAS</h1>
-
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">Angular</span></a>
-                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
-                    </div>
-                </div>
-
-                <div class="link-proyecto">
-                    <a href="https://carlosjaramillotinajero.github.io/angularSalas/" target="_blank" class="btn"><span
-                            class="hoverCursor">Visitar</span></a>
-                </div>
-
-                <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(1)"><span class="hoverCursor">Mas...</span></a>
-                </div>
-
-            </section>
-        </div> -->
-
-        <!-- Proyecto Expercom -->
-        <div class="proyecto col">
-            <img src="assets/Expercom.png" class="imagenProyecto" alt="">
-
-            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/Expercom.png" class="imagenBN" alt="">
+                <img [src]="project.img" class="imagenBN" alt="">
             </section>
 
             <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
-                <h1 class="tituloProyecto">EXPERCOM ECOMERCE</h1>
+                <h1 class="tituloProyecto">{{ project.title }}</h1>
 
                 <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">API</span></a>
-                        <a class="btn"><span class="hoverCursor">SQL</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
+                    <div class="d-flex justify-content-center tr"
+                        *ngFor="let technology of project.technologiesProfolie">
+                        <a class="btn" *ngFor="let item of technology"><span class="hoverCursor">{{ item
+                                }}</span></a>
                     </div>
                 </div>
                 <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(6)"><span class="hoverCursor">Mas...</span></a>
+                    <a class="btn" (click)="verProyecto(project.showNumber)"><span class="hoverCursor">Mas...</span></a>
                 </div>
                 <div class="link-proyecto">
-                    <a href="https://www.expercom.mx/" target="_blank" class="btn"><span
-                            class="hoverCursor">Visitar</span></a>
+                    <a [href]="project.link" target="_blank" class="btn"><span class="hoverCursor">Visitar</span></a>
                 </div>
             </section>
-
-        </div>
-
-        <!-- Proyecto Peliculas -->
-        <div class="proyecto col">
-            <img src="assets/Proyecto_Peliculas.png" class="imagenProyecto" alt="">
-
-            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/Proyecto_Peliculas.png" class="imagenBN" alt="">
-            </section>
-
-            <section [ngClass]="{'abajo': !animaciones, 'lenguajes': animaciones}">
-                <h1 class="tituloProyecto">SITIO DE PELICULAS</h1>
-
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">API</span></a>
-                        <a class="btn"><span class="hoverCursor">SQL</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <!-- <a class="btn"><span class="hoverCursor">Angular</span></a> -->
-                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
-                    </div>
-                </div>
-                <div class="link-proyecto">
-                    <a href="https://peliculas.carlosjaramillo.beauty/" target="_blank" class="btn"><span
-                            class="hoverCursor">Visitar</span></a>
-                </div>
-
-                <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(2)"><span class="hoverCursor">Mas...</span></a>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- Proyecto portafolio -->
-        <div class="proyecto col">
-            <img src="assets/portafolio.png" class="imagenProyecto" alt="">
-
-            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/portafolio.png" class="imagenBN" alt="">
-            </section>
-
-            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
-                <h1 class="tituloProyecto">PORTAFOLIO</h1>
-
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
-                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">Angular</span></a>
-                    </div>
-                </div>
-                <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(3)"><span class="hoverCursor">Mas...</span></a>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- Proyecto api rest vue -->
-        <div class="proyecto col">
-            <img src="assets/api-rest-vue.png" class="imagenProyecto" alt="">
-
-            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/api-rest-vue.png" class="imagenBN" alt="">
-            </section>
-
-            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
-                <h1 class="tituloProyecto">CONSUMO API REST CON VUE 3</h1>
-
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">SQL</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">LARAVEL</span></a>
-                        <a class="btn"><span class="hoverCursor">VUE</span></a>
-                    </div>
-                </div>
-                <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(7)"><span class="hoverCursor">Mas...</span></a>
-                </div>
-                <div class="link-proyecto">
-                    <a href="https://carlosjaramillo.beauty/consumo-ap-rest-vue/#/" target="_blank" class="btn"><span
-                            class="hoverCursor">Visitar</span></a>
-                </div>
-            </section>
-        </div>
-
-        <!-- Proyecto pedidos -->
-        <!-- <div class="proyecto col">
-            <img src="assets/pedidos.png" class="imagenProyecto" alt="">
-
-            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/pedidos.png" class="imagenBN" alt="">
-            </section>
-
-            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
-                <h1 class="tituloProyecto">ADMINISTADOR DE PEDIDOS</h1>
-
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">PHP</span></a>
-                        <a class="btn"><span class="hoverCursor">MSYQL</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">Angular</span></a>
-                        <a class="btn"><span class="hoverCursor">Laravel</span></a>
-                    </div>
-                </div>
-                <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(4)"><span class="hoverCursor">Mas...</span></a>
-                </div>
-                <div class="link-proyecto">
-                    <a href="https://carlosjaramillotinajero.github.io/pedidos/" target="_blank" class="btn"><span
-                            class="hoverCursor">Visitar</span></a>
-                </div>
-            </section>
-
-        </div> -->
-
-        <!-- Proyecto pacman -->
-        <div class="proyecto col">
-            <img src="assets/pacman.png" class="imagenProyecto" alt="">
-
-            <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
-                <img src="assets/pacman.png" class="imagenBN" alt="">
-            </section>
-
-            <section [ngClass]="{'abajo': !animaciones, 'lenguajes hoverCursor': animaciones}">
-                <h1 class="tituloProyecto">PACMAN CON ANGULAR</h1>
-
-                <div class="botones">
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">HTML5</span></a>
-                        <a class="btn"><span class="hoverCursor">CSS3</span></a>
-                        <a class="btn"><span class="hoverCursor">TypeScript</span></a>
-                        <a class="btn"><span class="hoverCursor">JavaScript</span></a>
-                    </div>
-                    <div class="d-flex justify-content-center tr">
-                        <a class="btn"><span class="hoverCursor">Angular</span></a>
-                    </div>
-                </div>
-                <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(5)"><span class="hoverCursor">Mas...</span></a>
-                </div>
-                <div class="link-proyecto">
-                    <a href="https://carlosjaramillotinajero.github.io/pacmanAngular/" target="_blank" class="btn"><span
-                            class="hoverCursor">Visitar</span></a>
-                </div>
-            </section>
-
         </div>
     </div>
 
-    <!-- <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 1, 'outMas': proyectoSelect != 1}"
-        nombreProyecto="Administracion de reservas de salas"
-        descripcionBreve="Este proyecto crea y gestiona reservas para diferentes salas."
-        descripcionProyecto="Este proyecto fue desarrollado utilizando Angular, un framework de FrontEnd, con el que se mostró todo el contenido obtenido a través de peticiones HTTP a una API creada con Laravel. Gracias a este proyecto, contamos con un sistema de gestión de reservas de salas, que nos permite agendar reservas a través de un sistema de gestión de reservas. Este proyecto nos brinda la posibilidad de realizar operaciones básicas de gestión de datos (CRUD) tanto para las salas como para las reservas"
-        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']"
-        img="assets/Proyecto_Salas.png" link="https://carlosjaramillotinajero.github.io/angularSalas/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/angularSalas"></app-proyecto-mas> -->
+    <div *ngFor="let project of projects">
+        <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
+            [ngClass]="{'inMas': proyectoSelect == project.showNumber, 'outMas': proyectoSelect != project.showNumber}"
+            [nombreProyecto]="project.moreProject.name" [descripcionBreve]="project.moreProject.shortDescription"
+            [descripcionProyecto]="project.moreProject.description" [lenguajes]="project.moreProject.technologies"
+            [img]="project.img" [link]="project.link" [linkGithub]="project.linkGitHub"></app-proyecto-mas>
+    </div>
 
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 7, 'outMas': proyectoSelect != 7}"
-        nombreProyecto="Consumo de API REST con Vue 3 (Composition API)"
-        descripcionBreve="Este proyecto consume una API creada con laravel, la cual tiene un CRUD de servicios y clientes."
-        descripcionProyecto="Para este proyecto, se diseñó y desarrolló una API robusta utilizando Laravel, incorporando el paquete de autenticación Sanctum de Laravel; En dicha API, se implementaron operaciones CRUD dedicadas a los clientes y servicios, proporcionando una gestión completa de los datos.
-
-        En la capa del frontend, se optó por Vue 3 con Composition API; Para la navegación del proyecto de una sola página (SPA), se empleó Vue Router, configurando rutas eficientes y asegurando su protección mediante la autenticación de los Guards de Vue Router; Además, se integró Vuex para almacenar de manera centralizada la información recuperada de la API relacionada con clientes y servicios; La sincronización automática entre componentes se logró gracias a la conexión de estos componentes con los estados de Vuex, permitiendo una experiencia coherente y en tiempo real.
-        
-        En el proceso de validación de datos, se implementó Vuelidate, una herramienta que garantiza la integridad de la información antes de realizar las peticiones a la API; Esto se traduce en una capa adicional de seguridad y consistencia en el flujo de datos.
-        
-        La gestión de solicitudes HTTP a la API se simplificó utilizando Axios, una biblioteca conocida por su eficiencia y flexibilidad en el manejo de comunicaciones basadas en HTTP; Para orquestar estas solicitudes y mantener un código organizado, se creó una clase dedicada que abstrae y centraliza todas las interacciones con la API REST.
-        
-        Para mejorar la experiencia del usuario, se implementó Toastify, una biblioteca que facilita la presentación de notificaciones de manera atractiva y efectiva; Esto garantiza que cualquier acción importante, como la creación o modificación de clientes y servicios, se comunique de manera clara y visualmente agradable al usuario final."
-        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel', 'Vue 3', 'Vue Router', 'Vuex', 'Vuelidate', 'Axios']"
-        img="assets/api-rest-vue.png" link="https://carlosjaramillo.beauty/consumo-ap-rest-vue/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/Consumo_API_REST_Vue_Composition_API"></app-proyecto-mas>
-
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 2, 'outMas': proyectoSelect != 2}" nombreProyecto="Sitio de peliculas"
-        descripcionBreve="Este proyecto simula el comportamiento de un sitio de peliculas el cual cuenta con un catalogo de peliculas."
-        descripcionProyecto="
-        Este proyecto desarrollado en Laravel es una aplicación web para ver un catálogo de películas organizadas por
-        categorías; Además, cuenta con un sistema de autenticación de usuarios los cuales pueden crear una lista 
-        personalizada de películas para ver después, para mejorar la experiencia del usuario, se ha utilizado
-        Bootstrap para algunos estilos de la interfaz de usuario, y Splide para crear carruseles de películas.
-
-        Una de las características más destacadas de este proyecto es la integración con la API de OMDb;
-        El usuario administrador puede buscar películas por nombre y agregarlas a el catalogo de peliculas, 
-        además, el proyecto cuenta con un sistema de administración (CRUD) para agregar nuevas películas y categorías, 
-        el cual solo el usuario administrador tiene acceso a estas funciones.
-
-        Para mejorar la seguridad del proyecto, se ha implementado middleware de rutas para controlar el acceso a
-        ciertas partes de la aplicación; En resumen, este proyecto es una aplicación web completa que ofrece una 
-        experiencia de usuario mejorada y una amplia gama de funciones para ver y administrar películas.
-
-        Este sitio es responsive, por lo que el contenido se puede visualizar tanto en dispositivos móviles 
-        como en computadoras portátiles."
-        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Livewire', 'Consumo de API', 'MYSQL', 'Laravel']"
-        img="assets/Proyecto_Peliculas.png" link="https://peliculas.carlosjaramillo.beauty/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/PeliculasLaravel"></app-proyecto-mas>
-
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 6, 'outMas': proyectoSelect != 6}" nombreProyecto="Expercom Ecomerce"
-        descripcionBreve="Desarrollo del Ecomerce para la empresa Expercom." descripcionProyecto="
-
-        Integración de APIs de Mayoristas: Implementé conexiones a diversas APIs de mayoristas, como Exel, CtOnline, PCH, TVC, CVA, Intcomex y DC Mayorista; 
-        Utilicé los componentes de Laravel para consumir estas APIs de manera eficiente y obtener datos actualizados de los catálogos de productos, precios y disponibilidad;
-        Mediante comandos y tareas programadas utilizando el Kernel de comandos y el sistema de cron de Laravel, automatizé la obtención de datos 
-        y la creación de órdenes en Expercom.
-
-        Desarrollo de Módulos Avanzados: Desarrolle módulos personalizados tanto en el backend del administrador del sitio como en la interfaz pública de Expercom; 
-        Utilicé componentes del framework Livewire de Laravel en algunos modulos para crear interacciones dinámicas y en tiempo real, mejorando la experiencia
-        del usuario y aumentando la eficiencia en la manipulación y visualización de datos.
-
-        Mejoras en el Frontend: Realicé mejoras en el frontend tanto del administrador del sitio como en la interfaz pública de Expercom; Esto incluyó la creación de nuevos
-        diseños y mejoras en los existentes utilizando CSS y JavaScript, con el objetivo de mejorar la apariencia y experiencia de usuario de la página.
-
-        Desarrollo de la mayor parte de la Lógica del Ecommerce: Construí la mayor parte de la lógica del Ecommerce de Expercom utilizando las estructuras y funcionalidades proporcionadas
-        por Laravel; Esto incluyó el desarrollo de un sistema de gestión de productos para administrar y mostrar los catálogos de productos, el diseño e implementación de 
-        un carrito de compras con capacidad de gestión de inventario, la implementación de un sistema de autenticación y registro de usuarios,
-        y la creación de un panel de administración completo para que los propietarios y administradores gestionen pedidos, productos, clientes y 
-        otras configuraciones relevantes.
-        
-        Estas tareas muestran mi capacidad para trabajar con APIs externas, desarrollar módulos personalizados, mejorar el frontend de una aplicación y 
-        crear la lógica completa de un Ecommerce; Estoy orgulloso de mi contribución al proyecto Expercom y considero que estas habilidades serán valiosas en 
-        futuros proyectos."
-        [lenguajes]="['HTML5', 'CSS3', 'JavaScript', 'PHP', 'Livewire', 'Consumo de APIs', 'MYSQL', 'Laravel', 'Tareas Cron']"
-        img="assets/Expercom.png" link="https://www.expercom.mx/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero"></app-proyecto-mas>
-
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 3, 'outMas': proyectoSelect != 3}" nombreProyecto="Portafolio"
-        descripcionBreve="Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes."
-        descripcionProyecto="En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, JavaScript, TypeScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles."
-        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'Angular']" img="assets/portafolio.png"
-        link="https://carlosjaramillotinajero.github.io/Portafolio/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/Portafolio"></app-proyecto-mas>
-
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 4, 'outMas': proyectoSelect != 4}"
-        nombreProyecto="Administrador de pedidos"
-        descripcionBreve="Este proyecto está diseñado para organizar y llevar un registro de los pedidos que he llevado en mi trabajo como repartidor de una pollería"
-        descripcionProyecto="Este proyecto sirve como un administrador de pedidos que he llevado en mi trabajo como repartidor. Cuenta con un CRUD (Create, Read, Update, Delete) de pedidos por llevar y pedidos llevados, así como un CRUD de deudas para poder gestionarlas. Para el front-end de este proyecto, se utilizó el framework de Angular y para el back-end, se hicieron peticiones HTTP a una API creada en Laravel.
-        Este proyecto me resulta muy útil porque me permite llevar un control preciso de cuánto dinero recibo por el precio del pedido y cuánto me dan de propina por cada pedido; De esta manera, puedo revisar en cualquier momento los registros de los pedidos y asegurarme de que todo esté en orden."
-        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'PHP', 'MYSQL', 'Laravel', 'Angular']" img="assets/pedidos.png"
-        link="https://carlosjaramillotinajero.github.io/pedidos/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/pedidos"></app-proyecto-mas>
-
-    <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
-        [ngClass]="{'inMas': proyectoSelect == 5, 'outMas': proyectoSelect != 5}" nombreProyecto="Pacman con Angular"
-        descripcionBreve="Este proyecto es un videojuego 2D tipo Pacman."
-        descripcionProyecto="Este proyecto fue desarrollado con Angular y utilizó el archivo app_component_ts para implementar la lógica del juego. Se utilizaron TimeOut's e Interval's para controlar el comportamiento del jugador y los fantasmas. Este proyecto es reponsive, por lo cual se puede jugar tambien en dispositivos móviles."
-        [lenguajes]="['HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Angular']" img="assets/pacman.png"
-        link="https://carlosjaramillotinajero.github.io/pacmanAngular/"
-        linkGithub="https://github.com/CarlosJaramilloTinajero/pacmanAngular"></app-proyecto-mas>
 </div>

@@ -19,7 +19,8 @@
         </svg><span class="hoverCursor d-none d-md-block">Inicio</span>
         <section class="hoverCursor" [ngClass]="{'foot': selected !=0, 'foot2': selected==0}"></section>
     </li>
-    <li class="navLinkA hoverCursor" (click)="cambiarSelect(1)" [ngClass]="{'selected': selected == 1}">
+    <li class="navLinkA hoverCursor" onclick="changeSection()" (click)="cambiarSelect(1)"
+        [ngClass]="{'selected': selected == 1}">
         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-briefcase-fill"
             viewBox="0 0 16 16">
             <path
@@ -29,7 +30,8 @@
         </svg><span class="hoverCursor d-none d-md-block">Portafolio</span>
         <footer class="hoverCursor" [ngClass]="{'foot': selected !=1, 'foot2': selected==1}"></footer>
     </li>
-    <li class="navLinkA hoverCursor" (click)="cambiarSelect(2)" [ngClass]="{'selected': selected == 2}">
+    <li class="navLinkA hoverCursor" onclick="changeSection()" (click)="cambiarSelect(2)"
+        [ngClass]="{'selected': selected == 2}">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-code-fill"
             viewBox="0 0 16 16">
             <path
