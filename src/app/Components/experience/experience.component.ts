@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PopupService } from '../../Services/popup.service';
+import { APP_DEBUG } from 'src/app/constants';
 
 @Component({
   selector: 'app-experience',
@@ -12,7 +14,7 @@ export class ExperienceComponent implements OnInit {
   @Input() iluminacion: boolean = false;
 
   jobSelected: number = 0;
-  constructor() { }
+  constructor(private popUpService: PopupService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,14 @@ export class ExperienceComponent implements OnInit {
   return(): void {
     this.jobSelected = 0;
     window.scroll(0, 0);
+  }
+
+  clickVisitJob(company: string): void {
+    if (APP_DEBUG) return;
+    this.popUpService.typeSend('Entraron a la pagina de la empresa ' + company + ' desde el apartado de experiencia del portafolio').subscribe(
+      data => {
+      }
+    )
   }
 
 }

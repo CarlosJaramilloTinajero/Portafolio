@@ -13,6 +13,7 @@ export class PopupService {
   endpoint: string = 'https://api.carlosjaramillo.beauty';
   urlPopUp: string = "/checkPup";
   urlPortafolio: string = '/portafolio';
+  urlTypeSend: string = '/api/send-mail';
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,10 @@ export class PopupService {
 
   portafolio(): Observable<any> {
     return this.http.post<any>(this.endpoint + this.urlPortafolio, {});
+  }
+
+  typeSend(msg: string = ''): Observable<any> {
+    return this.http.post<any>(this.endpoint + this.urlTypeSend, { msg: msg });
   }
 
 }

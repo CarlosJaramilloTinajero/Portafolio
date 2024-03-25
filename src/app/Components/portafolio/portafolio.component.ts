@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PopupService } from 'src/app/Services/popup.service';
+import { APP_DEBUG } from 'src/app/constants';
 
 @Component({
   selector: 'app-portafolio',
@@ -13,14 +15,17 @@ export class PortafolioComponent implements OnInit {
   @Input() retraso: number = 0;
   @Input() iliminacion: boolean = false;
 
+  filter: String = '';
+
   projects: any = [
     {
-      title: 'EXPERCOM ECOMERCE',
+      title: 'EXPERCOM ECOMMERCE LARAVEL',
       img: 'assets/Expercom.png',
       showNumber: 6,
       link: 'https://www.expercom.mx/',
       linkGitHub: 'https://github.com/CarlosJaramilloTinajero',
-      technologiesProfolie: [['HTML5', 'CSS', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'API', 'SQL', 'Laravel'],
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
       moreProject: {
         name: 'Expercom Ecomerce',
         shortDescription: 'Desarrollo del Ecomerce para la empresa Expercom.',
@@ -29,11 +34,12 @@ export class PortafolioComponent implements OnInit {
       }
     },
     {
-      title: 'SITIO DE PELICULAS',
+      title: 'PELICULAS DE CHILL LARAVEL',
       img: 'assets/Proyecto_Peliculas.png',
       showNumber: 2,
       link: 'https://peliculas.carlosjaramillo.beauty/',
       linkGitHub: 'https://github.com/CarlosJaramilloTinajero/PeliculasLaravel',
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'API', 'SQL', 'Laravel'],
       technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
       moreProject: {
         name: 'Sitio de peliculas',
@@ -43,17 +49,33 @@ export class PortafolioComponent implements OnInit {
       }
     },
     {
-      title: 'PORTAFOLIO',
-      img: 'assets/portafolio.png',
-      showNumber: 3,
-      link: 'https://carlosjaramillo.beauty/portafolio',
-      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/Portafolio',
-      technologiesProfolie: [['HTML5', 'CSS', 'JavaScript', 'TypeScript'], ['Angular']],
+      title: 'PRODUCTS HUB ADMIN REACT',
+      img: 'assets/products-hub-admin.png',
+      showNumber: 9,
+      link: 'https://carlosjaramillo.beauty/products-hub-admin/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/react-product-admin',
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'JSX', 'PHP', 'API', 'SQL', 'Laravel', 'React'],
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript', 'JSX'], ['PHP', 'SQL', 'API'], ['React', 'Laravel']],
       moreProject: {
-        name: 'Portafolio',
-        shortDescription: 'Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes.',
-        description: 'En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, JavaScript, TypeScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles.',
-        technologies: ['HTML5', 'CSS3', 'TypeScript', 'Angular'],
+        name: 'Products Hub amdin',
+        shortDescription: 'Administrador de productos, para la pagina Productus Hub, APP creada con React.',
+        description: 'El Administrador de Productos ha sido diseñado de manera integral para gestionar productos, categorías, subcategorías y marcas dentro del entorno de la aplicación Products Hub, la cual tambien fue desarrollada por mí. Esta aplicación se fundamenta en React Router DOM para implementar el enrutamiento de la Single Page Application (SPA); En conjunto con esta arquitectura, se emplea Axios para facilitar las peticiones a la API asociada, la cual se encuentra disponible para su utilización y revisión. En la estructura de esta aplicación, se ha integrado Toastify como una solución para la presentación de notificaciones relacionadas con las operaciones realizadas mediante peticiones a la API, proporcionando una experiencia de usuario informada y receptiva. Dentro del código base, se ha adoptado una estrategia que aprovecha los Hooks useState y useEffect de React para la creación y gestión eficiente de los diversos componentes que componen la aplicación; La utilización de estos Hooks no solo simplifica la manipulación del estado y efectos secundarios, sino que también mejora la estructura general del código, permitiendo un desarrollo más mantenible y escalable. Adicionalmente, se han creado Custom Hooks específicos para la reutilización de código entre distintos componentes, promoviendo así la modularidad y la eficiencia en el desarrollo; Este enfoque contribuye a la cohesión del código, permitiendo una mayor flexibilidad y adaptabilidad a medida que evoluciona el proyecto. En resumen, el Administrador de Productos no solo ofrece una interfaz intuitiva y funcional para la gestión de productos, categorías, subcategorías y marcas, sino que también se beneficia de una arquitectura tecnológica avanzada que incorpora las mejores prácticas de desarrollo y facilita la expansión futura del sistema.',
+        technologies: ['PHP', 'SQL', 'HTML5', 'CSS3', 'JavaScript', 'JSX', 'Laravel', 'Santcum', 'React', 'React router DOM', 'Toastify', 'Axios'],
+      }
+    },
+    {
+      title: 'PRODUCTS HUB ECOMMERCE VUE 3',
+      img: 'assets/products-hub.png',
+      showNumber: 10,
+      link: 'https://carlosjaramillo.beauty/products-hub/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/vue-products-hub',
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'API', 'SQL', 'Laravel', 'Vue 3'],
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'SQL', 'API'], ['Vue 3', 'Laravel']],
+      moreProject: {
+        name: 'Products Hub Ecommerce con Vue 3',
+        shortDescription: 'Ecommerce demostrativo desarrollado con Vue 3 Compositio API',
+        description: 'El desarrollo de un Ecommerce utilizando el framework de Front End Vue 3, en su modalidad Composition API, representa una implementación avanzada y eficiente en términos de arquitectura y rendimiento; Este proyecto se integra con una API robusta creada con Laravel, aprovechando el paquete de autenticación Sanctum, así como un sistema de autenticación personalizado desarrollado internamente. La estructura de enrutamiento se ha configurado mediante el paquete Vue Router, permitiendo la construcción de una Single Page Application (SPA) fluida y altamente receptiva; Además, se ha adoptado Vuex como solución para la gestión centralizada del estado de la aplicación, lo que facilita la coordinación de datos entre todos los componentes. La comunicación con la API se realiza de manera eficiente a través de la biblioteca Axios, permitiendo la emisión y recepción de solicitudes HTTP de manera fluida y segura; Para mejorar la experiencia del usuario, se ha implementado la biblioteca Vue-Toastify, proporcionando notificaciones en tiempo real para las diversas interacciones con la API, lo que garantiza una interacción más dinámica. Es importante destacar que este sitio se presenta como un entorno demostrativo, exento de la capacidad de generar ingresos o realizar pedidos con los productos expuestos; Su propósito principal radica en exhibir las capacidades técnicas y funcionales del Ecommerce desarrollado, así como servir como un entorno de pruebas para validar su desempeño y funcionalidad en un entorno simulado de producción.',
+        technologies: ['PHP', 'SQL', 'HTML5', 'CSS3', 'JavaScript', 'Laravel', 'Santcum', 'Vue 3', 'Vuex', 'Vue router', 'Toastify', 'Axios'],
       }
     },
     {
@@ -62,7 +84,8 @@ export class PortafolioComponent implements OnInit {
       showNumber: 7,
       link: 'https://carlosjaramillo.beauty/consumo-ap-rest-vue/',
       linkGitHub: 'https://github.com/CarlosJaramilloTinajero/Consumo_API_REST_Vue_Composition_API',
-      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel', 'Vue']],
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'API', 'SQL', 'Laravel', 'Vue 3'],
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel', 'Vue 3']],
       moreProject: {
         name: 'Consumo de API REST con Vue 3 (Composition API)',
         shortDescription: 'Este proyecto consume una API creada con laravel, la cual tiene un CRUD de servicios y clientes.',
@@ -71,11 +94,27 @@ export class PortafolioComponent implements OnInit {
       }
     },
     {
+      title: 'LISTA DE TAREAS VUE 3',
+      img: 'assets/task-list.png',
+      showNumber: 8,
+      link: 'https://carlosjaramillo.beauty/task-list/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/task_list_Vue',
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'API', 'SQL', 'Laravel', 'Vue 3'],
+      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel', 'Vue 3']],
+      moreProject: {
+        name: 'Lista de tareas con Vue 3 (Composition API) y Laravel',
+        shortDescription: 'Este proyecto consume una API creada con laravel, la cual tiene un CRUD de tareas y listas de tareas.',
+        description: 'Para este proyecto, se diseñó y desarrolló una API robusta utilizando Laravel, incorporando el paquete de autenticación Sanctum de Laravel; En dicha API, se implementaron operaciones CRUD dedicadas a las tareas y lista de tareas, proporcionando una gestión completa de los datos. En la capa del frontend, se optó por Vue 3 con Composition API; Para la navegación del proyecto de una sola página(SPA), se empleó Vue Router, configurando rutas eficientes y asegurando su protección mediante la autenticación de los Guards de Vue Router; Además, se integró Vuex para almacenar de manera centralizada la información recuperada de la API relacionada con las tareas y listas de tareas; La sincronización automática entre componentes se logró gracias a la conexión de estos componentes con los estados de Vuex, permitiendo una experiencia coherente y en tiempo real. La gestión de solicitudes HTTP a la API se simplificó utilizando Axios, una biblioteca conocida por su eficiencia y flexibilidad en el manejo de comunicaciones basadas en HTTP; Para orquestar estas solicitudes y mantener un código organizado, se creó una clase dedicada que abstrae y centraliza todas las interacciones con la API REST. Para cada acción que se haga con las tareas o listas de tareas, se manda un correo electrónico al email del usuario, ya sea cuando se crea una tarea o cuando se archiva una lista de tareas. Para mejorar la experiencia del usuario, se implementó Toastify, una biblioteca que facilita la presentación de notificaciones de manera atractiva y efectiva; Esto garantiza que cualquier acción importante, como la creación o modificación de tareas o listas de tareas, se comunique de manera clara y visualmente agradable al usuario final.',
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel', 'Vue 3', 'Vue Router', 'Vuex', 'Axios'],
+      }
+    },
+    {
       title: 'PACMAN CON ANGULAR',
       img: 'assets/pacman.png',
       showNumber: 5,
       link: 'https://carlosjaramillotinajero.github.io/pacmanAngular/',
       linkGitHub: 'https://github.com/CarlosJaramilloTinajero/pacmanAngular',
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Angular'],
       technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript', 'TypeScript'], ['Angular']],
       moreProject: {
         name: 'Pacman con Angular',
@@ -85,17 +124,18 @@ export class PortafolioComponent implements OnInit {
       }
     },
     {
-      title: 'LISTA DE TAREAS',
-      img: 'assets/task-list.png',
-      showNumber: 8,
-      link: 'https://carlosjaramillo.beauty/task-list/',
-      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/task_list_Vue',
-      technologiesProfolie: [['HTML5', 'CSS3', 'JavaScript'], ['PHP', 'API', 'SQL'], ['Laravel']],
+      title: 'PORTAFOLIO',
+      img: 'assets/portafolio.png',
+      showNumber: 3,
+      link: 'https://carlosjaramillo.beauty/portafolio',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero/Portafolio',
+      targets: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Angular'],
+      technologiesProfolie: [['HTML5', 'CSS', 'JavaScript', 'TypeScript'], ['Angular']],
       moreProject: {
-        name: 'Lista de tareas con Vue 3 (Composition API) y Laravel',
-        shortDescription: 'Este proyecto consume una API creada con laravel, la cual tiene un CRUD de tareas y listas de tareas.',
-        description: 'Para este proyecto, se diseñó y desarrolló una API robusta utilizando Laravel, incorporando el paquete de autenticación Sanctum de Laravel; En dicha API, se implementaron operaciones CRUD dedicadas a las tareas y lista de tareas, proporcionando una gestión completa de los datos. En la capa del frontend, se optó por Vue 3 con Composition API; Para la navegación del proyecto de una sola página(SPA), se empleó Vue Router, configurando rutas eficientes y asegurando su protección mediante la autenticación de los Guards de Vue Router; Además, se integró Vuex para almacenar de manera centralizada la información recuperada de la API relacionada con las tareas y listas de tareas; La sincronización automática entre componentes se logró gracias a la conexión de estos componentes con los estados de Vuex, permitiendo una experiencia coherente y en tiempo real. La gestión de solicitudes HTTP a la API se simplificó utilizando Axios, una biblioteca conocida por su eficiencia y flexibilidad en el manejo de comunicaciones basadas en HTTP; Para orquestar estas solicitudes y mantener un código organizado, se creó una clase dedicada que abstrae y centraliza todas las interacciones con la API REST. Para cada acción que se haga con las tareas o listas de tareas, se manda un correo electrónico al email del usuario, ya sea cuando se crea una tarea o cuando se archiva una lista de tareas. Para mejorar la experiencia del usuario, se implementó Toastify, una biblioteca que facilita la presentación de notificaciones de manera atractiva y efectiva; Esto garantiza que cualquier acción importante, como la creación o modificación de tareas o listas de tareas, se comunique de manera clara y visualmente agradable al usuario final.',
-        technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MYSQL', 'Laravel', 'Vue 3', 'Vue Router', 'Vuex', 'Axios'],
+        name: 'Portafolio',
+        shortDescription: 'Este proyecto presenta una breve descripción de mí y mis habilidades en el desarrollo web, así como una selección de mis proyectos más relevantes.',
+        description: 'En este proyecto, muestro algunas de mis habilidades en el desarrollo web, utilizando lenguajes como HTML, CSS, JavaScript, TypeScript, PHP y MySQL, así como frameworks y librerías para mejorar y optimizar mi trabajo y los resultados. Además, presento un portafolio con algunos de los proyectos que he realizado, utilizando diversos lenguajes y frameworks de back-end y front-end. Para facilitar el contacto, he incluido una sección de contacto en la que podrás encontrar mis datos de contacto y enviarme un mensaje. Este proyecto es responsive por lo que se puede visualizar en dispositivos móviles.',
+        technologies: ['HTML5', 'CSS3', 'TypeScript', 'Angular'],
       }
     },
     // {
@@ -128,15 +168,38 @@ export class PortafolioComponent implements OnInit {
     // }
   ];
 
+  projectsFilter: any = this.projects;
+
   proyectoSelect: number = 0;
-  constructor() { }
+  constructor(private popUpService: PopupService) { }
 
   ngOnInit(): void {
   }
 
-  verProyecto(num: number) {
+  verProyecto(num: number, project: string) {
     window.scroll(0, 220);
     this.proyectoSelect = num;
+    if (APP_DEBUG) return;
+    this.popUpService.typeSend('Click en el proyecto ' + project + ' del portafolio y se abrio la información el proyecto').subscribe(
+      data => {
+
+      }
+    );
+  }
+
+  enterUrlProject(project: string): void {
+    if (APP_DEBUG) return;
+    this.popUpService.typeSend('Click en el proyecto ' + project + ' del portafolio y se abrio el proyecto').subscribe(
+      data => {
+
+      }
+    );
+  }
+
+  changeFilter(): void {
+    if (this.filter === '') this.projectsFilter = this.projects;
+    else
+      this.projectsFilter = this.projects.filter((value: any) => value?.targets?.some((elm: any) => elm === this.filter))
   }
 
 }

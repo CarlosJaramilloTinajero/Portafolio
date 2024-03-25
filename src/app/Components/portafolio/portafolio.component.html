@@ -3,7 +3,7 @@
     <hr class="hr1 hrcenter">
     <p class="textoP" [ngClass]="{'txtShadowBlancoSm': iliminacion}">
         ¡Bienvenido a mi Portafolio Web! Aquí encontrarás una variedad de proyectos en los que
-        he trabajado, destacando mis habilidades en el desarrollo Frontend con lenguajes como HTML, CSS, JavaScript y
+        he trabajado, destacando mis habilidades en el desarrollo Frontend con lenguajes como HTML5, CSS, JavaScript y
         TypeScript. He utilizado Frameworks populares como Vue.js, Angular y BootStrap, así como diversas librerías de
         CSS y JavaScript para crear experiencias interactivas y atractivas. <br>
         Además, también podrás explorar proyectos en los que me he trabajado en el desarrollo backend utilizando los
@@ -12,10 +12,32 @@
     </p>
     <hr>
 
+    <div class="filter-tecnology" [ngStyle]="{'opacity': proyectoSelect === 0 ? '1' : '0'}">
+        <div class="d-block">
+            <select (change)="changeFilter()" [(ngModel)]="filter" class="form-select">
+                <option value="">Filtrar</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="TypeScript">TypeScript</option>
+                <option value="HTML5">HTML5</option>
+                <option value="CSS3">CSS3</option>
+                <option value="PHP">PHP</option>
+                <option value="SQL">SQL</option>
+                <option value="Laravel">Laravel</option>
+                <option value="Angular">Angular</option>
+                <option value="Vue 3">Vue 3</option>
+                <option value="Angular">Angular</option>
+                <option value="JSX">JSX</option>
+                <option value="React">React</option>
+                <option value="API">API</option>
+            </select>
+        </div>
+    </div>
+
     <div class="proyectos row row-cols-2 row-cols-lg-2"
         [ngClass]="{'inMas': proyectoSelect == 0, 'outMas': proyectoSelect != 0}">
+        <!-- Terminar estos filtros y subir los cambios al servidor de proyecto administrador de products hub -->
 
-        <div *ngFor="let project of projects" class="proyecto col" data-aos="fade-up">
+        <div *ngFor="let project of projectsFilter" class="proyecto col" data-aos="fade-up">
             <img [src]="project.img" class="imagenProyecto" alt="">
 
             <section [ngClass]="{'abajo': !animaciones, 'proyecto-mas': animaciones}">
@@ -33,16 +55,18 @@
                     </div>
                 </div>
                 <div class="mas-proyecto">
-                    <a class="btn" (click)="verProyecto(project.showNumber)"><span class="hoverCursor">Mas...</span></a>
+                    <a class="btn" (click)="verProyecto(project.showNumber, project.title)"><span
+                            class="hoverCursor">Mas...</span></a>
                 </div>
                 <div class="link-proyecto">
-                    <a [href]="project.link" target="_blank" class="btn"><span class="hoverCursor">Visitar</span></a>
+                    <a [href]="project.link" (click)="enterUrlProject(project.title)" target="_blank" class="btn"><span
+                            class="hoverCursor">Visitar</span></a>
                 </div>
             </section>
         </div>
     </div>
 
-    <div *ngFor="let project of projects">
+    <div *ngFor="let project of projectsFilter">
         <app-proyecto-mas class="mas_Proyecto" [iliminacion]="iliminacion" (regresarEvent)="proyectoSelect = $event"
             [ngClass]="{'inMas': proyectoSelect == project.showNumber, 'outMas': proyectoSelect != project.showNumber}"
             [nombreProyecto]="project.moreProject.name" [descripcionBreve]="project.moreProject.shortDescription"

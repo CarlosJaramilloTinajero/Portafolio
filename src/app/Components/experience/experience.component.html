@@ -39,7 +39,8 @@
 
             <p [ngClass]="{'txtShadowBlancoSm': iluminacion}" class="title" style="color: rgb(232, 73, 0) !important;">
                 <span class="company">Mervins</span> <span class="link-company ms-2"><a
-                        href="https://www.mervins.com.mx/" target="_blank">Visitar</a></span> <br>
+                        href="https://www.mervins.com.mx/" target="_blank"
+                        (click)="clickVisitJob('Mervins')">Visitar</a></span> <br>
                 <span class="date-experience">Enero 2023 - Julio 2023</span>
             </p>
             <p [ngClass]="{'txtShadowBlancoSm': iluminacion}" class="text-experience">

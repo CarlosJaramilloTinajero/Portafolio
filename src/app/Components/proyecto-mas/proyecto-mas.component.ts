@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { PopupService } from 'src/app/Services/popup.service';
+import { APP_DEBUG } from 'src/app/constants';
 
 @Component({
   selector: 'app-proyecto-mas',
@@ -20,7 +22,7 @@ export class ProyectoMasComponent implements OnInit {
 
   @Output() regresarEvent: EventEmitter<number> = new EventEmitter();
 
-  constructor() {
+  constructor(private popUpService: PopupService) {
   }
 
   regresar() {
@@ -31,5 +33,20 @@ export class ProyectoMasComponent implements OnInit {
     this.letras = this.descripcionProyecto.split("");
   }
 
+  enterUrlProject(): void {
+    if (APP_DEBUG) return;
+    this.popUpService.typeSend('Click en el proyecto ' + this.nombreProyecto + ' del portafolio y se abrio el proyecto').subscribe(
+      data => {
+      }
+    );
+  }
+
+  enterUrlProjectGit(): void {
+    if (APP_DEBUG) return;
+    this.popUpService.typeSend('Click en el proyecto ' + this.nombreProyecto + ' del portafolio y se abrio el repositorio').subscribe(
+      data => {
+      }
+    );
+  }
 
 }

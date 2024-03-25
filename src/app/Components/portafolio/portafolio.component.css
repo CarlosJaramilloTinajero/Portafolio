@@ -266,8 +266,37 @@
 
 .mas_Proyecto {
     position: absolute;
-    top: 0;
+    top: 20px;
     width: 100%;
     max-width: 1300px;
     transition: all 1.5s ease-in-out;
+}
+
+.filter-tecnology {
+    margin: 20px 0;
+    display: flex;
+    justify-content: start;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.filter-tecnology .form-select {
+    background-color: transparent !important;
+    border-radius: 1px !important;
+    border: 1px rgba(207, 207, 207, 0.6) solid !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    text-shadow: 0 0 10px rgba(207, 207, 207, 0.6) !important;
+    font-size: 15px !important;
+    color: white;
+    box-shadow: 0 0 10px rgba(207, 207, 207, 0.3);
+    transition: box-shadow .3s ease-in-out;
+}
+
+.filter-tecnology .form-select option {
+    background-color: transparent !important;
+    color: black !important;
+}
+
+.filter-tecnology .form-select:focus {
+    border: 1px rgba(207, 207, 207, 0.6) solid !important;
+    box-shadow: 0 0 15px rgba(207, 207, 207, 0.8);
 }

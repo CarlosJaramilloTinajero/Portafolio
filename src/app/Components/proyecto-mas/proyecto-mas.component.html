@@ -17,11 +17,13 @@
 
     <div class="divImagen">
         <header class="botones">
-            <a target="_blank" [href]="link" class="link btn btn2 hoverCursor">Ir al sitio web</a>
-            <a target="_blank" [href]="linkGithub" class="btn3"> <img src="assets/git.png" alt=""
-                    class="icon hoverCursor"></a>
+            <a target="_blank" [href]="link" (click)="enterUrlProject()" class="link btn btn2 hoverCursor">Ir al sitio
+                web</a>
+            <a target="_blank" (click)="enterUrlProjectGit()" [href]="linkGithub" class="btn3"> <img src="assets/git.png"
+                    alt="" class="icon hoverCursor"></a>
         </header>
-        <a target="_blank" [href]="link"><img [src]="img" class="imagen hoverCursor" alt=""></a>
+        <a target="_blank" [href]="link" (click)="enterUrlProject()"><img [src]="img" class="imagen hoverCursor"
+                alt=""></a>
     </div>
     <div class="mb-m"></div>
     <h4 class="subtitle-proyect" [ngClass]="{'txtShadowBlancoMd': iliminacion}">Sobre este proyecto</h4>
@@ -48,11 +50,11 @@
         <h4 class="subtitle-proyect" [ngClass]="{'txtShadowBlancoMd': iliminacion}">Links</h4>
         <hr class="hr1">
         <h6 class="description" style="text-align: unset;" [ngClass]="{'txtShadowBlancoSm': iliminacion}">Link del
-            proyecto: <a target="_blank" class="hoverCursor" [href]="link"
+            proyecto: <a target="_blank" class="hoverCursor" (click)="enterUrlProject()" [href]="link"
                 style="text-decoration: none; text-shadow: none;">{{link}}</a> </h6>
 
         <h6 class="description" style="text-align: unset;" [ngClass]="{'txtShadowBlancoSm': iliminacion}">Link GitHub:
-            <a target="_blank" class="hoverCursor" [href]="linkGithub"
+            <a target="_blank" (click)="enterUrlProjectGit()" class="hoverCursor" [href]="linkGithub"
                 style="text-decoration: none;  text-shadow: none;">{{linkGithub}}</a>
         </h6>
     </div>

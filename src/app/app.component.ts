@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopupService } from './Services/popup.service';
+import { APP_DEBUG } from './constants';
 
 @Component({
   selector: 'app-root',
@@ -410,13 +411,15 @@ export class AppComponent implements OnInit {
 
   // Pop-up
   clousePup(event: number): void {
-    this.popUpService.checkPup(event).subscribe(
-      data => {
-        // console.log(data);
-      },
-      error => {
-      }
-    );
+    if (!APP_DEBUG) {
+      this.popUpService.checkPup(event).subscribe(
+        data => {
+          // console.log(data);
+        },
+        error => {
+        }
+      );
+    }
     this.leftPup = -500;
     this.scalePup = .5;
   }
@@ -425,6 +428,7 @@ export class AppComponent implements OnInit {
     if (!localStorage.getItem('checkPup') && document.documentElement.clientWidth > 1150) {
       this.pupVisible = true;
     }
+    if (APP_DEBUG) return;
     this.popUpService.portafolio().subscribe(
       data => {
       },
