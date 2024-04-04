@@ -21,7 +21,8 @@
         datos y lógica del servidor.
         <br>
         Destaco en la implementación de frameworks potentes como <a [href]="'#' + tecnologyTitle[1]" class="text-resalt"
-            (click)="showText(tecnologyText[1].length, tecnologyTitle[1])">Vue</a> y <a [href]="'#' + tecnologyTitle[7]"
+            (click)="showText(tecnologyText[1].length, tecnologyTitle[1])">Vue</a>, <a [href]="'#' + tecnologyTitle[8]" class="text-resalt"
+            (click)="showText(tecnologyText[8].length, tecnologyTitle[8])">React</a>  y <a [href]="'#' + tecnologyTitle[7]"
             class="text-resalt" (click)="showText(tecnologyText[7].length, tecnologyTitle[7])">Angular</a>
         para el
         desarrollo ágil y estructurado de
@@ -37,9 +38,21 @@
     </p>
     <hr>
 
-    <div class="mb-5">
-        <div class="skills-text" data-aos="fade-up" [id]="tecnologyTitle[z]"
-            *ngFor="let textTecnology of tecnologyText; let z = index">
+    <section class="skills-image-container">
+        <div *ngFor="let technology of tecnologyImg" data-aos="fade-down">
+            <div class="skill-img">
+                <p class="title-skill-image">{{technology.name}}</p>
+                <p class="percentage">{{technology.percentage}}%</p>
+                <section class="img-icon img-inside">
+                    <img [src]="technology.img" alt="">
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="mb-5">
+        <div *ngFor="let textTecnology of tecnologyText; let z = index" class="skills-text" data-aos="fade-up"
+            [id]="tecnologyTitle[z]">
             <p class="title">
                 <span (mouseleave)="hiddeText()"
                     (mouseover)="showText(textTecnology.length, tecnologyTitle[z])">{{tecnologyTitle[z]}}
@@ -52,5 +65,5 @@
                 </span>
             </p>
         </div>
-    </div>
+    </div> -->
 </div>

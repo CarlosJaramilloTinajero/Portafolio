@@ -79,6 +79,21 @@ export class PortafolioComponent implements OnInit {
       }
     },
     {
+      title: 'API PRODUCTS HUB',
+      img: 'assets/api-products-hub.png',
+      showNumber: 11,
+      link: 'https://carlosjaramillo.beauty/products-hub-api-documentation/',
+      linkGitHub: 'https://github.com/CarlosJaramilloTinajero',
+      targets: ['Laravel', 'PHP', 'SQL', 'API'],
+      technologiesProfolie: [['PHP', 'SQL', 'API'], ['Laravel', ' Sanctum'], ['Arquitectuta en capas']],
+      moreProject: {
+        name: 'API de la página Products Hub',
+        shortDescription: 'Esta API ha sido diseñada específicamente para el portal Products Hub, brindando soporte tanto en el comercio electrónico (ecommerce) como en la gestión administrativa.',
+        description: 'Desarrollo de API REST robusta para el portal de Products Hub, diseñada para su implementación tanto para el Ecommerce como para las tareas administrativas; Esta API construida sobre el Framework Laravel, destaca por su eficiencia y flexibilidad en la gestion de recursos. Sistema de Autenticación Seguro:|La API hace uso del paquete Laravel Sanctum para proporcionar un sistema de autenticación sólido, garantizando la seguridad de las transacciones tanto para usuarios finales como para el personal administrativo. Utilización de Middlewares:|Se ha implementado un sistema de Middlewares personalizado utilizando las funcionalidades ofrecidas por Laravel, lo que permite gestionar de manera eficiente las peticiones HTTP, incluyendo la autenticación, la validación de datos y la autorización de acceso a recursos. Arquitectura en Capas Organizada:|La estructura de la API sigue una arquitectura en capas bien definida, que incluye controladores, servicios y repositorios; Esta organización modular facilita la mantenibilidad del código y mejora la escalabilidad del sistema. Interfaces para Mejor Mantenimiento:|Se han creado interfaces para los repositorios y servicios utilizados por los controladores, lo que contribuye a una estructura más clara y un mantenimiento más sencillo a lo largo del ciclo de vida del software. Serialización de Datos Eficiente:|La API utiliza las capacidades de serialización de datos de Laravel para convertir los modelos y colecciones en formatos compatibles, como JSON, permitiendo una comunicación eficiente entre el servidor y los clientes de la API. Gestión de Respuestas HTTP y Códigos de Estado:|Se han implementado mecanismos para gestionar las respuestas HTTP y los códigos de estado de manera coherente, proporcionando información clara sobre el resultado de las solicitudes realizadas a la API. Documentación Clara y Concisa:|Se ha elaborado una documentación detallada que describe de manera clara y concisa el funcionamiento de la API, incluyendo la lista de endpoints disponibles y los parámetros esperados, facilitando su integración y uso por parte de los desarrolladores externos. Con todos estos elementos en juego, la API de Products Hub se posiciona como una solución completa y robusta, capaz de satisfacer las necesidades tanto del comercio electrónico como de la gestión administrativa, ofreciendo un alto nivel de seguridad, eficiencia y mantenibilidad',
+        technologies: ['PHP', 'SQL', 'Laravel', 'API', 'Sanctum', 'Arquitectuta en capas'],
+      }
+    },
+    {
       title: 'CONSUMO API REST CON VUE 3',
       img: 'assets/api-rest-vue.png',
       showNumber: 7,

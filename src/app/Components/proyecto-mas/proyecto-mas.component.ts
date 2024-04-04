@@ -10,6 +10,7 @@ import { APP_DEBUG } from 'src/app/constants';
 export class ProyectoMasComponent implements OnInit {
 
   letras: string[] = [];
+  
   @Input() descripcionProyecto: string = "";
   @Input() lenguajes: string[] = [];
   // @Input() descripcionTecnica: string = "";

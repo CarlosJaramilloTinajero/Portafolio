@@ -19,8 +19,8 @@
         <header class="botones">
             <a target="_blank" [href]="link" (click)="enterUrlProject()" class="link btn btn2 hoverCursor">Ir al sitio
                 web</a>
-            <a target="_blank" (click)="enterUrlProjectGit()" [href]="linkGithub" class="btn3"> <img src="assets/git.png"
-                    alt="" class="icon hoverCursor"></a>
+            <a target="_blank" (click)="enterUrlProjectGit()" [href]="linkGithub" class="btn3"> <img
+                    src="assets/git.png" alt="" class="icon hoverCursor"></a>
         </header>
         <a target="_blank" [href]="link" (click)="enterUrlProject()"><img [src]="img" class="imagen hoverCursor"
                 alt=""></a>
@@ -28,9 +28,13 @@
     <div class="mb-m"></div>
     <h4 class="subtitle-proyect" [ngClass]="{'txtShadowBlancoMd': iliminacion}">Sobre este proyecto</h4>
     <hr class="hr1">
-    <h6 class="description" [ngClass]="{'txtShadowBlancoSm': iliminacion}"><span *ngFor="let letra of letras"
-            style="margin: 0px 0px 0px 0px;"><span style="margin-left: 0px;">{{letra}}</span><br
-                *ngIf="letra == '.'"><br *ngIf="letra == '.'"></span></h6>
+    <h6 class="description" [ngClass]="{'txtShadowBlancoSm': iliminacion}">
+        <span *ngFor="let letra of letras" style="margin: 0px 0px 0px 0px;">
+            <!-- <strong style="margin-left: 0px;" *ngIf="letra === 'º'">{{letra}}</strong> -->
+            <span *ngIf="letra !== '|'" style="margin-left: 0px;">{{letra}}</span>
+            <br *ngIf="letra == '.'  || letra === '|'"><br *ngIf="letra == '.'">
+        </span>
+    </h6>
 
     <div class="mb-m"></div>
 

@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
+
 export class SkillsComponent implements OnInit {
 
   @Input() select: number = 0;
@@ -12,7 +13,7 @@ export class SkillsComponent implements OnInit {
   @Input() iluminacion: boolean = false;
 
   // Textos
-  tecnologyTitle: string[] = ['Laravel', 'Vue', 'PHP', 'JavaScript', 'CSS', 'HTML', 'TypeScript', 'Angular'];
+  tecnologyTitle: string[] = ['Laravel', 'Vue', 'PHP', 'JavaScript', 'CSS', 'HTML', 'TypeScript', 'Angular', 'React'];
 
   tecnologyText: any = [
     ("Mi destreza en Laravel se extiende a Livewire, CRON para comandos programados, gestión de Jobs, creación/consumo de API Rest, manipulación de Emails, Excel para exportar/importar datos, y aprovechamiento de Websockets (Pusher y Laravel Echo), entre otros.").split(""),
@@ -23,7 +24,56 @@ export class SkillsComponent implements OnInit {
     ('En mi trayectoria con HTML, me destaco en la creación de estructuras web semánticas, la utilización meticulosa de etiquetas, la elaboración de elementos multimedia y la aplicación rigurosa de estándares de accesibilidad para diseñar interfaces eficientes y accesibles.').split(""),
     ('Mi habilidad en TypeScript se manifiesta en la creación de aplicaciones sólidas con tipado estático. Implemento interfaces, clases, módulos y optimizo el desarrollo en entornos complejos de programación para garantizar sistemas eficientes y escalables, entre otros.').split(""),
     // ('En SQL, demuestro habilidades en la creación y gestión eficiente de bases de datos, escritura de consultas complejas, diseño de esquemas, optimización de consultas y manejo seguro de datos para sistemas eficaces y confiables.').split(""),
-    ('En Angular, destaco por mi habilidad en la construcción de aplicaciones web dinámicas y escalables. Manejo la creación de componentes, servicios, enrutamiento, gestión de estado con RxJS y optimización de rendimiento para interfaces robustas y eficientes, entre otros.').split("")
+    ('En Angular, destaco por mi habilidad en la construcción de aplicaciones web dinámicas y escalables. Manejo la creación de componentes, servicios, enrutamiento, gestión de estado con RxJS y optimización de rendimiento para interfaces robustas y eficientes, entre otros.').split(""),
+    ('').split("")
+  ];
+
+  tecnologyImg: any = [
+    {
+      name: 'Vue',
+      percentage: 90,
+      img: 'assets/vue-icon.png'
+    },
+    {
+      name: 'React',
+      percentage: 60,
+      img: 'assets/react-icon.png'
+    },
+    {
+      name: 'Angular',
+      percentage: 60,
+      img: 'assets/angular-icon.png'
+    },
+    {
+      name: 'Laravel',
+      percentage: 90,
+      img: 'assets/laravel-icon.png'
+    },
+    {
+      name: 'PHP',
+      percentage: 90,
+      img: 'assets/php-icon.png'
+    },
+    {
+      name: 'SQL',
+      percentage: 75,
+      img: 'assets/sql-icon.png'
+    },
+    {
+      name: 'JavaScript',
+      percentage: 95,
+      img: 'assets/javascript-icon.svg'
+    },
+    {
+      name: 'HTML',
+      percentage: 95,
+      img: 'assets/html-icon.png'
+    },
+    {
+      name: 'CSS',
+      percentage: 95,
+      img: 'assets/css-icon.webp'
+    }
   ];
 
   idInterval: any = 0;
@@ -33,6 +83,7 @@ export class SkillsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.tecnologyImg = this.tecnologyImg.sort((a: any, b: any) => b.percentage - a.percentage);
   }
 
   hiddeText() {
