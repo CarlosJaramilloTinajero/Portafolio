@@ -10,21 +10,25 @@
         este portafolio, me complace compartir contigo mis logros y contribuciones en cada una de estas empresas. </p>
     <hr>
     <div class="jobs-experiences">
-        <div class="in-out-job" [ngClass]="{'out-job' : jobSelected != 0, 'in-job': jobSelected == 0}">
-            <div class="experiences-container">
-                <div class="experience-container mervins">
-                    <p class="tilte-experience">Mervins</p>
-                    <p class="time-experience">Ene 2023 - Jul 2023</p>
-                    <p class="job-position-experience">Desarrollador Full Stack</p>
-                    <a class="btn-experience" (click)="selectJob(1)">Ver...</a>
-                    <div class="image-experience">
-                        <img src="assets/logo-mervins.webp">
+
+        <div class="in-out-job w-100" [ngClass]="{'out-job' : jobSelected != 0, 'in-job': jobSelected == 0}">
+            <div class="experiences-container row">
+                <div class="col col-1 col-md-2">
+                    <div *ngFor="let item of jobs" [ngClass]="item.className" class="experience-container">
+                        <p class="tilte-experience">{{ item.title }}</p>
+                        <p class="time-experience">{{ item.timeExperience }}</p>
+                        <p class="job-position-experience">{{ item.positionExperience }}</p>
+                        <a class="btn-experience" (click)="selectJob(item.jobSelect)">Ver...</a>
+                        <div class="image-experience">
+                            <img [src]="item.logo">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="job-experience in-out-job" [ngClass]="{'out-job' : jobSelected != 1, 'in-job' : jobSelected == 1}">
+        <div *ngFor="let item of jobs" class="job-experience in-out-job"
+            [ngClass]="{'out-job' : jobSelected != item.jobSelect, 'in-job' : jobSelected == item.jobSelect}">
             <div class="mt-3 mb-2 d-flex justify-content-end">
                 <a class="btn btn1 btn-return hoverCursor" (click)="return()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white"
@@ -38,52 +42,16 @@
             </div>
 
             <p [ngClass]="{'txtShadowBlancoSm': iluminacion}" class="title" style="color: rgb(232, 73, 0) !important;">
-                <span class="company">Mervins</span> <span class="link-company ms-2"><a
-                        href="https://www.mervins.com.mx/" target="_blank"
-                        (click)="clickVisitJob('Mervins')">Visitar</a></span> <br>
-                <span class="date-experience">Enero 2023 - Julio 2023</span>
+                <span class="company">{{ item.title }}</span> <span class="link-company ms-2"><a
+                        [href]="item.urlCompany" target="_blank" (click)="clickVisitJob(item.title)">Visitar</a></span>
+                <br>
+                <span class="date-experience">{{ item.timeExperience }}</span>
             </p>
             <p [ngClass]="{'txtShadowBlancoSm': iluminacion}" class="text-experience">
-                Durante mi experiencia laboral en la empresa Mervins, tuve la oportunidad de desempeñarme como
-                desarrollador
-                full stack durante 7 meses. Durante este tiempo,
-                participé en una variedad de proyectos, no solo para Mervins, sino también para otras empresas como
-                Expercom
-                y Powe.mx. En estos proyectos, desempeñé un papel
-                tanto en el desarrollo del frontend como del backend, trabajando en la creación de nuevos módulos,
-                integraciones con proveedores a través de APIs, mejoras en el
-                diseño de los sitios web públicos y en los sistemas de administración, así como en la resolución de
-                errores
-                y brindando soporte a los proyectos.
-                <br> <br>
-                Para el desarrollo de estos proyectos, utilicé lenguajes como JavaScript, CSS y HTML en el frontend,
-                y
-                aproveché bibliotecas de estilos de CSS y JavaScript para
-                mejorar los resultados visuales. En el backend, trabajé con PHP y SQL para las bases de datos,
-                utilizando
-                el framework Laravel. Hice uso de los componentes de
-                Laravel, como el sistema de tareas programadas (Cron), para actualizar productos de forma automática
-                mediante comandos programados. También utilicé los Jobs de
-                Laravel para realizar tareas en segundo plano, utilizando un worker para procesar estas tareas.
-                Además,
-                implementé websockets utilizando la API de Pusher y Laravel
-                Echo para recibir notificaciones en tiempo real sobre los resultados de los Jobs y tareas
-                programadas
-                del
-                Cron de Laravel. También realicé conexiones a APIs de
-                mayoristas mediante solicitudes HTTP para obtener datos de productos, como imágenes, nombres,
-                precios e
-                inventario.
-                <br> <br>
-                A través del trabajo realizado en Mervins, adquirí una amplia gama de conocimientos tanto en
-                frontend
-                como
-                en
-                backend. Aprendí más sobre las funcionalidades de
-                Laravel, lo que me ha preparado para desarrollar y mejorar proyectos en el futuro. Mi experiencia en
-                Mervins
-                me ha brindado una base sólida y una valiosa experiencia
-                laboral en el campo del desarrollo web.
+                <span *ngFor="let letter of item.textExperience">
+                    <span *ngIf="letter != '*'">{{ letter }}</span>
+                    <br *ngIf="letter == '*'">
+                </span>
             </p>
         </div>
     </div>

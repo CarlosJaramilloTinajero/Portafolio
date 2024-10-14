@@ -185,14 +185,21 @@
 /* Mervins */
 .experiences-container .experience-container.mervins {
     background: linear-gradient(61deg, rgba(255, 104, 35, 1) 15%, rgba(255, 150, 38, 1) 82%);
-}
-
-.experiences-container .experience-container.mervins {
     box-shadow: -6px 6px 6px rgba(241, 76, 0, 0.3);
 }
 
 .experiences-container .experience-container.mervins:hover {
     box-shadow: -9px 9px 10px rgba(241, 76, 0, 0.3);
+}
+
+/* Maestros joyeros */
+.experiences-container .experience-container.maestros-joyeros {
+    background: linear-gradient(61deg, rgb(0, 0, 0) 15%, rgb(79, 54, 0) 82%);
+    box-shadow: -6px 6px 6px rgba(194, 146, 0, 0.3);
+}
+
+.experiences-container .experience-container.maestros-joyeros:hover {
+    box-shadow: -9px 9px 10px rgba(194, 146, 0, 0.3);
 }
 
 
