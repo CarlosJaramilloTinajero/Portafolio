@@ -30,11 +30,11 @@ export class ExperienceComponent implements OnInit {
       title: 'Maestros Joyeros',
       className: 'maestros-joyeros',
       timeExperience: 'May 2024 - Actualidad',
-      positionExperience: 'Middle Desarrollador Full Stack',
+      positionExperience: 'Desarrollador Full Stack',
       jobSelect: 2,
       logo: 'assets/logo-mj.png',
       urlCompany: 'https://maestrosjoyeros.com/',
-      textExperience: ('').split('')
+      textExperience: ('Durante mi experiencia en Maestros Joyeros, participé activamente en el desarrollo e implementación de módulos administrativos para diversas áreas, tales como Recursos Humanos, Soporte Técnico, Contabilidad, así como en la creación de sistemas internos personalizados que optimizaron procesos clave dentro de la empresa. ** Mi rol abarcó tanto el Frontend como el Backend, desempeñando funciones en todo el ciclo de vida de los proyectos. En el Frontend, utilicé tecnologías estándar como HTML5, CSS3 y JavaScript, implementando Tailwind CSS para un diseño rápido y eficiente, junto con Alpine.js y SweetAlert para enriquecer la experiencia de usuario con interfaces interactivas. ** En el Backend, desarrollé soluciones robustas utilizando PHP y el framework Laravel, que me permitieron estructurar aplicaciones escalables y modulares. También hice uso de Livewire, lo que facilitó la creación de componentes dinámicos y mejoró la interactividad sin necesidad de recargar la página. La gestión de datos se realizó mediante SQL, utilizando consultas optimizadas para garantizar un rendimiento eficiente en la base de datos. ** Además de la codificación, participé en la arquitectura del software, siguiendo buenas prácticas de desarrollo, como la aplicación del principio DRY (Dont Repeat Yourself), estructuración MVC (Model-View-Controller), y técnicas de control de versiones con Git, lo que facilitó la colaboración y mantenimiento a largo plazo. ** También me encargué de documentar los proyectos, generando manuales técnicos y funcionales para facilitar la transición y escalabilidad futura. Trabajé en la organización del equipo de desarrollo, implementando metodologías de trabajo como SCRUM, para asignar tareas, gestionar sprints y asegurar que los entregables se completaran dentro de los tiempos estimados. ** Durante mi tiempo en Maestros Joyeros, no solo perfeccioné habilidades técnicas sino que también adquirí competencias clave en gestión de proyectos, liderazgo de equipo y organización eficiente del flujo de trabajo, lo que contribuyó al éxito de los proyectos y a la mejora continua de los procesos internos de la empresa.').split('')
     }
   ];
 

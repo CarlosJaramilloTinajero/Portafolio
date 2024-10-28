@@ -13,8 +13,8 @@
 
         <div class="in-out-job w-100" [ngClass]="{'out-job' : jobSelected != 0, 'in-job': jobSelected == 0}">
             <div class="experiences-container row">
-                <div class="col col-1 col-md-2">
-                    <div *ngFor="let item of jobs" [ngClass]="item.className" class="experience-container">
+                <div *ngFor="let item of jobs" class="col col-12 col-lg-6">
+                    <div [ngClass]="item.className" class="experience-container mx-auto mt-4">
                         <p class="tilte-experience">{{ item.title }}</p>
                         <p class="time-experience">{{ item.timeExperience }}</p>
                         <p class="job-position-experience">{{ item.positionExperience }}</p>
@@ -41,7 +41,7 @@
                 </a>
             </div>
 
-            <p [ngClass]="{'txtShadowBlancoSm': iluminacion}" class="title" style="color: rgb(232, 73, 0) !important;">
+            <p [ngClass]="{'txtShadowBlancoSm': iluminacion}" class="title">
                 <span class="company">{{ item.title }}</span> <span class="link-company ms-2"><a
                         [href]="item.urlCompany" target="_blank" (click)="clickVisitJob(item.title)">Visitar</a></span>
                 <br>

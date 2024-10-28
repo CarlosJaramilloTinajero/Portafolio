@@ -26,6 +26,7 @@
 }
 
 .job-experience .title {
+    color: rgba(255, 255, 255, 0.875) !important;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: left;
 }
@@ -194,7 +195,7 @@
 
 /* Maestros joyeros */
 .experiences-container .experience-container.maestros-joyeros {
-    background: linear-gradient(61deg, rgb(0, 0, 0) 15%, rgb(79, 54, 0) 82%);
+    background: linear-gradient(61deg, rgb(57, 39, 0) 15%, rgb(162, 111, 0) 82%);
     box-shadow: -6px 6px 6px rgba(194, 146, 0, 0.3);
 }
 
@@ -213,42 +214,13 @@
     left: 0;
     opacity: 1;
     scale: 1;
-    /* animation: in 1s linear; */
-    /* animation-fill-mode: forwards; */
 }
 
 .out-job {
     left: -150%;
     opacity: 0;
     scale: .3;
-    /* animation: out 1s linear; */
-    /* animation-fill-mode: forwards; */
 }
-
-/* @keyframes out {
-    0% {
-        opacity: 1;
-        scale: 1;
-        z-index: 101;
-    }
-
-    40% {
-        opacity: .4;
-        scale: .8;
-    }
-
-    80% {
-        scale: .6;
-        opacity: .1;
-    }
-
-    100% {
-        opacity: 0;
-        scale: .5;
-        z-index: -1;
-    }
-
-} */
 
 @keyframes out {
     0% {
